@@ -1,0 +1,4 @@
+module part2 (LEDR, SW);
+	input [9:0] SW;
+	output [9:0] LEDR;
+	wire s, [3:0] X, [3:0] Y, 
