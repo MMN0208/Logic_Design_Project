@@ -1,0 +1,8 @@
+module part3 (SW, LEDR);
+endmodule
+
+module full_adder (a, b, c_in, s, c_out);
+	input a, b, c_in;
+	output s, c_out;
+	
+endmodule
