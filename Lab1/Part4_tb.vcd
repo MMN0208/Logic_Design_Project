@@ -1,0 +1,55 @@
+$date
+	Wed Oct 12 10:15:57 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module part4_tb $end
+$var wire 7 ! Hex0 [6:0] $end
+$var reg 3 " Sw [2:0] $end
+$scope module uut $end
+$var wire 2 # SW [1:0] $end
+$var wire 1 $ c1 $end
+$var wire 1 % c0 $end
+$var wire 7 & HEX0 [6:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b100001 &
+0%
+0$
+b0 #
+b0 "
+b100001 !
+$end
+#1
+b110 !
+b110 &
+1%
+b1 #
+b1 "
+#2
+b100100 !
+b100100 &
+1$
+0%
+b10 #
+b10 "
+#3
+b1111111 !
+b1111111 &
+1%
+b11 #
+b11 "
+#4
+b100001 !
+b100001 &
+0$
+0%
+b0 #
+b100 "
