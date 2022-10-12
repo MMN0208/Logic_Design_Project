@@ -1,0 +1,51 @@
+#! /opt/homebrew/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x11d60b220 .scope module, "part1_tb" "part1_tb" 2 3;
+ .timescale -9 -9;
+v0x11d61bed0_0 .net "Led", 9 0, L_0x11d61c030;  1 drivers
+v0x11d61bf90_0 .var "Sw", 10 0;
+L_0x11d61c0f0 .part v0x11d61bf90_0, 0, 10;
+S_0x11d608b70 .scope module, "uut" "part1" 2 12, 3 1 0, S_0x11d60b220;
+ .timescale 0 0;
+    .port_info 0 /INPUT 10 "SW";
+    .port_info 1 /OUTPUT 10 "LEDR";
+L_0x11d61c030 .functor BUFZ 10, L_0x11d61c0f0, C4<0000000000>, C4<0000000000>, C4<0000000000>;
+v0x11d608ce0_0 .net "LEDR", 9 0, L_0x11d61c030;  alias, 1 drivers
+v0x11d61be10_0 .net "SW", 9 0, L_0x11d61c0f0;  1 drivers
+    .scope S_0x11d60b220;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "Part1_tb.vcd" {0 0 0};
+    %vpi_call 2 9 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x11d60b220 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x11d60b220;
+T_1 ;
+    %pushi/vec4 0, 0, 11;
+    %store/vec4 v0x11d61bf90_0, 0, 11;
+T_1.0 ;
+    %load/vec4 v0x11d61bf90_0;
+    %pad/u 32;
+    %cmpi/u 1024, 0, 32;
+    %jmp/0xz T_1.1, 5;
+    %delay 1, 0;
+    %load/vec4 v0x11d61bf90_0;
+    %addi 1, 0, 11;
+    %store/vec4 v0x11d61bf90_0, 0, 11;
+    %jmp T_1.0;
+T_1.1 ;
+    %vpi_call 2 16 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Part1_tb.v";
+    "./Part1.v";
