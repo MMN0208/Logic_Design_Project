@@ -8,15 +8,15 @@ module part5 (SW, LEDR, HEX0, HEX1, HEX2, HEX3);
 	wire [6:0] hex0_out, hex1_out, hex2_out, hex3_out;
 	
 	assign LEDR = SW;
-	assign {ChSel, Ch0, Ch1, Ch2, Ch3} = SW;
+	assign {ChSel, Ch3, Ch0, Ch1, Ch2} = SW;
 	assign HEX0 = hex0_out;
 	assign HEX1 = hex1_out;
 	assign HEX2 = hex2_out;
 	assign HEX3 = hex3_out;
 	
-	mux_2bit_4to1 mux0 (ChSel, Ch0, Ch1, Ch2, Ch3, mux0_out);
+	mux_2bit_4to1 mux0 (ChSel, Ch2, Ch3, Ch0, Ch1, mux0_out);
 	mux_2bit_4to1 mux1 (ChSel, Ch1, Ch2, Ch3, Ch0, mux1_out);
-	mux_2bit_4to1 mux2 (ChSel, Ch2, Ch3, Ch0, Ch1, mux2_out);
+	mux_2bit_4to1 mux2 (ChSel, Ch0, Ch1, Ch2, Ch3, mux2_out);
 	mux_2bit_4to1 mux3 (ChSel, Ch3, Ch0, Ch1, Ch2, mux3_out);
 	char_7seg hex0 (mux0_out, hex0_out);
 	char_7seg hex1 (mux1_out, hex1_out);
