@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at Part4.v(4): object "HEX0" differs only in case from object "hex0" in the same scope File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/Part4.v Line: 4
+Info (10281): Verilog HDL Declaration information at Part4.v(4): object "HEX1" differs only in case from object "hex1" in the same scope File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/Part4.v Line: 4

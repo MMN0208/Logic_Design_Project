@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Wed Oct 12 13:17:33 2022
+Analysis & Synthesis Status : Successful - Thu Oct 20 14:51:00 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : Lab2
-Top-level Entity Name : part3
+Top-level Entity Name : part6
 Family : Cyclone IV GX
-Total logic elements : 8
-    Total combinational functions : 8
+Total logic elements : 35
+    Total combinational functions : 35
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 14
+Total pins : 26
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

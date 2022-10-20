@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab2
-Wed Oct 12 13:17:33 2022
+Thu Oct 20 14:51:00 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -14,9 +14,12 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "displayBSD:hex1"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -43,16 +46,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 12 13:17:33 2022       ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 20 14:51:00 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; Lab2                                        ;
-; Top-level Entity Name              ; part3                                       ;
+; Top-level Entity Name              ; part6                                       ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 8                                           ;
-;     Total combinational functions  ; 8                                           ;
+; Total logic elements               ; 35                                          ;
+;     Total combinational functions  ; 35                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 14                                          ;
+; Total pins                         ; 26                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -70,7 +73,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CGX150DF31C7    ;                    ;
-; Top-level entity name                                            ; part3              ; Lab2               ;
+; Top-level entity name                                            ; part6              ; Lab2               ;
 ; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -166,42 +169,41 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                              ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+---------+
-; output_files/Part3.v             ; yes             ; User Verilog HDL File  ; /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/output_files/Part3.v ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                   ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
+; Part1.v                          ; yes             ; User Verilog HDL File  ; /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/Part1.v ;         ;
+; Part6.v                          ; yes             ; User Verilog HDL File  ; /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/Part6.v ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary       ;
-+--------------------------+------------------------+
-; Resource                 ; Usage                  ;
-+--------------------------+------------------------+
-; I/O pins                 ; 14                     ;
-;                          ;                        ;
-; DSP block 9-bit elements ; 0                      ;
-;                          ;                        ;
-; Maximum fan-out node     ; full_adder:fa0|c_out~0 ;
-; Maximum fan-out          ; 2                      ;
-; Total fan-out            ; 43                     ;
-; Average fan-out          ; 1.19                   ;
-+--------------------------+------------------------+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 26               ;
+;                          ;                  ;
+; DSP block 9-bit elements ; 0                ;
+;                          ;                  ;
+; Maximum fan-out node     ; SW[4]~input      ;
+; Maximum fan-out          ; 18               ;
+; Total fan-out            ; 173              ;
+; Average fan-out          ; 1.99             ;
++--------------------------+------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name   ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------+-------------+--------------+
-; |part3                     ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 14   ; 0            ; |part3                ; part3       ; work         ;
-;    |full_adder:fa0|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part3|full_adder:fa0 ; full_adder  ; work         ;
-;    |full_adder:fa1|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part3|full_adder:fa1 ; full_adder  ; work         ;
-;    |full_adder:fa2|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part3|full_adder:fa2 ; full_adder  ; work         ;
-;    |full_adder:fa3|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part3|full_adder:fa3 ; full_adder  ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------+-------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                     ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name    ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------+-------------+--------------+
+; |part6                     ; 35 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 26   ; 0            ; |part6                 ; part6       ; work         ;
+;    |displayBSD:hex0|       ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part6|displayBSD:hex0 ; displayBSD  ; work         ;
+;    |displayBSD:hex1|       ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part6|displayBSD:hex1 ; displayBSD  ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -220,18 +222,39 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |part6|Z0[3]               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "displayBSD:hex1" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; x[3] ; Input ; Info     ; Stuck at GND      ;
++------+-------+----------+-------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 14                          ;
-; cycloneiii_lcell_comb ; 8                           ;
-;     normal            ; 8                           ;
-;         3 data inputs ; 8                           ;
+; boundary_port         ; 26                          ;
+; cycloneiii_lcell_comb ; 40                          ;
+;     normal            ; 40                          ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 7                           ;
+;         4 data inputs ; 25                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.94                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 4.39                        ;
 +-----------------------+-----------------------------+
 
 
@@ -250,7 +273,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Wed Oct 12 13:17:27 2022
+    Info: Processing started: Thu Oct 20 14:50:53 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab2 -c Lab2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -264,22 +287,39 @@ Info (12021): Found 4 design units, including 4 entities, in source file Part2.v
     Info (12023): Found entity 2: comparator File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/Part2.v Line: 19
     Info (12023): Found entity 3: circuitA File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/Part2.v Line: 26
     Info (12023): Found entity 4: mux_4bit_2to1 File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/Part2.v Line: 36
-Info (12021): Found 2 design units, including 2 entities, in source file output_files/Part3.v
-    Info (12023): Found entity 1: part3 File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/output_files/Part3.v Line: 1
-    Info (12023): Found entity 2: full_adder File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/output_files/Part3.v Line: 15
-Info (12127): Elaborating entity "part3" for the top level hierarchy
-Info (12128): Elaborating entity "full_adder" for hierarchy "full_adder:fa0" File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/output_files/Part3.v Line: 9
+Warning (12019): Can't analyze file -- file output_files/Part3.v is missing
+Info (12021): Found 3 design units, including 3 entities, in source file Part4.v
+    Info (12023): Found entity 1: part4 File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/Part4.v Line: 1
+    Info (12023): Found entity 2: comparator_5bit File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/Part4.v Line: 32
+    Info (12023): Found entity 3: sum_converter File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/Part4.v Line: 39
+Info (12021): Found 2 design units, including 2 entities, in source file Part3.v
+    Info (12023): Found entity 1: part3 File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/Part3.v Line: 1
+    Info (12023): Found entity 2: full_adder File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/Part3.v Line: 15
+Warning (12019): Can't analyze file -- file output_files/Lab2.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file Part5.v
+    Info (12023): Found entity 1: part5 File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/Part5.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Part6.v
+    Info (12023): Found entity 1: part6 File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/Part6.v Line: 1
+Info (12127): Elaborating entity "part6" for the top level hierarchy
+Info (12128): Elaborating entity "displayBSD" for hierarchy "displayBSD:hex0" File: /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/Part6.v Line: 41
 Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/output_files/Lab2.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 22 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 9 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 8 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 516 megabytes
-    Info: Processing ended: Wed Oct 12 13:17:33 2022
-    Info: Elapsed time: 00:00:06
+Info (21057): Implemented 61 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 20 output pins
+    Info (21061): Implemented 35 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 517 megabytes
+    Info: Processing ended: Thu Oct 20 14:51:00 2022
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:13
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/netfpga/Downloads/Logic_Design_Project-main/Lab2/output_files/Lab2.map.smsg.
 
 
