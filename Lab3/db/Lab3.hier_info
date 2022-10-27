@@ -1,0 +1,50 @@
+|part4
+Clk => Clk.IN2
+D => D.IN3
+Qa <= D_latch:D0.port2
+Qb <= D_ff:D1.port2
+Qc <= D_ff:D2.port2
+
+
+|part4|D_latch:D0
+Clk => Q$latch.LATCH_ENABLE
+D => Q$latch.DATAIN
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part4|D_ff:D1
+Clk => Clk.IN1
+D => D.IN1
+Q <= D_latch:slave.port2
+
+
+|part4|D_ff:D1|D_latch:master
+Clk => Q$latch.LATCH_ENABLE
+D => Q$latch.DATAIN
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part4|D_ff:D1|D_latch:slave
+Clk => Q$latch.LATCH_ENABLE
+D => Q$latch.DATAIN
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part4|D_ff:D2
+Clk => Clk.IN1
+D => D.IN1
+Q <= D_latch:slave.port2
+
+
+|part4|D_ff:D2|D_latch:master
+Clk => Q$latch.LATCH_ENABLE
+D => Q$latch.DATAIN
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part4|D_ff:D2|D_latch:slave
+Clk => Q$latch.LATCH_ENABLE
+D => Q$latch.DATAIN
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,226 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/ADMIN/Documents/FPGA/Lab3/simulation/qsim
+T_opt
+Z2 !s110 1666859033
+V5]3Ue0<H[_Z_KTV?1biJB0
+04 17 4 work part1_vlg_vec_tst fast 0
+=1-50ebf6b3f867-635a4019-262-31d0
+Z3 !s124 OEM10U3 
+Z4 o-quiet -auto_acc_if_foreign -work work -L cycloneiv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1666861959
+V1ZckPMRI8CJnPXnMgoW^P3
+04 16 4 work Lab3_vlg_vec_tst fast 0
+=1-50ebf6b3f867-635a4b87-16a-53d4
+R3
+R4
+R5
+n@_opt1
+R6
+R1
+vhard_block
+Z7 !s110 1666865953
+!i10b 1
+!s100 QBQTo=a3lPTAaEz=SgVhL3
+Z8 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IHzVBam6hzcNZ2MC7gcNCO2
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+R1
+Z10 w1666865953
+Z11 8Lab3.vo
+Z12 FLab3.vo
+!i122 122
+L0 232 34
+Z13 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z14 !s108 1666865953.000000
+Z15 !s107 Lab3.vo|
+Z16 !s90 -work|work|Lab3.vo|
+!i113 1
+Z17 o-work work
+R5
+vLab3
+Z18 !s110 1666865355
+!i10b 1
+!s100 d1fjX:a8z8KmHiO]]8T`71
+R8
+I6FWJGEUKX7A1JFhFPPS]H2
+R9
+R1
+Z19 w1666865354
+R11
+R12
+!i122 118
+L0 32 109
+R13
+r1
+!s85 0
+31
+Z20 !s108 1666865355.000000
+R15
+R16
+!i113 1
+R17
+R5
+n@lab3
+vLab3_vlg_vec_tst
+R18
+!i10b 1
+!s100 3O=DU8ScklRTSPZQg`:[03
+R8
+I8ho54RG:G6]F3a_gdSS@61
+R9
+R1
+R19
+Z21 8Waveform.vwf.vt
+Z22 FWaveform.vwf.vt
+!i122 119
+Z23 L0 30 56
+R13
+r1
+!s85 0
+31
+R20
+Z24 !s107 Waveform.vwf.vt|
+Z25 !s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R17
+R5
+n@lab3_vlg_vec_tst
+vpart1
+R2
+!i10b 1
+!s100 kcAma[ZMb^FCkLOD6>oOi0
+I05KY=890hOB8KfJT>Q1F:1
+R1
+Z26 w1666859032
+R11
+R12
+!i122 72
+L0 32 157
+R9
+Z27 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z28 !s108 1666859033.000000
+R15
+R16
+!i113 0
+Z29 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
+vpart1_vlg_vec_tst
+R2
+!i10b 1
+!s100 eWS4fBk<dA[7ai2n2ATbh2
+IU_[3QT;S>]MBR0U=zd?P:2
+R1
+R26
+R21
+R22
+!i122 73
+L0 30 52
+R9
+R27
+r1
+!s85 0
+31
+R28
+R24
+R25
+!i113 0
+R29
+R5
+vpart4
+R7
+!i10b 1
+!s100 eW6GlQJLS?Nh35Jg<FRP40
+R8
+IeNc5UCUFk<o2@AZ5U1VND1
+R9
+R1
+R10
+R11
+R12
+!i122 122
+L0 32 199
+R13
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R17
+R5
+vpart4_vlg_vec_tst
+R7
+!i10b 1
+!s100 7OHNd7bT_bTGISo`F`M2]1
+R8
+IbKE6YRz?^PPnBB_]@S79_0
+R9
+R1
+w1666865952
+R21
+R22
+!i122 123
+R23
+R13
+r1
+!s85 0
+31
+R14
+R24
+R25
+!i113 1
+R17
+R5

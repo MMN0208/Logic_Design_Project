@@ -1,0 +1,11 @@
+module part3 (SW, LEDR, LEDG);
+  input [1:0] SW;
+  output [1:0] LEDR, LEDG;
+  
+  assign LEDR = SW;
+  assign LEDG[1] = 0;
+  
+  wire Q;
+
+  d_ff D0 (SW[0], SW[1], LEDG[0]);
+endmodule
