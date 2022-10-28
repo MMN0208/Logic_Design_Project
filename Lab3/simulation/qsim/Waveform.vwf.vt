@@ -19,68 +19,53 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "10/27/2022 17:19:12"
+// Generated on "10/27/2022 20:47:50"
                                                                                 
-// Verilog Test Bench (with test vectors) for design :                          part4
+// Verilog Test Bench (with test vectors) for design :                          Lab3
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module part4_vlg_vec_tst();
+module Lab3_vlg_vec_tst();
 // constants                                           
 // general purpose registers
-reg Clk;
-reg D;
+reg [1:0] SW;
 // wires                                               
-wire Qa;
-wire Qb;
-wire Qc;
+wire [1:0] LEDR;
 
 // assign statements (if any)                          
-part4 i1 (
+Lab3 i1 (
 // port map - connection between master ports and signals/registers   
-	.Clk(Clk),
-	.D(D),
-	.Qa(Qa),
-	.Qb(Qb),
-	.Qc(Qc)
+	.LEDR(LEDR),
+	.SW(SW)
 );
 initial 
 begin 
-#160000 $finish;
+#300000 $finish;
 end 
-
-// Clk
-always
-begin
-	Clk = 1'b0;
-	Clk = #5000 1'b1;
-	#5000;
-end 
-
-// D
+// SW[ 1 ]
 initial
 begin
-	D = 1'b0;
-	D = #5000 1'b1;
-	D = #15000 1'b0;
-	D = #15000 1'b1;
-	D = #5000 1'b0;
-	D = #10000 1'b1;
-	D = #10000 1'b0;
-	D = #5000 1'b1;
-	D = #5000 1'b0;
-	D = #5000 1'b1;
-	D = #5000 1'b0;
-	D = #5000 1'b1;
-	D = #5000 1'b0;
-	D = #5000 1'b1;
-	D = #5000 1'b0;
-	D = #10000 1'b1;
-	D = #15000 1'b0;
-	D = #15000 1'b1;
-	D = #15000 1'b0;
+	repeat(7)
+	begin
+		SW[1] = 1'b0;
+		SW[1] = #20000 1'b1;
+		# 20000;
+	end
+	SW[1] = 1'b0;
+end 
+// SW[ 0 ]
+initial
+begin
+	repeat(3)
+	begin
+		SW[0] = 1'b0;
+		SW[0] = #40000 1'b1;
+		# 40000;
+	end
+	SW[0] = 1'b0;
+	SW[0] = #40000 1'b1;
 end 
 endmodule
 

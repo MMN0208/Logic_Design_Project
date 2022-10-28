@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition"
 
-// DATE "10/27/2022 17:19:13"
+// DATE "10/27/2022 20:47:51"
 
 // 
 // Device: Altera EP4CGX150DF31C7 Package FBGA896
@@ -29,25 +29,11 @@
 
 `timescale 1 ps/ 1 ps
 
-module part4 (
-	Clk,
-	D,
-	Qa,
-	Qb,
-	Qc);
-input 	Clk;
-input 	D;
-output 	Qa;
-output 	Qb;
-output 	Qc;
-
-// Design Ports Information
-// Qa	=>  Location: PIN_AK26,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// Qb	=>  Location: PIN_AH23,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// Qc	=>  Location: PIN_AG23,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// D	=>  Location: PIN_AH25,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// Clk	=>  Location: PIN_W15,	 I/O Standard: 2.5 V,	 Current Strength: Default
-
+module Lab3 (
+	LEDR,
+	SW);
+output 	[1:0] LEDR;
+input 	[1:0] SW;
 
 wire gnd;
 wire vcc;
@@ -60,206 +46,192 @@ assign unknown = 1'bx;
 tri1 devclrn;
 tri1 devpor;
 tri1 devoe;
-// synopsys translate_off
-initial $sdf_annotate("Lab3_v.sdo");
-// synopsys translate_on
-
-wire \Qa~output_o ;
-wire \Qb~output_o ;
-wire \Qc~output_o ;
-wire \D~input_o ;
-wire \Clk~input_o ;
-wire \Clk~inputclkctrl_outclk ;
-wire \D0|Q~combout ;
-wire \D1|master|Q~combout ;
-wire \D1|slave|Q~combout ;
-wire \D2|slave|Q~combout ;
+wire \LEDR[1]~output_o ;
+wire \LEDR[0]~output_o ;
+wire \SW[1]~input_o ;
+wire \SW[0]~input_o ;
+wire \inst|D0|master|R_g~combout ;
+wire \inst|D0|master|S_g~combout ;
+wire \inst|D0|master|Qb~combout ;
+wire \inst|D0|master|Qa~combout ;
+wire \inst|D0|slave|R_g~combout ;
+wire \inst|D0|slave|S_g~combout ;
+wire \inst|D0|slave|Qb~combout ;
+wire \inst|D0|slave|Qa~combout ;
 
 
-hard_block auto_generated_inst(
-	.devpor(devpor),
-	.devclrn(devclrn),
-	.devoe(devoe));
-
-// Location: IOOBUF_X95_Y0_N2
-cycloneiv_io_obuf \Qa~output (
-	.i(\D0|Q~combout ),
+cycloneiv_io_obuf \LEDR[1]~output (
+	.i(gnd),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\Qa~output_o ),
+	.o(\LEDR[1]~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \Qa~output .bus_hold = "false";
-defparam \Qa~output .open_drain_output = "false";
+defparam \LEDR[1]~output .bus_hold = "false";
+defparam \LEDR[1]~output .open_drain_output = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X95_Y0_N9
-cycloneiv_io_obuf \Qb~output (
-	.i(\D1|slave|Q~combout ),
+cycloneiv_io_obuf \LEDR[0]~output (
+	.i(\inst|D0|slave|Qa~combout ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\Qb~output_o ),
+	.o(\LEDR[0]~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \Qb~output .bus_hold = "false";
-defparam \Qb~output .open_drain_output = "false";
+defparam \LEDR[0]~output .bus_hold = "false";
+defparam \LEDR[0]~output .open_drain_output = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X95_Y0_N16
-cycloneiv_io_obuf \Qc~output (
-	.i(\D2|slave|Q~combout ),
-	.oe(vcc),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\Qc~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \Qc~output .bus_hold = "false";
-defparam \Qc~output .open_drain_output = "false";
-// synopsys translate_on
-
-// Location: IOIBUF_X97_Y0_N1
-cycloneiv_io_ibuf \D~input (
-	.i(D),
+cycloneiv_io_ibuf \SW[1]~input (
+	.i(SW[1]),
 	.ibar(gnd),
-	.o(\D~input_o ));
+	.o(\SW[1]~input_o ));
 // synopsys translate_off
-defparam \D~input .bus_hold = "false";
-defparam \D~input .simulate_z_as = "z";
+defparam \SW[1]~input .bus_hold = "false";
+defparam \SW[1]~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: IOIBUF_X57_Y0_N15
-cycloneiv_io_ibuf \Clk~input (
-	.i(Clk),
+cycloneiv_io_ibuf \SW[0]~input (
+	.i(SW[0]),
 	.ibar(gnd),
-	.o(\Clk~input_o ));
+	.o(\SW[0]~input_o ));
 // synopsys translate_off
-defparam \Clk~input .bus_hold = "false";
-defparam \Clk~input .simulate_z_as = "z";
+defparam \SW[0]~input .bus_hold = "false";
+defparam \SW[0]~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: CLKCTRL_G29
-cycloneiv_clkctrl \Clk~inputclkctrl (
-	.ena(vcc),
-	.inclk({vcc,vcc,vcc,\Clk~input_o }),
-	.clkselect(2'b00),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.outclk(\Clk~inputclkctrl_outclk ));
-// synopsys translate_off
-defparam \Clk~inputclkctrl .clock_type = "global clock";
-defparam \Clk~inputclkctrl .ena_register_mode = "none";
-// synopsys translate_on
-
-// Location: LCCOMB_X96_Y1_N16
-cycloneiv_lcell_comb \D0|Q (
+cycloneiv_lcell_comb \inst|D0|master|R_g (
 // Equation(s):
-// \D0|Q~combout  = (GLOBAL(\Clk~inputclkctrl_outclk ) & ((\D~input_o ))) # (!GLOBAL(\Clk~inputclkctrl_outclk ) & (\D0|Q~combout ))
+// \inst|D0|master|R_g~combout  = LCELL((\SW[1]~input_o ) # (\SW[0]~input_o ))
 
-	.dataa(gnd),
-	.datab(\D0|Q~combout ),
-	.datac(\D~input_o ),
-	.datad(\Clk~inputclkctrl_outclk ),
+	.dataa(\SW[1]~input_o ),
+	.datab(\SW[0]~input_o ),
+	.datac(gnd),
+	.datad(gnd),
 	.cin(gnd),
-	.combout(\D0|Q~combout ),
+	.combout(\inst|D0|master|R_g~combout ),
 	.cout());
 // synopsys translate_off
-defparam \D0|Q .lut_mask = 16'hF0CC;
-defparam \D0|Q .sum_lutc_input = "datac";
+defparam \inst|D0|master|R_g .lut_mask = 16'hEEEE;
+defparam \inst|D0|master|R_g .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X96_Y1_N18
-cycloneiv_lcell_comb \D1|master|Q (
+cycloneiv_lcell_comb \inst|D0|master|S_g (
 // Equation(s):
-// \D1|master|Q~combout  = (GLOBAL(\Clk~inputclkctrl_outclk ) & ((\D1|master|Q~combout ))) # (!GLOBAL(\Clk~inputclkctrl_outclk ) & (\D~input_o ))
+// \inst|D0|master|S_g~combout  = LCELL((\SW[1]~input_o ) # (!\SW[0]~input_o ))
 
-	.dataa(gnd),
-	.datab(\D~input_o ),
-	.datac(\D1|master|Q~combout ),
-	.datad(\Clk~inputclkctrl_outclk ),
-	.cin(gnd),
-	.combout(\D1|master|Q~combout ),
-	.cout());
-// synopsys translate_off
-defparam \D1|master|Q .lut_mask = 16'hF0CC;
-defparam \D1|master|Q .sum_lutc_input = "datac";
-// synopsys translate_on
-
-// Location: LCCOMB_X96_Y1_N30
-cycloneiv_lcell_comb \D1|slave|Q (
-// Equation(s):
-// \D1|slave|Q~combout  = (GLOBAL(\Clk~inputclkctrl_outclk ) & ((\D1|master|Q~combout ))) # (!GLOBAL(\Clk~inputclkctrl_outclk ) & (\D1|slave|Q~combout ))
-
-	.dataa(\D1|slave|Q~combout ),
+	.dataa(\SW[0]~input_o ),
 	.datab(gnd),
-	.datac(\Clk~inputclkctrl_outclk ),
-	.datad(\D1|master|Q~combout ),
+	.datac(gnd),
+	.datad(\SW[1]~input_o ),
 	.cin(gnd),
-	.combout(\D1|slave|Q~combout ),
+	.combout(\inst|D0|master|S_g~combout ),
 	.cout());
 // synopsys translate_off
-defparam \D1|slave|Q .lut_mask = 16'hFA0A;
-defparam \D1|slave|Q .sum_lutc_input = "datac";
+defparam \inst|D0|master|S_g .lut_mask = 16'hFF55;
+defparam \inst|D0|master|S_g .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X96_Y1_N28
-cycloneiv_lcell_comb \D2|slave|Q (
+cycloneiv_lcell_comb \inst|D0|master|Qb (
 // Equation(s):
-// \D2|slave|Q~combout  = (GLOBAL(\Clk~inputclkctrl_outclk ) & (\D2|slave|Q~combout )) # (!GLOBAL(\Clk~inputclkctrl_outclk ) & ((\D0|Q~combout )))
+// \inst|D0|master|Qb~combout  = LCELL((!\inst|D0|master|S_g~combout ) # (!\inst|D0|master|Qa~combout ))
 
-	.dataa(gnd),
-	.datab(\D2|slave|Q~combout ),
-	.datac(\Clk~inputclkctrl_outclk ),
-	.datad(\D0|Q~combout ),
+	.dataa(\inst|D0|master|Qa~combout ),
+	.datab(\inst|D0|master|S_g~combout ),
+	.datac(gnd),
+	.datad(gnd),
 	.cin(gnd),
-	.combout(\D2|slave|Q~combout ),
+	.combout(\inst|D0|master|Qb~combout ),
 	.cout());
 // synopsys translate_off
-defparam \D2|slave|Q .lut_mask = 16'hCFC0;
-defparam \D2|slave|Q .sum_lutc_input = "datac";
+defparam \inst|D0|master|Qb .lut_mask = 16'h7777;
+defparam \inst|D0|master|Qb .sum_lutc_input = "datac";
 // synopsys translate_on
 
-assign Qa = \Qa~output_o ;
+cycloneiv_lcell_comb \inst|D0|master|Qa (
+// Equation(s):
+// \inst|D0|master|Qa~combout  = LCELL((!\inst|D0|master|Qb~combout ) # (!\inst|D0|master|R_g~combout ))
 
-assign Qb = \Qb~output_o ;
+	.dataa(\inst|D0|master|R_g~combout ),
+	.datab(\inst|D0|master|Qb~combout ),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\inst|D0|master|Qa~combout ),
+	.cout());
+// synopsys translate_off
+defparam \inst|D0|master|Qa .lut_mask = 16'h7777;
+defparam \inst|D0|master|Qa .sum_lutc_input = "datac";
+// synopsys translate_on
 
-assign Qc = \Qc~output_o ;
+cycloneiv_lcell_comb \inst|D0|slave|R_g (
+// Equation(s):
+// \inst|D0|slave|R_g~combout  = LCELL((\inst|D0|master|Qa~combout ) # (!\SW[1]~input_o ))
 
-endmodule
+	.dataa(\SW[1]~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\inst|D0|master|Qa~combout ),
+	.cin(gnd),
+	.combout(\inst|D0|slave|R_g~combout ),
+	.cout());
+// synopsys translate_off
+defparam \inst|D0|slave|R_g .lut_mask = 16'hFF55;
+defparam \inst|D0|slave|R_g .sum_lutc_input = "datac";
+// synopsys translate_on
 
-module hard_block (
+cycloneiv_lcell_comb \inst|D0|slave|S_g (
+// Equation(s):
+// \inst|D0|slave|S_g~combout  = LCELL((!\inst|D0|master|Qa~combout ) # (!\SW[1]~input_o ))
 
-	devpor,
-	devclrn,
-	devoe);
+	.dataa(\SW[1]~input_o ),
+	.datab(\inst|D0|master|Qa~combout ),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\inst|D0|slave|S_g~combout ),
+	.cout());
+// synopsys translate_off
+defparam \inst|D0|slave|S_g .lut_mask = 16'h7777;
+defparam \inst|D0|slave|S_g .sum_lutc_input = "datac";
+// synopsys translate_on
 
-// Design Ports Information
-// ~ALTERA_NCEO~	=>  Location: PIN_AE7,	 I/O Standard: 2.5 V,	 Current Strength: 16mA
-// ~ALTERA_DATA0~	=>  Location: PIN_A3,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// ~ALTERA_ASDO_DATA1~	=>  Location: PIN_G9,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// ~ALTERA_NCSO~	=>  Location: PIN_B4,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// ~ALTERA_DCLK~	=>  Location: PIN_B3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+cycloneiv_lcell_comb \inst|D0|slave|Qb (
+// Equation(s):
+// \inst|D0|slave|Qb~combout  = LCELL((!\inst|D0|slave|S_g~combout ) # (!\inst|D0|slave|Qa~combout ))
 
-input 	devpor;
-input 	devclrn;
-input 	devoe;
+	.dataa(\inst|D0|slave|Qa~combout ),
+	.datab(\inst|D0|slave|S_g~combout ),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\inst|D0|slave|Qb~combout ),
+	.cout());
+// synopsys translate_off
+defparam \inst|D0|slave|Qb .lut_mask = 16'h7777;
+defparam \inst|D0|slave|Qb .sum_lutc_input = "datac";
+// synopsys translate_on
 
-wire gnd;
-wire vcc;
-wire unknown;
+cycloneiv_lcell_comb \inst|D0|slave|Qa (
+// Equation(s):
+// \inst|D0|slave|Qa~combout  = LCELL((!\inst|D0|slave|Qb~combout ) # (!\inst|D0|slave|R_g~combout ))
 
-assign gnd = 1'b0;
-assign vcc = 1'b1;
-assign unknown = 1'bx;
+	.dataa(\inst|D0|slave|R_g~combout ),
+	.datab(\inst|D0|slave|Qb~combout ),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\inst|D0|slave|Qa~combout ),
+	.cout());
+// synopsys translate_off
+defparam \inst|D0|slave|Qa .lut_mask = 16'h7777;
+defparam \inst|D0|slave|Qa .sum_lutc_input = "datac";
+// synopsys translate_on
 
-wire \~ALTERA_DATA0~~padout ;
-wire \~ALTERA_ASDO_DATA1~~padout ;
-wire \~ALTERA_NCSO~~padout ;
-wire \~ALTERA_DATA0~~ibuf_o ;
-wire \~ALTERA_ASDO_DATA1~~ibuf_o ;
-wire \~ALTERA_NCSO~~ibuf_o ;
+assign LEDR[1] = \LEDR[1]~output_o ;
 
+assign LEDR[0] = \LEDR[0]~output_o ;
 
 endmodule

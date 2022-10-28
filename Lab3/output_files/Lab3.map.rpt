@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab3
-Thu Oct 27 17:20:13 2022
+Thu Oct 27 20:45:36 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -13,11 +13,12 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Source assignments for part3:inst|d_ff:D0|d_latch:master
+ 10. Source assignments for part3:inst|d_ff:D0|d_latch:slave
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +45,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 27 17:20:13 2022       ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 27 20:45:36 2022       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; Lab3                                        ;
-; Top-level Entity Name              ; part4                                       ;
+; Top-level Entity Name              ; Lab3                                        ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 4                                           ;
-;     Total combinational functions  ; 4                                           ;
+; Total logic elements               ; 8                                           ;
+;     Total combinational functions  ; 8                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 5                                           ;
+; Total pins                         ; 4                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -71,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CGX150DF31C7    ;                    ;
-; Top-level entity name                                            ; part4              ; Lab3               ;
+; Top-level entity name                                            ; Lab3               ; Lab3               ;
 ; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -160,21 +161,22 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                             ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path               ; Library ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------+---------+
-; Part4.v                          ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab3/Part4.v ;         ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                ; Library ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------+---------+
+; Lab3.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/ADMIN/Documents/FPGA/Lab3/Lab3.bdf ;         ;
+; Part2.v                          ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab3/Part2.v  ;         ;
+; Part3.v                          ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab3/Part3.v  ;         ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -182,46 +184,29 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------+------------------+
 ; Resource                 ; Usage            ;
 +--------------------------+------------------+
-; I/O pins                 ; 5                ;
+; I/O pins                 ; 4                ;
 ;                          ;                  ;
 ; DSP block 9-bit elements ; 0                ;
 ;                          ;                  ;
-; Maximum fan-out node     ; Clk~input        ;
+; Maximum fan-out node     ; SW[1]~input      ;
 ; Maximum fan-out          ; 4                ;
-; Total fan-out            ; 20               ;
-; Average fan-out          ; 1.43             ;
+; Total fan-out            ; 21               ;
+; Average fan-out          ; 1.31             ;
 +--------------------------+------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                            ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------+-------------+--------------+
-; |part4                     ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 5    ; 0            ; |part4                        ; part4       ; work         ;
-;    |D_ff:D1|               ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part4|D_ff:D1                ; D_ff        ; work         ;
-;       |D_latch:master|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part4|D_ff:D1|D_latch:master ; D_latch     ; work         ;
-;       |D_latch:slave|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part4|D_ff:D1|D_latch:slave  ; D_latch     ; work         ;
-;    |D_ff:D2|               ; 1 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part4|D_ff:D2                ; D_ff        ; work         ;
-;       |D_latch:slave|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part4|D_ff:D2|D_latch:slave  ; D_latch     ; work         ;
-;    |D_latch:D0|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part4|D_latch:D0             ; D_latch     ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------+-------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------+-------------+--------------+
+; |Lab3                      ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 4    ; 0            ; |Lab3                                   ; Lab3        ; work         ;
+;    |part3:inst|            ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab3|part3:inst                        ; part3       ; work         ;
+;       |d_ff:D0|            ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab3|part3:inst|d_ff:D0                ; d_ff        ; work         ;
+;          |d_latch:master|  ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab3|part3:inst|d_ff:D0|d_latch:master ; d_latch     ; work         ;
+;          |d_latch:slave|   ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab3|part3:inst|d_ff:D0|d_latch:slave  ; d_latch     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; D_latch:D0|Q                                       ; Clk                 ; yes                    ;
-; D_ff:D1|D_latch:slave|Q                            ; Clk                 ; yes                    ;
-; D_ff:D2|D_latch:slave|Q                            ; Clk                 ; yes                    ;
-; D_ff:D1|D_latch:master|Q                           ; Clk                 ; yes                    ;
-; D_ff:D2|D_latch:master|Q                           ; Clk                 ; yes                    ;
-; Number of user-specified and inferred latches = 5  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -239,18 +224,51 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
++----------------------------------------------------------+
+; Source assignments for part3:inst|d_ff:D0|d_latch:master ;
++------------------------------+-------+------+------------+
+; Assignment                   ; Value ; From ; To         ;
++------------------------------+-------+------+------------+
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R_g        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R_g        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; S_g        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; S_g        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Qa         ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Qa         ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Qb         ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Qb         ;
++------------------------------+-------+------+------------+
+
+
++---------------------------------------------------------+
+; Source assignments for part3:inst|d_ff:D0|d_latch:slave ;
++------------------------------+-------+------+-----------+
+; Assignment                   ; Value ; From ; To        ;
++------------------------------+-------+------+-----------+
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R_g       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R_g       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; S_g       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; S_g       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Qa        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Qa        ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Qb        ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Qb        ;
++------------------------------+-------+------+-----------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 5                           ;
-; cycloneiii_lcell_comb ; 4                           ;
-;     normal            ; 4                           ;
-;         3 data inputs ; 4                           ;
+; boundary_port         ; 4                           ;
+; cycloneiii_lcell_comb ; 9                           ;
+;     normal            ; 9                           ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 1.00                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.54                        ;
 +-----------------------+-----------------------------+
 
 
@@ -269,7 +287,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Thu Oct 27 17:20:07 2022
+    Info: Processing started: Thu Oct 27 20:45:30 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab3 -c Lab3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -286,25 +304,32 @@ Info (12021): Found 2 design units, including 2 entities, in source file part3.v
 Info (12021): Found 3 design units, including 3 entities, in source file part4.v
     Info (12023): Found entity 1: part4 File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part4.v Line: 1
     Info (12023): Found entity 2: D_latch File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part4.v Line: 11
-    Info (12023): Found entity 3: D_ff File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part4.v Line: 19
-Info (12127): Elaborating entity "part4" for the top level hierarchy
-Info (12128): Elaborating entity "D_latch" for hierarchy "D_latch:D0" File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part4.v Line: 5
-Warning (10240): Verilog HDL Always Construct warning at Part4.v(14): inferring latch(es) for variable "Q", which holds its previous value in one or more paths through the always construct File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part4.v Line: 14
-Info (10041): Inferred latch for "Q" at Part4.v(15) File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part4.v Line: 15
-Info (12128): Elaborating entity "D_ff" for hierarchy "D_ff:D1" File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part4.v Line: 6
-Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "D_ff:D2|D_latch:master|Q" merged with LATCH primitive "D_latch:D0|Q" File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part4.v Line: 13
+    Info (12023): Found entity 3: D_ff File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part4.v Line: 21
+Info (12021): Found 7 design units, including 7 entities, in source file part5.v
+    Info (12023): Found entity 1: part5 File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part5.v Line: 1
+    Info (12023): Found entity 2: D_Latch_Async_Reset File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part5.v Line: 34
+    Info (12023): Found entity 3: D_FF_Async_Reset File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part5.v Line: 46
+    Info (12023): Found entity 4: displayHEX File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part5.v Line: 56
+    Info (12023): Found entity 5: fulladder_8bit File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part5.v Line: 82
+    Info (12023): Found entity 6: fulladder_4bit File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part5.v Line: 94
+    Info (12023): Found entity 7: fulladder_1bit File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part5.v Line: 108
+Info (12127): Elaborating entity "Lab3" for the top level hierarchy
+Info (12128): Elaborating entity "part3" for hierarchy "part3:inst"
+Info (12128): Elaborating entity "d_ff" for hierarchy "part3:inst|d_ff:D0" File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part3.v Line: 9
+Info (12128): Elaborating entity "d_latch" for hierarchy "part3:inst|d_ff:D0|d_latch:master" File: C:/Users/ADMIN/Documents/FPGA/Lab3/Part3.v Line: 18
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 9 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 12 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 3 output pins
-    Info (21061): Implemented 4 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4865 megabytes
-    Info: Processing ended: Thu Oct 27 17:20:13 2022
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 8 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4853 megabytes
+    Info: Processing ended: Thu Oct 27 20:45:36 2022
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Total CPU time (on all processors): 00:00:13
 
 
