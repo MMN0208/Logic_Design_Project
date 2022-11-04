@@ -1,0 +1,226 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ADMIN/Documents/FPGA/Lab4/simulation/qsim
+vhard_block
+Z1 !s110 1667398091
+!i10b 1
+!s100 oS5=b^h<AY57>lJ_5P`4P3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IXjzl3]mLV3HBn1D=n:m_j3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1667398090
+Z5 8Lab4.vo
+Z6 FLab4.vo
+!i122 34
+L0 1028 34
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1667398091.000000
+Z9 !s107 Lab4.vo|
+Z10 !s90 -work|work|Lab4.vo|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+vLab4Part1
+!s110 1667318020
+!i10b 1
+!s100 =EE0UL26[CXN=WN?FVmOh2
+R2
+IV]loP0^jGEhVl5]Gk@RTE3
+R3
+R0
+Z13 w1667318020
+R5
+R6
+!i122 26
+L0 32 529
+R7
+r1
+!s85 0
+31
+Z14 !s108 1667318020.000000
+R9
+R10
+!i113 1
+R11
+R12
+n@lab4@part1
+vLab4Part1_vlg_vec_tst
+!s110 1667318021
+!i10b 1
+!s100 iIS1znS>>e>70>RiU=N0F1
+R2
+IH]ZG>S<97[ebci6CoUA`M1
+R3
+R0
+R13
+Z15 8Waveform.vwf.vt
+Z16 FWaveform.vwf.vt
+!i122 27
+Z17 L0 30 48
+R7
+r1
+!s85 0
+31
+R14
+Z18 !s107 Waveform.vwf.vt|
+Z19 !s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R11
+R12
+n@lab4@part1_vlg_vec_tst
+vLab4Part2
+R1
+!i10b 1
+!s100 TYVO:QHNPizUdE8iEe5=20
+R2
+ID^GzgzPaS[Z_ebe@l=<]<0
+R3
+R0
+R4
+R5
+R6
+!i122 34
+L0 32 995
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@lab4@part2
+vLab4Part2_vlg_vec_tst
+R1
+!i10b 1
+!s100 QT[;4PO4>l]96l5XC:3k=1
+R2
+I[:>d=Pa[hMd@6E]1<>L>F1
+R3
+R0
+R4
+R15
+R16
+!i122 35
+R17
+R7
+r1
+!s85 0
+31
+R8
+R18
+R19
+!i113 1
+R11
+R12
+n@lab4@part2_vlg_vec_tst
+vLab4Part3
+Z20 !s110 1667466370
+!i10b 1
+!s100 Bf>=>[?c;GeMRUKlOX8=l1
+R2
+I@:ZAN87D]1aDQMBn;NTjf2
+R3
+R0
+Z21 w1667466369
+R5
+R6
+!i122 36
+L0 32 1195
+R7
+r1
+!s85 0
+31
+Z22 !s108 1667466370.000000
+R9
+R10
+!i113 1
+R11
+R12
+n@lab4@part3
+vLab4Part3_vlg_vec_tst
+R20
+!i10b 1
+!s100 2WdkIB;KM@liIWQ^NQM]Y0
+R2
+IlEdn[BJK9Olf7Lg;Ezd8A3
+R3
+R0
+R21
+R15
+R16
+!i122 37
+L0 30 26
+R7
+r1
+!s85 0
+31
+R22
+R18
+R19
+!i113 1
+R11
+R12
+n@lab4@part3_vlg_vec_tst
+vPart1
+Z23 !s110 1667315188
+!i10b 1
+!s100 V=X<W@BBjk8oPDj_lJ][D2
+R2
+IB2<`5zB`FTYBa<fKk3TLW1
+R3
+R0
+Z24 w1667315187
+R5
+R6
+!i122 4
+L0 32 593
+R7
+r1
+!s85 0
+31
+Z25 !s108 1667315188.000000
+R9
+R10
+!i113 1
+R11
+R12
+n@part1
+vPart1_vlg_vec_tst
+R23
+!i10b 1
+!s100 =AXl0B?gbXR4a<K@kS]i33
+R2
+Ie8<^WgL7i=g@<2b?C<mj91
+R3
+R0
+R24
+R15
+R16
+!i122 5
+L0 30 53
+R7
+r1
+!s85 0
+31
+R25
+R18
+R19
+!i113 1
+R11
+R12
+n@part1_vlg_vec_tst

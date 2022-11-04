@@ -1,0 +1,10 @@
+module part3 (CLOCK_50, HEX0);
+	input CLOCK_50;
+	output [6:0] HEX0;
+	
+	wire En_1Hz;
+	
+	clock_50mhz_to_1hz C0
+	
+	
+	inc_counter_16bit  (, CLOCK_50, 

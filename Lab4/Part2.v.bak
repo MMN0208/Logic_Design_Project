@@ -1,0 +1,9 @@
+module part2 (SW, KEY, HEX0, HEX1, HEX2, HEX3);
+	input [1:0] SW, KEY;
+	output [6:0] HEX0, HEX1, HEX2, HEX3;
+	
+	displayHEX H0 (Q[3:0], HEX0);
+	displayHEX H1 (Q[7:4], HEX1);
+	displayHEX H2 (Q[11:8], HEX0);
+	displayHEX H3 (Q[15:12], HEX1);
+endmodule
