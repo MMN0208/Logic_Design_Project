@@ -1,15 +1,15 @@
-Fitter Status : Successful - Wed Nov  2 21:07:45 2022
+Fitter Status : Successful - Wed Dec 14 19:06:22 2022
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : Lab4
-Top-level Entity Name : Lab4Part2
+Top-level Entity Name : Lab4Part3
 Family : Cyclone IV GX
 Device : EP4CGX150DF31C7
 Timing Models : Final
-Total logic elements : 17 / 149,760 ( < 1 % )
-    Total combinational functions : 17 / 149,760 ( < 1 % )
-    Dedicated logic registers : 16 / 149,760 ( < 1 % )
-Total registers : 16
-Total pins : 19 / 508 ( 4 % )
+Total logic elements : 66 / 149,760 ( < 1 % )
+    Total combinational functions : 62 / 149,760 ( < 1 % )
+    Dedicated logic registers : 27 / 149,760 ( < 1 % )
+Total registers : 27
+Total pins : 2 / 508 ( < 1 % )
 Total virtual pins : 0
 Total memory bits : 0 / 6,635,520 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 720 ( 0 % )

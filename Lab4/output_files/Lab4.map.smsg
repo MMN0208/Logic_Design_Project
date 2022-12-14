@@ -1,1 +1,12 @@
-Warning (10268): Verilog HDL information at t_ff_inc.v(5): always construct contains both blocking and non-blocking assignments File: C:/Users/ADMIN/Documents/FPGA/Lab4/t_ff_inc.v Line: 5
+Info (10281): Verilog HDL Declaration information at Part5.v(3): object "HEX0" differs only in case from object "hex0" in the same scope File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part5.v Line: 3
+Info (10281): Verilog HDL Declaration information at Part5.v(3): object "HEX1" differs only in case from object "hex1" in the same scope File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part5.v Line: 3
+Info (10281): Verilog HDL Declaration information at Part5.v(3): object "HEX2" differs only in case from object "hex2" in the same scope File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part5.v Line: 3
+Info (10281): Verilog HDL Declaration information at Part5.v(3): object "HEX3" differs only in case from object "hex3" in the same scope File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part5.v Line: 3
+Info (10281): Verilog HDL Declaration information at Part5.v(3): object "HEX4" differs only in case from object "hex4" in the same scope File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part5.v Line: 3
+Info (10281): Verilog HDL Declaration information at Part5.v(3): object "HEX5" differs only in case from object "hex5" in the same scope File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part5.v Line: 3
+Info (10281): Verilog HDL Declaration information at Part5.v(3): object "HEX6" differs only in case from object "hex6" in the same scope File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part5.v Line: 3
+Info (10281): Verilog HDL Declaration information at Part5.v(3): object "HEX7" differs only in case from object "hex7" in the same scope File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part5.v Line: 3
+Info (10281): Verilog HDL Declaration information at Part4.v(3): object "HEX0" differs only in case from object "hex0" in the same scope File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part4.v Line: 3
+Info (10281): Verilog HDL Declaration information at Part4.v(3): object "HEX1" differs only in case from object "hex1" in the same scope File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part4.v Line: 3
+Info (10281): Verilog HDL Declaration information at Part4.v(3): object "HEX2" differs only in case from object "hex2" in the same scope File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part4.v Line: 3
+Info (10281): Verilog HDL Declaration information at Part4.v(3): object "HEX3" differs only in case from object "hex3" in the same scope File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part4.v Line: 3

@@ -6,7 +6,7 @@ module part2 (CLOCK_50, KEY, LEDR, HEX2, HEX1, HEX0);
 
   wire [25:0] CYCLES;
   wire [3:0] c1_out, c2_out, c3_out;
-  reg ones, tens, hundreds;
+  wire ones, tens, hundreds;
 
   counter_modk C0 (CLOCK_50, KEY[0], CYCLES, ones);
   defparam C0.n = 26;

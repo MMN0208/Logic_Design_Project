@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab4
-Thu Nov  3 16:04:30 2022
+Wed Dec 14 20:04:40 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -14,9 +14,15 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Parameter Settings for User Entity Instance: counter_modk:C0
+ 10. Parameter Settings for User Entity Instance: counter_modk:C1
+ 11. Port Connectivity Checks: "mux_2bit_8to1:mux0"
+ 12. Port Connectivity Checks: "counter_modk:C1"
+ 13. Port Connectivity Checks: "counter_modk:C0"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -43,16 +49,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov  3 16:04:30 2022       ;
+; Analysis & Synthesis Status        ; Successful - Wed Dec 14 20:04:40 2022       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; Lab4                                        ;
-; Top-level Entity Name              ; Lab4Part3                                   ;
+; Top-level Entity Name              ; part5                                       ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 36                                          ;
-;     Total combinational functions  ; 36                                          ;
-;     Dedicated logic registers      ; 27                                          ;
-; Total registers                    ; 27                                          ;
-; Total pins                         ; 2                                           ;
+; Total logic elements               ; 88                                          ;
+;     Total combinational functions  ; 88                                          ;
+;     Dedicated logic registers      ; 30                                          ;
+; Total registers                    ; 30                                          ;
+; Total pins                         ; 57                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -70,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CGX150DF31C7    ;                    ;
-; Top-level entity name                                            ; Lab4Part3          ; Lab4               ;
+; Top-level entity name                                            ; part5              ; Lab4               ;
 ; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -167,42 +173,60 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                      ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                            ; Library ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------+---------+
-; inc_counter_26bit.v              ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab4/inc_counter_26bit.v  ;         ;
-; clock_50mhz_en_1hz.v             ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab4/clock_50mhz_en_1hz.v ;         ;
-; Lab4Part3.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/ADMIN/Documents/FPGA/Lab4/Lab4Part3.bdf        ;         ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                     ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                       ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
+; mux_2bit_2to1.v                  ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab4/mux_2bit_2to1.v ;         ;
+; Part5.v                          ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab4/Part5.v         ;         ;
+; counter_modk.v                   ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab4/counter_modk.v  ;         ;
+; char_7seg.v                      ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab4/char_7seg.v     ;         ;
+; mux_2bit_8to1.v                  ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab4/mux_2bit_8to1.v ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+--------------------------+-----------------------------+
-; Resource                 ; Usage                       ;
-+--------------------------+-----------------------------+
-; I/O pins                 ; 2                           ;
-;                          ;                             ;
-; DSP block 9-bit elements ; 0                           ;
-;                          ;                             ;
-; Maximum fan-out node     ; clock_50mhz_en_1hz:inst|Clr ;
-; Maximum fan-out          ; 27                          ;
-; Total fan-out            ; 173                         ;
-; Average fan-out          ; 2.58                        ;
-+--------------------------+-----------------------------+
++-------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary     ;
++--------------------------+----------------------+
+; Resource                 ; Usage                ;
++--------------------------+----------------------+
+; I/O pins                 ; 57                   ;
+;                          ;                      ;
+; DSP block 9-bit elements ; 0                    ;
+;                          ;                      ;
+; Maximum fan-out node     ; counter_modk:C1|Q[2] ;
+; Maximum fan-out          ; 33                   ;
+; Total fan-out            ; 416                  ;
+; Average fan-out          ; 1.79                 ;
++--------------------------+----------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                               ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------+--------------------+--------------+
-; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Entity Name        ; Library Name ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------+--------------------+--------------+
-; |Lab4Part3                   ; 36 (0)              ; 27 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 2    ; 0            ; |Lab4Part3                                              ; Lab4Part3          ; work         ;
-;    |clock_50mhz_en_1hz:inst| ; 36 (10)             ; 27 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab4Part3|clock_50mhz_en_1hz:inst                      ; clock_50mhz_en_1hz ; work         ;
-;       |inc_counter_26bit:C0| ; 26 (26)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab4Part3|clock_50mhz_en_1hz:inst|inc_counter_26bit:C0 ; inc_counter_26bit  ; work         ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------+--------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                          ; Entity Name   ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------+---------------+--------------+
+; |part5                     ; 88 (9)              ; 30 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 57   ; 0            ; |part5                                       ; part5         ; work         ;
+;    |char_7seg:hex0|        ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|char_7seg:hex0                        ; char_7seg     ; work         ;
+;    |char_7seg:hex1|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|char_7seg:hex1                        ; char_7seg     ; work         ;
+;    |char_7seg:hex2|        ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|char_7seg:hex2                        ; char_7seg     ; work         ;
+;    |char_7seg:hex3|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|char_7seg:hex3                        ; char_7seg     ; work         ;
+;    |char_7seg:hex4|        ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|char_7seg:hex4                        ; char_7seg     ; work         ;
+;    |char_7seg:hex5|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|char_7seg:hex5                        ; char_7seg     ; work         ;
+;    |char_7seg:hex6|        ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|char_7seg:hex6                        ; char_7seg     ; work         ;
+;    |char_7seg:hex7|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|char_7seg:hex7                        ; char_7seg     ; work         ;
+;    |counter_modk:C0|       ; 44 (44)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|counter_modk:C0                       ; counter_modk  ; work         ;
+;    |counter_modk:C1|       ; 2 (2)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|counter_modk:C1                       ; counter_modk  ; work         ;
+;    |mux_2bit_8to1:mux0|    ; 3 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|mux_2bit_8to1:mux0                    ; mux_2bit_8to1 ; work         ;
+;       |mux_2bit_4to1:mux0| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|mux_2bit_8to1:mux0|mux_2bit_4to1:mux0 ; mux_2bit_4to1 ; work         ;
+;    |mux_2bit_8to1:mux1|    ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|mux_2bit_8to1:mux1                    ; mux_2bit_8to1 ; work         ;
+;    |mux_2bit_8to1:mux2|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|mux_2bit_8to1:mux2                    ; mux_2bit_8to1 ; work         ;
+;    |mux_2bit_8to1:mux3|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|mux_2bit_8to1:mux3                    ; mux_2bit_8to1 ; work         ;
+;    |mux_2bit_8to1:mux4|    ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|mux_2bit_8to1:mux4                    ; mux_2bit_8to1 ; work         ;
+;    |mux_2bit_8to1:mux5|    ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|mux_2bit_8to1:mux5                    ; mux_2bit_8to1 ; work         ;
+;    |mux_2bit_8to1:mux6|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|mux_2bit_8to1:mux6                    ; mux_2bit_8to1 ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -211,8 +235,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 27    ;
-; Number of registers using Synchronous Clear  ; 26    ;
+; Total registers                              ; 30    ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -221,25 +245,85 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter_modk:C0 ;
++----------------+----------+----------------------------------+
+; Parameter Name ; Value    ; Type                             ;
++----------------+----------+----------------------------------+
+; n              ; 26       ; Signed Integer                   ;
+; k              ; 50000000 ; Signed Integer                   ;
++----------------+----------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter_modk:C1 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; n              ; 3     ; Signed Integer                      ;
+; k              ; 8     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "mux_2bit_8to1:mux0" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; Q[1] ; Input ; Info     ; Stuck at VCC         ;
+; Q[0] ; Input ; Info     ; Stuck at GND         ;
+; T    ; Input ; Info     ; Stuck at VCC         ;
+; U    ; Input ; Info     ; Stuck at VCC         ;
+; V    ; Input ; Info     ; Stuck at VCC         ;
+; W    ; Input ; Info     ; Stuck at VCC         ;
+; X    ; Input ; Info     ; Stuck at VCC         ;
+; Y    ; Input ; Info     ; Stuck at GND         ;
+; Z[1] ; Input ; Info     ; Stuck at GND         ;
+; Z[0] ; Input ; Info     ; Stuck at VCC         ;
++------+-------+----------+----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter_modk:C1"                                                                                                                                                                         ;
++-------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rst_neg     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rst_neg[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter_modk:C0"                                                                                                                                                                         ;
++-------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rst_neg     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rst_neg[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 2                           ;
-; cycloneiii_ff         ; 27                          ;
-;     SCLR              ; 26                          ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 36                          ;
+; boundary_port         ; 57                          ;
+; cycloneiii_ff         ; 30                          ;
+;     plain             ; 30                          ;
+; cycloneiii_lcell_comb ; 104                         ;
 ;     arith             ; 25                          ;
 ;         2 data inputs ; 25                          ;
-;     normal            ; 11                          ;
-;         1 data inputs ; 1                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 9                           ;
+;     normal            ; 79                          ;
+;         1 data inputs ; 18                          ;
+;         2 data inputs ; 14                          ;
+;         3 data inputs ; 25                          ;
+;         4 data inputs ; 22                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.98                        ;
+; Max LUT depth         ; 4.50                        ;
+; Average LUT depth     ; 2.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -258,10 +342,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Thu Nov  3 16:04:24 2022
+    Info: Processing started: Wed Dec 14 20:04:34 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab4 -c Lab4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file mux_2bit_2to1.v
+    Info (12023): Found entity 1: mux_2bit_4to1 File: C:/Users/ADMIN/Documents/FPGA/Lab4/mux_2bit_2to1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file part5.v
+    Info (12023): Found entity 1: part5 File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part5.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file part4.v
+    Info (12023): Found entity 1: part4 File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part4.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file counter_modk.v
+    Info (12023): Found entity 1: counter_modk File: C:/Users/ADMIN/Documents/FPGA/Lab4/counter_modk.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file char_7seg.v
+    Info (12023): Found entity 1: char_7seg File: C:/Users/ADMIN/Documents/FPGA/Lab4/char_7seg.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file t_ff.v
     Info (12023): Found entity 1: t_ff File: C:/Users/ADMIN/Documents/FPGA/Lab4/t_ff.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file displayhex.v
@@ -286,20 +380,33 @@ Info (12021): Found 1 design units, including 1 entities, in source file clock_5
     Info (12023): Found entity 1: clock_50mhz_en_1hz File: C:/Users/ADMIN/Documents/FPGA/Lab4/clock_50mhz_en_1hz.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file lab4part3.bdf
     Info (12023): Found entity 1: Lab4Part3
-Info (12127): Elaborating entity "Lab4Part3" for the top level hierarchy
-Info (12128): Elaborating entity "clock_50mhz_en_1hz" for hierarchy "clock_50mhz_en_1hz:inst"
-Info (12128): Elaborating entity "inc_counter_26bit" for hierarchy "clock_50mhz_en_1hz:inst|inc_counter_26bit:C0" File: C:/Users/ADMIN/Documents/FPGA/Lab4/clock_50mhz_en_1hz.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file mux_2bit_8to1.v
+    Info (12023): Found entity 1: mux_2bit_8to1 File: C:/Users/ADMIN/Documents/FPGA/Lab4/mux_2bit_8to1.v Line: 1
+Info (12127): Elaborating entity "part5" for the top level hierarchy
+Info (12128): Elaborating entity "counter_modk" for hierarchy "counter_modk:C0" File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part5.v Line: 14
+Info (12128): Elaborating entity "counter_modk" for hierarchy "counter_modk:C1" File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part5.v Line: 27
+Info (12128): Elaborating entity "mux_2bit_8to1" for hierarchy "mux_2bit_8to1:mux0" File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part5.v Line: 37
+Info (12128): Elaborating entity "mux_2bit_4to1" for hierarchy "mux_2bit_8to1:mux0|mux_2bit_4to1:mux0" File: C:/Users/ADMIN/Documents/FPGA/Lab4/mux_2bit_8to1.v Line: 11
+Info (12128): Elaborating entity "char_7seg" for hierarchy "char_7seg:hex0" File: C:/Users/ADMIN/Documents/FPGA/Lab4/Part5.v Line: 45
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/ADMIN/Documents/FPGA/Lab4/output_files/Lab4.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 38 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 145 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 36 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4870 megabytes
-    Info: Processing ended: Thu Nov  3 16:04:30 2022
+    Info (21059): Implemented 56 output pins
+    Info (21061): Implemented 88 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4867 megabytes
+    Info: Processing ended: Wed Dec 14 20:04:40 2022
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Total CPU time (on all processors): 00:00:05
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/ADMIN/Documents/FPGA/Lab4/output_files/Lab4.map.smsg.
 
 

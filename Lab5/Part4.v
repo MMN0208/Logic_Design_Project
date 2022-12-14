@@ -8,7 +8,7 @@ module part4 (CLOCK_50, KEY, SW, LEDR);
   wire HALFPULSE;
   wire [3:0] INDEX;
 
-  reg half;
+  wire half, done;
   reg [13:0] SIGNAL;
 
   // generate half second clock
@@ -16,9 +16,13 @@ module part4 (CLOCK_50, KEY, SW, LEDR);
   defparam C0.n = 25;
   defparam C0.k = 25000000;
 
-  counter_modk C1 (~half, KEY[0], INDEX, LEDR[1]);
+  counter_modk C1 (~half, KEY[0], INDEX, done);
   defparam C1.n = 4;
   defparam C1.k = 14;
+  
+  always begin
+	LEDR[1] = done;
+  end
 
 
 // A    o-      -_---         101110000000
@@ -60,6 +64,7 @@ module part4 (CLOCK_50, KEY, SW, LEDR);
       11:LEDR[0] = SIGNAL[2];
       12:LEDR[0] = SIGNAL[1];
       13:LEDR[0] = SIGNAL[0];
+		default: LEDR[0] = 'd0;
     endcase
   end
 

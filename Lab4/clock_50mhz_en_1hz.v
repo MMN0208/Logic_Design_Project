@@ -2,10 +2,10 @@ module clock_50mhz_en_1hz (Clk, En);
 	input Clk;
 	output En;
 	
-	wire [25:0] counter_50_mil;
+	wire [25:0] counter_50_mil /* synthesis keep */;
 	reg Clr;
 	
-	inc_counter_26bit C0 (Clk, Clr, counter_50_mil);
+	inc_counter_26bit C0 (1'b1, Clk, Clr, counter_50_mil);
 	
 	always @ (negedge Clk) begin
 		if (counter_50_mil >= 49999999) begin

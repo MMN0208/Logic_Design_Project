@@ -1,2 +1,0 @@
-module clock_50mhz_to_1hz (Clock_In, Clock_Out);
-	

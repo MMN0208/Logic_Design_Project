@@ -9,9 +9,10 @@ module counter_modk(clock, rst_neg, Q, roll_over);
 
   always @(posedge clock or negedge rst_neg)
   begin
-    if (~rst_neg)
+    if (~rst_neg)  begin
       Q <= 'd0;
       roll_over <= 'd0;
+	 end
     else begin
       Q <= Q + 1'b1;
       if (Q == k - 1) begin
