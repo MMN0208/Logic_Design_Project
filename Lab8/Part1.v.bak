@@ -1,0 +1,5 @@
+module part1 (Address, Clock, DataIn, DataOut);
+	input [4:0] Address;
+	input Clock;
+	input [3:0] DataIn;
+	output [3:0] DataOut;
