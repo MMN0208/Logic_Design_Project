@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab6
-Thu Dec 15 22:41:45 2022
+Fri Dec 16 03:12:06 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -45,7 +45,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 15 22:41:45 2022       ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 16 03:12:06 2022       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; Lab6                                        ;
 ; Top-level Entity Name              ; part1                                       ;
@@ -272,7 +272,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Thu Dec 15 22:41:40 2022
+    Info: Processing started: Fri Dec 16 03:12:00 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab6 -c Lab6
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -310,9 +310,9 @@ Info (21057): Implemented 85 device resources after synthesis - the final resour
     Info (21061): Implemented 37 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 4863 megabytes
-    Info: Processing ended: Thu Dec 15 22:41:45 2022
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Processing ended: Fri Dec 16 03:12:06 2022
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
 
 
 +------------------------------------------+
