@@ -10,7 +10,7 @@ module part2 (SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3);
 
     assign {Add_Sub, A} = SW;
 
-    accumulator_ex A0 (KEY[0], KEY[1], Add_Sub, A, LEDR[8], LEDR[9], S);
+    accumulator A0 (KEY[0], KEY[1], Add_Sub, A, LEDR[8], LEDR[9], S);
 
     assign LEDR[7:0] = S;
 

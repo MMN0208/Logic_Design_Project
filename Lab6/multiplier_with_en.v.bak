@@ -13,9 +13,6 @@ module multiplier_with_en (clk, rst, en_A, en_B, I, display, P);
         else if(en_B) begin
             display = B;
         end
-		  else begin
-				display = 0;
-		  end
     end
 
     always @(en_A, en_B, I) begin

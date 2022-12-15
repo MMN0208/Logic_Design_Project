@@ -1,0 +1,148 @@
+|part1
+SW[0] => A[0].IN2
+SW[1] => A[1].IN2
+SW[2] => A[2].IN2
+SW[3] => A[3].IN2
+SW[4] => A[4].IN2
+SW[5] => A[5].IN2
+SW[6] => A[6].IN2
+SW[7] => A[7].IN2
+KEY[0] => KEY[0].IN1
+KEY[1] => KEY[1].IN1
+LEDR[0] << S[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] << S[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] << S[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] << S[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] << S[4].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] << S[5].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[6] << S[6].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] << S[7].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[8] << accumulator:A0.port3
+LEDR[9] << accumulator:A0.port4
+HEX0[0] << displayHEX:H0.port1
+HEX0[1] << displayHEX:H0.port1
+HEX0[2] << displayHEX:H0.port1
+HEX0[3] << displayHEX:H0.port1
+HEX0[4] << displayHEX:H0.port1
+HEX0[5] << displayHEX:H0.port1
+HEX0[6] << displayHEX:H0.port1
+HEX1[0] << displayHEX:H1.port1
+HEX1[1] << displayHEX:H1.port1
+HEX1[2] << displayHEX:H1.port1
+HEX1[3] << displayHEX:H1.port1
+HEX1[4] << displayHEX:H1.port1
+HEX1[5] << displayHEX:H1.port1
+HEX1[6] << displayHEX:H1.port1
+HEX2[0] << displayHEX:H2.port1
+HEX2[1] << displayHEX:H2.port1
+HEX2[2] << displayHEX:H2.port1
+HEX2[3] << displayHEX:H2.port1
+HEX2[4] << displayHEX:H2.port1
+HEX2[5] << displayHEX:H2.port1
+HEX2[6] << displayHEX:H2.port1
+HEX3[0] << displayHEX:H3.port1
+HEX3[1] << displayHEX:H3.port1
+HEX3[2] << displayHEX:H3.port1
+HEX3[3] << displayHEX:H3.port1
+HEX3[4] << displayHEX:H3.port1
+HEX3[5] << displayHEX:H3.port1
+HEX3[6] << displayHEX:H3.port1
+
+
+|part1|accumulator:A0
+rst => overflow~reg0.ACLR
+rst => carry~reg0.ACLR
+rst => sum[0]~reg0.ACLR
+rst => sum[1]~reg0.ACLR
+rst => sum[2]~reg0.ACLR
+rst => sum[3]~reg0.ACLR
+rst => sum[4]~reg0.ACLR
+rst => sum[5]~reg0.ACLR
+rst => sum[6]~reg0.ACLR
+rst => sum[7]~reg0.ACLR
+clk => overflow~reg0.CLK
+clk => carry~reg0.CLK
+clk => sum[0]~reg0.CLK
+clk => sum[1]~reg0.CLK
+clk => sum[2]~reg0.CLK
+clk => sum[3]~reg0.CLK
+clk => sum[4]~reg0.CLK
+clk => sum[5]~reg0.CLK
+clk => sum[6]~reg0.CLK
+clk => sum[7]~reg0.CLK
+A[0] => Add0.IN8
+A[1] => Add0.IN7
+A[2] => Add0.IN6
+A[3] => Add0.IN5
+A[4] => Add0.IN4
+A[5] => Add0.IN3
+A[6] => Add0.IN2
+A[7] => Add0.IN1
+carry <= carry~reg0.DB_MAX_OUTPUT_PORT_TYPE
+overflow <= overflow~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sum[0] <= sum[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sum[1] <= sum[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sum[2] <= sum[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sum[3] <= sum[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sum[4] <= sum[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sum[5] <= sum[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sum[6] <= sum[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sum[7] <= sum[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1|displayHEX:H0
+Input[0] => Decoder0.IN3
+Input[1] => Decoder0.IN2
+Input[2] => Decoder0.IN1
+Input[3] => Decoder0.IN0
+Output[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+Output[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+Output[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+Output[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+Output[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+Output[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+Output[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1|displayHEX:H1
+Input[0] => Decoder0.IN3
+Input[1] => Decoder0.IN2
+Input[2] => Decoder0.IN1
+Input[3] => Decoder0.IN0
+Output[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+Output[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+Output[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+Output[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+Output[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+Output[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+Output[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1|displayHEX:H2
+Input[0] => Decoder0.IN3
+Input[1] => Decoder0.IN2
+Input[2] => Decoder0.IN1
+Input[3] => Decoder0.IN0
+Output[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+Output[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+Output[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+Output[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+Output[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+Output[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+Output[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1|displayHEX:H3
+Input[0] => Decoder0.IN3
+Input[1] => Decoder0.IN2
+Input[2] => Decoder0.IN1
+Input[3] => Decoder0.IN0
+Output[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+Output[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+Output[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+Output[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+Output[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+Output[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+Output[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
