@@ -24,7 +24,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 336 208 504 224)
 	(text "INPUT" (rect 125 0 161 13)(font "Arial" (font_size 6)))
-	(text "clk" (rect 5 0 23 15)(font "Arial" ))
+	(text "clk" (rect 5 0 22 15)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -40,7 +40,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 336 224 504 240)
 	(text "INPUT" (rect 125 0 161 13)(font "Arial" (font_size 6)))
-	(text "en" (rect 5 0 21 19)(font "Intel Clear" ))
+	(text "en" (rect 5 0 20 19)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -56,7 +56,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 336 240 504 256)
 	(text "INPUT" (rect 125 0 161 13)(font "Arial" (font_size 6)))
-	(text "rst" (rect 5 0 22 15)(font "Arial" ))
+	(text "rst" (rect 5 0 21 15)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -72,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 336 256 504 272)
 	(text "INPUT" (rect 125 0 161 13)(font "Arial" (font_size 6)))
-	(text "sel[2..0]" (rect 5 0 56 15)(font "Arial" ))
+	(text "sel[2..0]" (rect 5 0 55 15)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -102,7 +102,7 @@ https://fpgasoftware.intel.com/eula.
 )
 (symbol
 	(rect 504 184 640 296)
-	(text "part4_test" (rect 5 0 69 15)(font "Arial" ))
+	(text "complete_morse_decoder" (rect 5 0 177 15)(font "Arial" ))
 	(text "inst" (rect 8 96 31 111)(font "Arial" ))
 	(port
 		(pt 0 32)

@@ -13,5 +13,5 @@ module part4 (CLOCK_50, KEY, SW, LEDR);
   defparam C0.n = 25;
   defparam C0.k = 25000000;
   
-  complete_morse_decoder C0 (~half, KEY[1], KEY[0], SW, LEDR[0]);
+  complete_morse_decoder D0 (~half, KEY[1], KEY[0], SW, LEDR[0]);
 endmodule
