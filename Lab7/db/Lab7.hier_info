@@ -1,125 +1,76 @@
-|Lab7Part1
-z <= rtl_fsm:inst.z
-clk => rtl_fsm:inst.clk
-rst => rtl_fsm:inst.rst
-w => rtl_fsm:inst.w
-Q[0] <= rtl_fsm:inst.Q[0]
-Q[1] <= rtl_fsm:inst.Q[1]
-Q[2] <= rtl_fsm:inst.Q[2]
-Q[3] <= rtl_fsm:inst.Q[3]
-Q[4] <= rtl_fsm:inst.Q[4]
-Q[5] <= rtl_fsm:inst.Q[5]
-Q[6] <= rtl_fsm:inst.Q[6]
-Q[7] <= rtl_fsm:inst.Q[7]
-Q[8] <= rtl_fsm:inst.Q[8]
+|Lab7Part4
+Q <= part4_test:inst.Q
+clk => part4_test:inst.clk
+en => part4_test:inst.en
+rst => part4_test:inst.rst
+sel[0] => part4_test:inst.sel[0]
+sel[1] => part4_test:inst.sel[1]
+sel[2] => part4_test:inst.sel[2]
 
 
-|Lab7Part1|rtl_fsm:inst
+|Lab7Part4|part4_test:inst
 clk => clk.IN1
+en => _.IN1
 rst => rst.IN1
-w => D.IN1
-w => D.IN1
-w => D.IN1
-w => D.IN1
-w => D.IN1
-w => D.IN1
-w => D.IN1
-w => D.IN1
-Q[0] <= fsm_ff:FF.port3
-Q[1] <= fsm_ff:FF.port3
-Q[2] <= fsm_ff:FF.port3
-Q[3] <= fsm_ff:FF.port3
-Q[4] <= fsm_ff:FF.port3
-Q[5] <= fsm_ff:FF.port3
-Q[6] <= fsm_ff:FF.port3
-Q[7] <= fsm_ff:FF.port3
-Q[8] <= fsm_ff:FF.port3
-z <= z.DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => sel[0].IN1
+sel[1] => sel[1].IN1
+sel[2] => sel[2].IN1
+Q <= morse_decoder_fsm:M0.port3
 
 
-|Lab7Part1|rtl_fsm:inst|fsm_ff:FF
-clk => clk.IN9
-rst => rst.IN9
-D[0] => D[0].IN1
-D[1] => D[1].IN1
-D[2] => D[2].IN1
-D[3] => D[3].IN1
-D[4] => D[4].IN1
-D[5] => D[5].IN1
-D[6] => D[6].IN1
-D[7] => D[7].IN1
-D[8] => D[8].IN1
-Q[0] <= d_ff:D0.port3
-Q[1] <= d_ff:D1.port3
-Q[2] <= d_ff:D2.port3
-Q[3] <= d_ff:D3.port3
-Q[4] <= d_ff:D4.port3
-Q[5] <= d_ff:D5.port3
-Q[6] <= d_ff:D6.port3
-Q[7] <= d_ff:D7.port3
-Q[8] <= d_ff:D8.port3
+|Lab7Part4|part4_test:inst|select_character:S0
+en => signal[0]~reg0.CLK
+en => signal[1]~reg0.CLK
+en => signal[2]~reg0.CLK
+en => signal[3]~reg0.CLK
+en => signal[4]~reg0.CLK
+en => signal[5]~reg0.CLK
+en => signal[6]~reg0.CLK
+en => signal[7]~reg0.CLK
+en => signal[8]~reg0.CLK
+en => signal[9]~reg0.CLK
+en => signal[10]~reg0.CLK
+en => signal[11]~reg0.CLK
+en => signal[12]~reg0.CLK
+en => signal[13]~reg0.CLK
+sel[0] => Decoder0.IN2
+sel[0] => Decoder1.IN1
+sel[1] => Decoder0.IN1
+sel[1] => Decoder1.IN0
+sel[2] => Decoder0.IN0
+signal[0] <= signal[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+signal[1] <= signal[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+signal[2] <= signal[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+signal[3] <= signal[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+signal[4] <= signal[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+signal[5] <= signal[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+signal[6] <= signal[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+signal[7] <= signal[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+signal[8] <= signal[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+signal[9] <= signal[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+signal[10] <= signal[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+signal[11] <= signal[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+signal[12] <= signal[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+signal[13] <= signal[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D0
-clk => Q~reg0.CLK
-rst => Q.OUTPUTSELECT
-d => Q.DATAB
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D1
-clk => Q~reg0.CLK
-rst => Q.OUTPUTSELECT
-d => Q.DATAB
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D2
-clk => Q~reg0.CLK
-rst => Q.OUTPUTSELECT
-d => Q.DATAB
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D3
-clk => Q~reg0.CLK
-rst => Q.OUTPUTSELECT
-d => Q.DATAB
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D4
-clk => Q~reg0.CLK
-rst => Q.OUTPUTSELECT
-d => Q.DATAB
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D5
-clk => Q~reg0.CLK
-rst => Q.OUTPUTSELECT
-d => Q.DATAB
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D6
-clk => Q~reg0.CLK
-rst => Q.OUTPUTSELECT
-d => Q.DATAB
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D7
-clk => Q~reg0.CLK
-rst => Q.OUTPUTSELECT
-d => Q.DATAB
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D8
-clk => Q~reg0.CLK
-rst => Q.OUTPUTSELECT
-d => Q.DATAB
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|Lab7Part4|part4_test:inst|morse_decoder_fsm:M0
+clk => y_Q~1.DATAIN
+rst => y_Q~3.DATAIN
+signal[0] => Selector0.IN13
+signal[1] => Selector0.IN12
+signal[2] => Selector0.IN11
+signal[3] => Selector0.IN10
+signal[4] => Selector0.IN9
+signal[5] => Selector0.IN8
+signal[6] => Selector0.IN7
+signal[7] => Selector0.IN6
+signal[8] => Selector0.IN5
+signal[9] => Selector0.IN4
+signal[10] => Selector0.IN3
+signal[11] => Selector0.IN2
+signal[12] => Selector0.IN1
+signal[13] => Selector0.IN0
+zout <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -1,4 +1,4 @@
-module part3 (SW, KEY, LEDR);
+module part3 (SW, KEY, LEDR, LEDG);
   input [1:0] SW;
   input [1:0] KEY;
   output [9:0] LEDR;

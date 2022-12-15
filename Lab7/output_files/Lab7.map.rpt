@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab7
-Fri Dec 16 00:56:32 2022
+Fri Dec 16 02:09:05 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -13,10 +13,13 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. State Machine - |Lab7Part4|part4_test:inst|morse_decoder_fsm:M0|y_Q
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: part4_test:inst|morse_decoder_fsm:M0
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +46,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 16 00:56:32 2022       ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 16 02:09:05 2022       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; Lab7                                        ;
-; Top-level Entity Name              ; Lab7Part1                                   ;
+; Top-level Entity Name              ; Lab7Part4                                   ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 13                                          ;
-;     Total combinational functions  ; 13                                          ;
-;     Dedicated logic registers      ; 9                                           ;
-; Total registers                    ; 9                                           ;
-; Total pins                         ; 13                                          ;
+; Total logic elements               ; 20                                          ;
+;     Total combinational functions  ; 20                                          ;
+;     Dedicated logic registers      ; 11                                          ;
+; Total registers                    ; 11                                          ;
+; Total pins                         ; 7                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -70,7 +73,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CGX150DF31C7    ;                    ;
-; Top-level entity name                                            ; Lab7Part1          ; Lab7               ;
+; Top-level entity name                                            ; Lab7Part4          ; Lab7               ;
 ; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
 ; State Machine Processing                                         ; User-Encoded       ; Auto               ;
 ; Use smart compilation                                            ; Off                ; Off                ;
@@ -167,53 +170,82 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                               ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                     ; Library ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------+---------+
-; rtl_fsm.v                        ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab7/rtl_fsm.v     ;         ;
-; fsm_ff.v                         ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab7/fsm_ff.v      ;         ;
-; d_ff.v                           ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab7/d_ff.v        ;         ;
-; Lab7Part1.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/ADMIN/Documents/FPGA/Lab7/Lab7Part1.bdf ;         ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                     ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                           ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------+---------+
+; select_character.v               ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab7/select_character.v  ;         ;
+; part4_test.v                     ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab7/part4_test.v        ;         ;
+; morse_decoder_fsm.v              ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab7/morse_decoder_fsm.v ;         ;
+; Lab7Part4.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/ADMIN/Documents/FPGA/Lab7/Lab7Part4.bdf       ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------+---------+
 
 
-+---------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary ;
-+--------------------------+------------------+
-; Resource                 ; Usage            ;
-+--------------------------+------------------+
-; I/O pins                 ; 13               ;
-;                          ;                  ;
-; DSP block 9-bit elements ; 0                ;
-;                          ;                  ;
-; Maximum fan-out node     ; w~input          ;
-; Maximum fan-out          ; 10               ;
-; Total fan-out            ; 88               ;
-; Average fan-out          ; 1.83             ;
-+--------------------------+------------------+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                           ;
++--------------------------+--------------------------------------------+
+; Resource                 ; Usage                                      ;
++--------------------------+--------------------------------------------+
+; I/O pins                 ; 7                                          ;
+;                          ;                                            ;
+; DSP block 9-bit elements ; 0                                          ;
+;                          ;                                            ;
+; Maximum fan-out node     ; part4_test:inst|morse_decoder_fsm:M0|y_Q~5 ;
+; Maximum fan-out          ; 8                                          ;
+; Total fan-out            ; 101                                        ;
+; Average fan-out          ; 2.24                                       ;
++--------------------------+--------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                        ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                       ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------+-------------+--------------+
-; |Lab7Part1                 ; 13 (0)              ; 9 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 13   ; 0            ; |Lab7Part1                                ; Lab7Part1   ; work         ;
-;    |rtl_fsm:inst|          ; 13 (4)              ; 9 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part1|rtl_fsm:inst                   ; rtl_fsm     ; work         ;
-;       |fsm_ff:FF|          ; 9 (0)               ; 9 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part1|rtl_fsm:inst|fsm_ff:FF         ; fsm_ff      ; work         ;
-;          |d_ff:D0|         ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D0 ; d_ff        ; work         ;
-;          |d_ff:D1|         ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D1 ; d_ff        ; work         ;
-;          |d_ff:D2|         ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D2 ; d_ff        ; work         ;
-;          |d_ff:D3|         ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D3 ; d_ff        ; work         ;
-;          |d_ff:D4|         ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D4 ; d_ff        ; work         ;
-;          |d_ff:D5|         ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D5 ; d_ff        ; work         ;
-;          |d_ff:D6|         ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D6 ; d_ff        ; work         ;
-;          |d_ff:D7|         ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D7 ; d_ff        ; work         ;
-;          |d_ff:D8|         ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D8 ; d_ff        ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                      ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Entity Name       ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------+-------------------+--------------+
+; |Lab7Part4                   ; 20 (0)              ; 11 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 7    ; 0            ; |Lab7Part4                                      ; Lab7Part4         ; work         ;
+;    |part4_test:inst|         ; 20 (0)              ; 11 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part4|part4_test:inst                      ; part4_test        ; work         ;
+;       |morse_decoder_fsm:M0| ; 13 (13)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part4|part4_test:inst|morse_decoder_fsm:M0 ; morse_decoder_fsm ; work         ;
+;       |select_character:S0|  ; 7 (7)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part4|part4_test:inst|select_character:S0  ; select_character  ; work         ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  User-Encoded
++---------------------------------------------------------------------+
+; State Machine - |Lab7Part4|part4_test:inst|morse_decoder_fsm:M0|y_Q ;
++-------------+-------+-------+-------+-------------------------------+
+; Name        ; y_Q~7 ; y_Q~6 ; y_Q~5 ; y_Q~4                         ;
++-------------+-------+-------+-------+-------------------------------+
+; y_Q.state0  ; 0     ; 0     ; 0     ; 0                             ;
+; y_Q.state1  ; 0     ; 0     ; 0     ; 1                             ;
+; y_Q.state2  ; 0     ; 0     ; 1     ; 0                             ;
+; y_Q.state3  ; 0     ; 0     ; 1     ; 1                             ;
+; y_Q.state4  ; 0     ; 1     ; 0     ; 0                             ;
+; y_Q.state5  ; 0     ; 1     ; 0     ; 1                             ;
+; y_Q.state6  ; 0     ; 1     ; 1     ; 0                             ;
+; y_Q.state7  ; 0     ; 1     ; 1     ; 1                             ;
+; y_Q.state8  ; 1     ; 0     ; 0     ; 0                             ;
+; y_Q.state9  ; 1     ; 0     ; 0     ; 1                             ;
+; y_Q.state10 ; 1     ; 0     ; 1     ; 0                             ;
+; y_Q.state11 ; 1     ; 0     ; 1     ; 1                             ;
+; y_Q.state12 ; 1     ; 1     ; 0     ; 0                             ;
+; y_Q.state13 ; 1     ; 1     ; 0     ; 1                             ;
++-------------+-------+-------+-------+-------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                            ;
++---------------------------------------------------+-----------------------------------------------------------+
+; Register name                                     ; Reason for Removal                                        ;
++---------------------------------------------------+-----------------------------------------------------------+
+; part4_test:inst|select_character:S0|signal[0,2]   ; Stuck at GND due to stuck port data_in                    ;
+; part4_test:inst|select_character:S0|signal[11]    ; Stuck at VCC due to stuck port data_in                    ;
+; part4_test:inst|select_character:S0|signal[12,13] ; Stuck at GND due to stuck port data_in                    ;
+; part4_test:inst|select_character:S0|signal[9]     ; Merged with part4_test:inst|select_character:S0|signal[7] ;
+; part4_test:inst|select_character:S0|signal[4]     ; Merged with part4_test:inst|select_character:S0|signal[1] ;
+; Total Number of Removed Registers = 7             ;                                                           ;
++---------------------------------------------------+-----------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -221,14 +253,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 9     ;
+; Total registers                              ; 11    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: part4_test:inst|morse_decoder_fsm:M0 ;
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; state0         ; 00000000000000000000000000000000 ; Unsigned Binary               ;
+; state1         ; 00000000000000000000000000000001 ; Unsigned Binary               ;
+; state2         ; 00000000000000000000000000000010 ; Unsigned Binary               ;
+; state3         ; 00000000000000000000000000000011 ; Unsigned Binary               ;
+; state4         ; 00000000000000000000000000000100 ; Unsigned Binary               ;
+; state5         ; 00000000000000000000000000000101 ; Unsigned Binary               ;
+; state6         ; 00000000000000000000000000000110 ; Unsigned Binary               ;
+; state7         ; 00000000000000000000000000000111 ; Unsigned Binary               ;
+; state8         ; 00000000000000000000000000001000 ; Unsigned Binary               ;
+; state9         ; 00000000000000000000000000001001 ; Unsigned Binary               ;
+; state10        ; 00000000000000000000000000001010 ; Unsigned Binary               ;
+; state11        ; 00000000000000000000000000001011 ; Unsigned Binary               ;
+; state12        ; 00000000000000000000000000001100 ; Unsigned Binary               ;
+; state13        ; 00000000000000000000000000001101 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
@@ -236,16 +291,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 13                          ;
-; cycloneiii_ff         ; 9                           ;
-;     plain             ; 9                           ;
-; cycloneiii_lcell_comb ; 13                          ;
-;     normal            ; 13                          ;
-;         3 data inputs ; 5                           ;
-;         4 data inputs ; 8                           ;
+; boundary_port         ; 7                           ;
+; cycloneiii_ff         ; 11                          ;
+;     CLR               ; 4                           ;
+;     plain             ; 7                           ;
+; cycloneiii_lcell_comb ; 20                          ;
+;     normal            ; 20                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 11                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.60                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.08                        ;
 +-----------------------+-----------------------------+
 
 
@@ -264,10 +322,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Fri Dec 16 00:56:27 2022
+    Info: Processing started: Fri Dec 16 02:08:59 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab7 -c Lab7
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file shift_register.v
+    Info (12023): Found entity 1: shift_register File: C:/Users/ADMIN/Documents/FPGA/Lab7/shift_register.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file select_character.v
+    Info (12023): Found entity 1: select_character File: C:/Users/ADMIN/Documents/FPGA/Lab7/select_character.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file part4_test.v
+    Info (12023): Found entity 1: part4_test File: C:/Users/ADMIN/Documents/FPGA/Lab7/part4_test.v Line: 1
+Info (12021): Found 0 design units, including 0 entities, in source file part4.v
+Info (12021): Found 1 design units, including 1 entities, in source file part3.v
+    Info (12023): Found entity 1: part3 File: C:/Users/ADMIN/Documents/FPGA/Lab7/Part3.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file morse_decoder_fsm.v
+    Info (12023): Found entity 1: morse_decoder_fsm File: C:/Users/ADMIN/Documents/FPGA/Lab7/morse_decoder_fsm.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file rtl_fsm.v
     Info (12023): Found entity 1: rtl_fsm File: C:/Users/ADMIN/Documents/FPGA/Lab7/rtl_fsm.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file part2.v
@@ -284,21 +353,23 @@ Info (12021): Found 1 design units, including 1 entities, in source file lab7par
     Info (12023): Found entity 1: Lab7Part2
 Info (12021): Found 1 design units, including 1 entities, in source file lab7part1.bdf
     Info (12023): Found entity 1: Lab7Part1
-Info (12127): Elaborating entity "Lab7Part1" for the top level hierarchy
-Info (12128): Elaborating entity "rtl_fsm" for hierarchy "rtl_fsm:inst"
-Info (12128): Elaborating entity "fsm_ff" for hierarchy "rtl_fsm:inst|fsm_ff:FF" File: C:/Users/ADMIN/Documents/FPGA/Lab7/rtl_fsm.v Line: 8
-Info (12128): Elaborating entity "d_ff" for hierarchy "rtl_fsm:inst|fsm_ff:FF|d_ff:D0" File: C:/Users/ADMIN/Documents/FPGA/Lab7/fsm_ff.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file lab7part4.bdf
+    Info (12023): Found entity 1: Lab7Part4
+Info (12127): Elaborating entity "Lab7Part4" for the top level hierarchy
+Info (12128): Elaborating entity "part4_test" for hierarchy "part4_test:inst"
+Info (12128): Elaborating entity "select_character" for hierarchy "part4_test:inst|select_character:S0" File: C:/Users/ADMIN/Documents/FPGA/Lab7/part4_test.v Line: 8
+Info (12128): Elaborating entity "morse_decoder_fsm" for hierarchy "part4_test:inst|morse_decoder_fsm:M0" File: C:/Users/ADMIN/Documents/FPGA/Lab7/part4_test.v Line: 9
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 26 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 13 logic cells
+Info (21057): Implemented 27 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 20 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4867 megabytes
-    Info: Processing ended: Fri Dec 16 00:56:32 2022
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 4863 megabytes
+    Info: Processing ended: Fri Dec 16 02:09:05 2022
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
 
 

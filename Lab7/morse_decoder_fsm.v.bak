@@ -19,6 +19,7 @@ module morse_decoder_fsm (clk, rst, signal, zout);
     parameter state11 = 'd11;
     parameter state12 = 'd12;
     parameter state13 = 'd13;
+    parameter endstate = 'd14;
 
     always @ (y_Q) begin
         case (y_Q)
@@ -35,7 +36,8 @@ module morse_decoder_fsm (clk, rst, signal, zout);
             state10: Y_D = state11;
             state11: Y_D = state12;
             state12: Y_D = state13;
-            state13: Y_D = state0;
+            state13: Y_D = endstate;
+            endstate: Y_D = endstate;
             default: Y_D = state0;
         endcase
     end
@@ -56,6 +58,7 @@ module morse_decoder_fsm (clk, rst, signal, zout);
             state11: zout = signal[2];
             state12: zout = signal[1];
             state13: zout = signal[0];
+            endstate: zout = 'd0;
             default: zout = 'd0;
         endcase
 
