@@ -1,4 +1,4 @@
-module counter_modk(clock, rst_neg, Q, roll_over);
+module counter_modk (clock, rst_neg, Q, roll_over);
   parameter n = 4;
   parameter k = 16;
 
@@ -17,11 +17,12 @@ module counter_modk(clock, rst_neg, Q, roll_over);
       Q <= Q + 1'b1;
       if (Q == k - 1) begin
         roll_over <= 'd1;
-      end
-      else if (Q == k) begin
+      end else if (Q == k) begin
         Q <= 'd0;
         roll_over <= 'd0;
-      end
+      end else if (Q == 'd0) begin
+		    roll_over <= 'd0;
+		  end
     end
   end
 endmodule

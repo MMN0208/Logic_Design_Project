@@ -21,8 +21,8 @@ module counter_modk (clock, rst_neg, Q, roll_over);
         Q <= 'd0;
         roll_over <= 'd0;
       end else if (Q == 'd0) begin
-		  roll_over <= 'd0;
-		end
+		    roll_over <= 'd0;
+		  end
     end
   end
 endmodule
