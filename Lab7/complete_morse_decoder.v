@@ -1,4 +1,4 @@
-module part4_test (clk, en, rst, sel, Q);
+module complete_morse_decoder (clk, en, rst, sel, Q);
     input clk, en, rst;
     input [2:0] sel;
     output Q;
