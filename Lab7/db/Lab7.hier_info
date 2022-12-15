@@ -1,0 +1,125 @@
+|Lab7Part1
+z <= rtl_fsm:inst.z
+clk => rtl_fsm:inst.clk
+rst => rtl_fsm:inst.rst
+w => rtl_fsm:inst.w
+Q[0] <= rtl_fsm:inst.Q[0]
+Q[1] <= rtl_fsm:inst.Q[1]
+Q[2] <= rtl_fsm:inst.Q[2]
+Q[3] <= rtl_fsm:inst.Q[3]
+Q[4] <= rtl_fsm:inst.Q[4]
+Q[5] <= rtl_fsm:inst.Q[5]
+Q[6] <= rtl_fsm:inst.Q[6]
+Q[7] <= rtl_fsm:inst.Q[7]
+Q[8] <= rtl_fsm:inst.Q[8]
+
+
+|Lab7Part1|rtl_fsm:inst
+clk => clk.IN1
+rst => rst.IN1
+w => D.IN1
+w => D.IN1
+w => D.IN1
+w => D.IN1
+w => D.IN1
+w => D.IN1
+w => D.IN1
+w => D.IN1
+Q[0] <= fsm_ff:FF.port3
+Q[1] <= fsm_ff:FF.port3
+Q[2] <= fsm_ff:FF.port3
+Q[3] <= fsm_ff:FF.port3
+Q[4] <= fsm_ff:FF.port3
+Q[5] <= fsm_ff:FF.port3
+Q[6] <= fsm_ff:FF.port3
+Q[7] <= fsm_ff:FF.port3
+Q[8] <= fsm_ff:FF.port3
+z <= z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7Part1|rtl_fsm:inst|fsm_ff:FF
+clk => clk.IN9
+rst => rst.IN9
+D[0] => D[0].IN1
+D[1] => D[1].IN1
+D[2] => D[2].IN1
+D[3] => D[3].IN1
+D[4] => D[4].IN1
+D[5] => D[5].IN1
+D[6] => D[6].IN1
+D[7] => D[7].IN1
+D[8] => D[8].IN1
+Q[0] <= d_ff:D0.port3
+Q[1] <= d_ff:D1.port3
+Q[2] <= d_ff:D2.port3
+Q[3] <= d_ff:D3.port3
+Q[4] <= d_ff:D4.port3
+Q[5] <= d_ff:D5.port3
+Q[6] <= d_ff:D6.port3
+Q[7] <= d_ff:D7.port3
+Q[8] <= d_ff:D8.port3
+
+
+|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D0
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+d => Q.DATAB
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D1
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+d => Q.DATAB
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D2
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+d => Q.DATAB
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D3
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+d => Q.DATAB
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D4
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+d => Q.DATAB
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D5
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+d => Q.DATAB
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D6
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+d => Q.DATAB
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D7
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+d => Q.DATAB
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7Part1|rtl_fsm:inst|fsm_ff:FF|d_ff:D8
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+d => Q.DATAB
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

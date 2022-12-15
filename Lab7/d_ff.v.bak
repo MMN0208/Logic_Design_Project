@@ -1,12 +1,12 @@
 module d_ff (clk, rst, d, Q);
     input clk, rst, d;
-    output reg Q;
+    output Q;
 
-    always @ (posedge clk) begin
-        if (~rst) begin
-            Q <= 'd0;
+    always @ (posedge clk) {
+        if(~rst) begin
+            Q <= 0;
         end else begin
             Q <= d;
         end
-    end
+    }
 endmodule

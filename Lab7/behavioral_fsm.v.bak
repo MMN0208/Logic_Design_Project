@@ -1,9 +1,9 @@
 module behavioral_fsm (clk, rst, w, Q, zout);
     input clk, rst, w;
     output reg zout;
-    output [3:0] Q;
+    output [8:0] Q;
     
-    reg [3:0] y_Q, Y_D;
+    reg [8:0] y_Q, Y_D;
     
     parameter A = 'd0;
     parameter B = 'd1;
