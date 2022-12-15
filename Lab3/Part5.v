@@ -8,7 +8,7 @@ module part5 (SW, KEY, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 	wire [7:0] Q, sum;
 	wire co;
 	
-	D_FF_Async_Reset D0 (~KEY[1], SW[0], ~KEY[0], Q[0]) ;
+	D_FF_Async_Reset D0 (~KEY[1], SW[0], ~KEY[0], Q[0]);
 	D_FF_Async_Reset D1 (~KEY[1], SW[1], ~KEY[0], Q[1]);
 	D_FF_Async_Reset D2 (~KEY[1], SW[2], ~KEY[0], Q[2]);
 	D_FF_Async_Reset D3 (~KEY[1], SW[3], ~KEY[0], Q[3]);
