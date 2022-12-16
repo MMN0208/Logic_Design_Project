@@ -7,7 +7,7 @@ Note: if both Questa Intel FPGA Edition and ModelSim executables are available, 
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Lab8 -c Lab8 --vector_source="C:/Users/ADMIN/Documents/FPGA/Lab8/Waveform.vwf" --testbench_file="C:/Users/ADMIN/Documents/FPGA/Lab8/simulation/qsim/Waveform.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Lab8 -c Lab8 --vector_source="C:/Users/ADMIN/Documents/FPGA/Lab8/Waveform2.vwf" --testbench_file="C:/Users/ADMIN/Documents/FPGA/Lab8/simulation/qsim/Waveform2.vwf.vt"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,8 +26,8 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Fri Dec 16 03:03:52 2022
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Lab8 -c Lab8 --vector_source=C:/Users/ADMIN/Documents/FPGA/Lab8/Waveform.vwf --testbench_file=C:/Users/ADMIN/Documents/FPGA/Lab8/simulation/qsim/Waveform.vwf.vt
+    Info: Processing started: Fri Dec 16 12:54:17 2022
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Lab8 -c Lab8 --vector_source=C:/Users/ADMIN/Documents/FPGA/Lab8/Waveform2.vwf --testbench_file=C:/Users/ADMIN/Documents/FPGA/Lab8/simulation/qsim/Waveform2.vwf.vt
 Info (119006): Selected device EP4CGX150DF31C7 for design "Lab8"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
@@ -56,15 +56,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Fri Dec 16 03:03:52 2022
+    Info: Processing started: Fri Dec 16 12:54:17 2022
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/ADMIN/Documents/FPGA/Lab8/simulation/qsim/ Lab8 -c Lab8
 Info (119006): Selected device EP4CGX150DF31C7 for design "Lab8"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file Lab8.vo in folder "C:/Users/ADMIN/Documents/FPGA/Lab8/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4729 megabytes
-    Info: Processing ended: Fri Dec 16 03:03:53 2022
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Fri Dec 16 12:54:17 2022
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 Completed successfully. 
@@ -91,40 +91,40 @@ Reading pref.tcl
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 03:03:53 on Dec 16,2022
+# Start time: 12:54:18 on Dec 16,2022
 # vlog -work work Lab8.vo 
 
-# -- Compiling module part1
+# -- Compiling module two_port_ram_test
 
 # 
 
 # Top level modules:
-# 	part1
+# 	two_port_ram_test
 
-# End time: 03:03:53 on Dec 16,2022, Elapsed time: 0:00:00
+# End time: 12:54:18 on Dec 16,2022, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 03:03:53 on Dec 16,2022
-# vlog -work work Waveform.vwf.vt 
+# Start time: 12:54:18 on Dec 16,2022
+# vlog -work work Waveform2.vwf.vt 
 
-# -- Compiling module part1_vlg_vec_tst
+# -- Compiling module two_port_ram_test_vlg_vec_tst
 
 # 
 
 # Top level modules:
-# 	part1_vlg_vec_tst
+# 	two_port_ram_test_vlg_vec_tst
 
-# End time: 03:03:53 on Dec 16,2022, Elapsed time: 0:00:00
+# End time: 12:54:18 on Dec 16,2022, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
-# vsim -c -t 1ps -L cycloneiv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.part1_vlg_vec_tst 
-# Start time: 03:03:53 on Dec 16,2022
-# Loading work.part1_vlg_vec_tst
-# Loading work.part1
+# vsim -c -t 1ps -L cycloneiv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.two_port_ram_test_vlg_vec_tst 
+# Start time: 12:54:18 on Dec 16,2022
+# Loading work.two_port_ram_test_vlg_vec_tst
+# Loading work.two_port_ram_test
 # Loading cycloneiv_ver.cycloneiv_io_obuf
 # Loading cycloneiv_ver.cycloneiv_io_ibuf
 # Loading cycloneiv_ver.cycloneiv_ram_block
@@ -133,23 +133,23 @@ Reading pref.tcl
 
 # after#25
 
-# ** Note: $finish    : Waveform.vwf.vt(51)
-#    Time: 1 us  Iteration: 0  Instance: /part1_vlg_vec_tst
+# ** Note: $finish    : Waveform2.vwf.vt(53)
+#    Time: 1 us  Iteration: 0  Instance: /two_port_ram_test_vlg_vec_tst
 
-# End time: 03:03:54 on Dec 16,2022, Elapsed time: 0:00:01
+# End time: 12:54:18 on Dec 16,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/ADMIN/Documents/FPGA/Lab8/Waveform.vwf...
+Reading C:/Users/ADMIN/Documents/FPGA/Lab8/Waveform2.vwf...
 
 Reading C:/Users/ADMIN/Documents/FPGA/Lab8/simulation/qsim/Lab8.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/ADMIN/Documents/FPGA/Lab8/simulation/qsim/Lab8_20221216030354.sim.vwf
+Writing the resulting VWF to C:/Users/ADMIN/Documents/FPGA/Lab8/simulation/qsim/Lab8_20221216125418.sim.vwf
 
 Finished VCD to VWF conversion.
 

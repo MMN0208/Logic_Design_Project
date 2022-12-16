@@ -1,0 +1,17 @@
+module ram_array (address, clock, data, wren, q);
+	input [4:0] address;
+	input clock;
+	input [3:0] data;
+	input wren;
+	output [3:0] q;
+	
+	reg [3:0] memory_array [31:0];
+	
+	always @ (posedge en) begin
+		memory_array[address] <= data;
+	end
+	
+	always @ (posedge clock) begin
+		q <= memory_array[address];
+	end
+endmodule

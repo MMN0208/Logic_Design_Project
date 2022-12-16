@@ -1,6 +1,6 @@
-module Part2 (SW, KEY, HEX0, HEX2, HEX4, HEX5);
+module part2 (SW, KEY, HEX0, HEX2, HEX4, HEX5);
 	input [9:0] SW;
-	output [1:0] KEY;
+	input [1:0] KEY;
 	output [6:0] HEX0, HEX2, HEX4, HEX5;
 	
 	wire [4:0] Address;

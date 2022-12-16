@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Fri Dec 16 03:01:41 2022
+Analysis & Synthesis Status : Successful - Fri Dec 16 12:46:31 2022
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : Lab8
-Top-level Entity Name : part1
+Top-level Entity Name : two_port_ram_test
 Family : Cyclone IV GX
 Total logic elements : 0
     Total combinational functions : 0
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 15
+Total pins : 20
 Total virtual pins : 0
 Total memory bits : 128
 Embedded Multiplier 9-bit elements : 0
