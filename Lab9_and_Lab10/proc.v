@@ -3,6 +3,8 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
   input Resetn, Clock, Run;
   output reg Done;
   output reg [8:0] BusWires;
+  
+  localparam T0 = 2'b00, T1 = 2'b01, T2 = 2'b10, T3= 2'b11;
 
   //declare variables
   reg IRin, DINout, Ain, Gout, Gin, AddSub;
@@ -22,7 +24,7 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
   always @(Tstep_Q, Run, I) begin
         case (Tstep_Q)
             T0: begin
-                if (run) begin
+                if (Run) begin
                     Tstep_D = T1;
                 end else begin
                     Tstep_D = T0;
@@ -51,8 +53,9 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
         endcase
     end
 
-    always @(posedge clock) begin
-        Tstep_Q <= Tstep_D;
+    always @(posedge Clock or negedge Resetn) begin
+		if(~Resetn) Tstep_Q <= T0;
+      else Tstep_Q <= Tstep_D;
     end
 
   always @(Tstep_Q or I or Xreg or Yreg)
@@ -70,11 +73,11 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
     Done = 1'b0;
 
     case (Tstep_Q)
-      2'b00: // store DIN in IR in time step 0
+      T0: // store DIN in IR in time step 0
         begin
           IRin = 1'b1; // should this be ANDed with Run?
         end
-      2'b01: //define signals in time step 1
+      T1: //define signals in time step 1
         case (I)
           3'b000:
             begin
@@ -102,7 +105,7 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
               Ain = 1'b1;
             end
         endcase
-      2'b10: //define signals in time step 2
+      T2: //define signals in time step 2
         case (I)
           3'b010:
           begin
@@ -116,7 +119,7 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
             AddSub = 1'b1;
           end
         endcase
-      2'b11: //define signals in time step 3
+      T3: //define signals in time step 3
         case (I)
           3'b010:
           begin
@@ -145,7 +148,6 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
   regn reg_7 (BusWires, Rin[7], Clock, R7);
 
   regn reg_IR (DIN, IRin, Clock, IR);
-  defparam reg_IR.n = 9;
   regn reg_A (BusWires, Ain, Clock, A);
   regn reg_G (result, Gin, Clock, G);
 
