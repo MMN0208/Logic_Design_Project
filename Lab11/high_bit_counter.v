@@ -31,11 +31,13 @@ module high_bit_counter (clock, reset, s, din, result, done);
             end
 
             S3: begin
-                if (s) done = 1;
-					 else done = 0;
-
-                if (!s) Y_D = S1;
-                else Y_D = S3;
+                if (!s) begin
+						done = 0;
+						Y_D = S1;
+                end else begin
+						done = 1;
+						Y_D = S3;
+					 end
             end
             default: Y_D = S1;
         endcase

@@ -10,28 +10,28 @@ z2
 cModel Technology
 Z0 dC:/Users/ADMIN/Documents/FPGA/Lab11/simulation/qsim
 vLab11Part1
-Z1 !s110 1671190049
+Z1 !s110 1671190833
 !i10b 1
 !s100 Z3Jlbe4Ko>U<A4?_P7Y<m0
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
 I<4V:k:AAEV1GmI`lOZ;8o2
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z4 w1671190048
+w1671190833
 8Lab11.vo
 FLab11.vo
-!i122 26
+!i122 34
 L0 32 828
-Z5 OV;L;2020.1;71
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1671190049.000000
+Z5 !s108 1671190833.000000
 !s107 Lab11.vo|
 !s90 -work|work|Lab11.vo|
 !i113 1
-Z7 o-work work
-Z8 tCvgOpt 0
+Z6 o-work work
+Z7 tCvgOpt 0
 n@lab11@part1
 vLab11Part1_vlg_vec_tst
 R1
@@ -41,19 +41,19 @@ R2
 I_QmoV<Z;O<>z0ZS4X=E`<0
 R3
 R0
-R4
+w1671190832
 8Waveform.vwf.vt
 FWaveform.vwf.vt
-!i122 27
+!i122 35
 L0 30 111
-R5
+R4
 r1
 !s85 0
 31
-R6
+R5
 !s107 Waveform.vwf.vt|
 !s90 -work|work|Waveform.vwf.vt|
 !i113 1
+R6
 R7
-R8
 n@lab11@part1_vlg_vec_tst

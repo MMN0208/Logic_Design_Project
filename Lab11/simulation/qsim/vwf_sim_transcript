@@ -26,7 +26,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Fri Dec 16 18:27:27 2022
+    Info: Processing started: Fri Dec 16 18:40:32 2022
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Lab11 -c Lab11 --vector_source=C:/Users/ADMIN/Documents/FPGA/Lab11/Waveform.vwf --testbench_file=C:/Users/ADMIN/Documents/FPGA/Lab11/simulation/qsim/Waveform.vwf.vt
 Info (119006): Selected device EP4CGX150DF31C7 for design "Lab11"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -56,14 +56,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Fri Dec 16 18:27:28 2022
+    Info: Processing started: Fri Dec 16 18:40:33 2022
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/ADMIN/Documents/FPGA/Lab11/simulation/qsim/ Lab11 -c Lab11
 Info (119006): Selected device EP4CGX150DF31C7 for design "Lab11"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file Lab11.vo in folder "C:/Users/ADMIN/Documents/FPGA/Lab11/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4729 megabytes
-    Info: Processing ended: Fri Dec 16 18:27:28 2022
+    Info: Processing ended: Fri Dec 16 18:40:33 2022
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
@@ -91,7 +91,7 @@ Reading pref.tcl
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 18:27:29 on Dec 16,2022
+# Start time: 18:40:33 on Dec 16,2022
 # vlog -work work Lab11.vo 
 
 # -- Compiling module Lab11Part1
@@ -99,16 +99,15 @@ Reading pref.tcl
 # 
 
 # Top level modules:
-
 # 	Lab11Part1
 
-# End time: 18:27:29 on Dec 16,2022, Elapsed time: 0:00:00
+# End time: 18:40:33 on Dec 16,2022, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 18:27:29 on Dec 16,2022
+# Start time: 18:40:33 on Dec 16,2022
 
 # vlog -work work Waveform.vwf.vt 
 
@@ -119,12 +118,12 @@ Reading pref.tcl
 # Top level modules:
 # 	Lab11Part1_vlg_vec_tst
 
-# End time: 18:27:29 on Dec 16,2022, Elapsed time: 0:00:00
+# End time: 18:40:33 on Dec 16,2022, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cycloneiv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.Lab11Part1_vlg_vec_tst 
-# Start time: 18:27:29 on Dec 16,2022
+# Start time: 18:40:33 on Dec 16,2022
 # Loading work.Lab11Part1_vlg_vec_tst
 # Loading work.Lab11Part1
 # Loading cycloneiv_ver.cycloneiv_io_obuf
@@ -138,7 +137,7 @@ Reading pref.tcl
 # ** Note: $finish    : Waveform.vwf.vt(53)
 #    Time: 1 us  Iteration: 0  Instance: /Lab11Part1_vlg_vec_tst
 
-# End time: 18:27:29 on Dec 16,2022, Elapsed time: 0:00:00
+# End time: 18:40:34 on Dec 16,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
@@ -151,7 +150,7 @@ Reading C:/Users/ADMIN/Documents/FPGA/Lab11/simulation/qsim/Lab11.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/ADMIN/Documents/FPGA/Lab11/simulation/qsim/Lab11_20221216182729.sim.vwf
+Writing the resulting VWF to C:/Users/ADMIN/Documents/FPGA/Lab11/simulation/qsim/Lab11_20221216184034.sim.vwf
 
 Finished VCD to VWF conversion.
 
