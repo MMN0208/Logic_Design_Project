@@ -100,15 +100,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "Pro_Clock",
-					"strict" : false
-				},
-				{
 					"name" : "Resetn",
 					"strict" : false
 				},
 				{
 					"name" : "Run",
+					"strict" : false
+				},
+				{
+					"name" : "Pro_Clock",
 					"strict" : false
 				},
 				{

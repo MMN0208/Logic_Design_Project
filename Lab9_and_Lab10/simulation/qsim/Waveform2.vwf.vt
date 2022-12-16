@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/16/2022 22:55:14"
+// Generated on "12/17/2022 01:26:13"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          Lab9Part2
 // 
@@ -59,14 +59,6 @@ begin
 #1000000 $finish;
 end 
 
-// Pro_Clock
-always
-begin
-	Pro_Clock = 1'b0;
-	Pro_Clock = #10000 1'b1;
-	#10000;
-end 
-
 // Mem_Clock
 initial
 begin
@@ -81,12 +73,32 @@ begin
 	Mem_Clock = #10000 1'b0;
 	Mem_Clock = #250000 1'b1;
 	Mem_Clock = #10000 1'b0;
+	Mem_Clock = #320000 1'b1;
+	Mem_Clock = #10000 1'b0;
 end 
 
-// rst_neg
+// Pro_Clock
+always
+begin
+	Pro_Clock = 1'b0;
+	Pro_Clock = #10000 1'b1;
+	#10000;
+end 
+
+// Run
 initial
 begin
-	rst_neg = 1'b1;
+	Run = 1'b0;
+	Run = #40000 1'b1;
+	Run = #20000 1'b0;
+	Run = #100000 1'b1;
+	Run = #20000 1'b0;
+	Run = #160000 1'b1;
+	Run = #20000 1'b0;
+	Run = #240000 1'b1;
+	Run = #20000 1'b0;
+	Run = #310000 1'b1;
+	Run = #20000 1'b0;
 end 
 
 // Resetn
@@ -95,12 +107,10 @@ begin
 	Resetn = 1'b1;
 end 
 
-// Run
-always
+// rst_neg
+initial
 begin
-	Run = 1'b0;
-	Run = #20000 1'b1;
-	#20000;
+	rst_neg = 1'b1;
 end 
 endmodule
 

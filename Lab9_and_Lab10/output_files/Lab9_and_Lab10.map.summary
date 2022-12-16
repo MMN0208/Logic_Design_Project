@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Fri Dec 16 22:50:14 2022
+Analysis & Synthesis Status : Successful - Sat Dec 17 01:26:04 2022
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : Lab9_and_Lab10
 Top-level Entity Name : Lab9Part2
 Family : Cyclone IV GX
-Total logic elements : 228
-    Total combinational functions : 146
-    Dedicated logic registers : 108
-Total registers : 108
+Total logic elements : 328
+    Total combinational functions : 247
+    Dedicated logic registers : 106
+Total registers : 106
 Total pins : 29
 Total virtual pins : 0
 Total memory bits : 288

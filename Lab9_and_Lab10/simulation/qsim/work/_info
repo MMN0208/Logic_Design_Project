@@ -10,23 +10,23 @@ z2
 cModel Technology
 Z0 dC:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/simulation/qsim
 vLab9Part1
-Z1 !s110 1671203669
+Z1 !s110 1671215050
 !i10b 1
-!s100 8KfCEc;@S?>ojN_7g2<TO2
+!s100 c[V_bTGjBkhfm7ib323W51
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-Il9GZD_enKUIIPKfg7Z;jl1
+I]]SZG`=Y3Nd_EeGcoQoU41
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z4 w1671203668
+Z4 w1671215049
 Z5 8Lab9_and_Lab10.vo
 Z6 FLab9_and_Lab10.vo
-!i122 12
-L0 32 4568
+!i122 92
+L0 32 6121
 Z7 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z8 !s108 1671203669.000000
+Z8 !s108 1671215050.000000
 Z9 !s107 Lab9_and_Lab10.vo|
 Z10 !s90 -work|work|Lab9_and_Lab10.vo|
 !i113 1
@@ -36,16 +36,16 @@ n@lab9@part1
 vLab9Part1_vlg_vec_tst
 R1
 !i10b 1
-!s100 LGUcJD757bG4?Ym^InIaH2
+!s100 k^FPbAOBQP2SO0DOWOL`d1
 R2
-I=?:cREZU]KYRQmWeNWfB=2
+I8E0X@D=C=P:JGMIbIS_5`0
 R3
 R0
 R4
 8Waveform.vwf.vt
 FWaveform.vwf.vt
-!i122 13
-L0 30 267
+!i122 93
+L0 30 108
 R7
 r1
 !s85 0
@@ -58,23 +58,23 @@ R11
 R12
 n@lab9@part1_vlg_vec_tst
 vLab9Part2
-Z13 !s110 1671206115
+Z13 !s110 1671215174
 !i10b 1
-!s100 j<U8e<PQleocm:fE?MPYD1
+!s100 c6HSz]06@I1kMYf@AEZB_0
 R2
-IFNjbzaA:MZ31f1KznAmSi3
+IgKG[z0XB7NdKNJ=iKIKHl2
 R3
 R0
-w1671206115
+w1671215174
 R5
 R6
-!i122 18
-L0 32 5409
+!i122 94
+L0 32 7013
 R7
 r1
 !s85 0
 31
-Z14 !s108 1671206115.000000
+Z14 !s108 1671215174.000000
 R9
 R10
 !i113 1
@@ -84,16 +84,16 @@ n@lab9@part2
 vLab9Part2_vlg_vec_tst
 R13
 !i10b 1
-!s100 N1hMd@n2=T>k2RaQmcI1;3
+!s100 KIO`boz03l3jTh0O;5=F_1
 R2
-IKa`iQO2bE6W1U2Gl@U0Gl1
+ISC^WchM`nibPAmUA<j5600
 R3
 R0
-w1671206114
+w1671215173
 8Waveform2.vwf.vt
 FWaveform2.vwf.vt
-!i122 19
-L0 30 76
+!i122 95
+L0 30 86
 R7
 r1
 !s85 0

@@ -1,5 +1,5 @@
 module proc (DIN, Resetn, Clock, Run, Done, BusWires);
-  input [8:0] DIN /* synthesis_keep */;
+  input [8:0] DIN;
   input Resetn, Clock, Run;
   output reg Done;
   output reg [8:0] BusWires;
@@ -9,18 +9,18 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
   //declare variables
   reg IRin, DINout, Ain, Gout, Gin, AddSub;
   reg [7:0] Rout, Rin;
-  wire [7:0] Xreg, Yreg;
-  wire [1:9] IR;
-  wire [1:3] I;
+  wire [7:0] Xreg, Yreg /* synthesis keep */;
+  wire [8:0] IR;
+  wire [2:0] I;
   reg [9:0] MUXsel;
-  wire [8:0] R0, R1, R2, R3, R4, R5, R6, R7, result;
+  wire [8:0] R0, R1, R2, R3, R4, R5, R6, R7, result /* synthesis keep */;
   wire [8:0] A, G;
-  reg [2:0] Tstep_Q;
+  reg [2:0] Tstep_Q /* synthesis keep */;
   reg [2:0] Tstep_D;
 
-  assign I = IR[1:3];
-  dec3to8 decX (IR[4:6], 1'b1, Xreg);
-  dec3to8 decY (IR[7:9], 1'b1, Yreg);
+  assign I = IR[8:6];
+  dec3to8 decX (IR[5:3], 1'b1, Xreg);
+  dec3to8 decY (IR[2:0], 1'b1, Yreg);
   always @(Tstep_Q, Run, I) begin
         case (Tstep_Q)
             T0: begin
@@ -53,11 +53,6 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
         endcase
     end
 
-    always @(posedge Clock or negedge Resetn) begin
-		if(~Resetn) Tstep_Q <= T0;
-      else Tstep_Q <= Tstep_D;
-    end
-
   always @(Tstep_Q or I or Xreg or Yreg)
   begin
     //specify initial values
@@ -75,7 +70,8 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
     case (Tstep_Q)
       T0: // store DIN in IR in time step 0
         begin
-          IRin = 1'b1; // should this be ANDed with Run?
+          IRin = 1'b1;
+          DINout = 1'b1;
         end
       T1: //define signals in time step 1
         case (I)
@@ -135,6 +131,11 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
           end
         endcase
     endcase
+  end
+  
+  always @(posedge Clock) begin
+		if(~Resetn) Tstep_Q <= T0;
+      else Tstep_Q <= Tstep_D;
   end
 
   //instantiate registers and the adder/subtracter unit

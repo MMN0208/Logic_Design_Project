@@ -72,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 288 216 456 232)
 	(text "INPUT" (rect 125 0 161 13)(font "Arial" (font_size 6)))
-	(text "Resetn" (rect 5 0 53 15)(font "Arial" ))
+	(text "Resetn" (rect 5 0 52 15)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -152,14 +152,14 @@ https://fpgasoftware.intel.com/eula.
 		(pt 200 32)
 		(output)
 		(text "Done" (rect 0 0 35 15)(font "Arial" ))
-		(text "Done" (rect 150 27 179 42)(font "Arial" ))
+		(text "Done" (rect 150 27 185 42)(font "Arial" ))
 		(line (pt 200 32)(pt 184 32))
 	)
 	(port
 		(pt 200 48)
 		(output)
 		(text "BusWires[8..0]" (rect 0 0 94 15)(font "Arial" ))
-		(text "BusWires[8..0]" (rect 100 43 179 58)(font "Arial" ))
+		(text "BusWires[8..0]" (rect 100 43 194 58)(font "Arial" ))
 		(line (pt 200 48)(pt 184 48)(line_width 3))
 	)
 	(parameter
@@ -185,5 +185,5 @@ https://fpgasoftware.intel.com/eula.
 	(drawing
 		(rectangle (rect 16 16 184 96))
 	)
-	(annotation_block (parameter)(rect 648 72 864 176))
+	(annotation_block (parameter)(rect 704 40 920 144))
 )
