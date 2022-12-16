@@ -13,15 +13,17 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
   wire [1:9] IR;
   wire [1:3] I;
   reg [9:0] MUXsel;
-  wire [15:0] R0, R1, R2, R3, R4, R5, R6, R7, result;
-  wire [15:0] A, G;
+  wire [8:0] R0, R1, R2, R3, R4, R5, R6, R7, result  /* synthesis_keep */;
+  wire [8:0] A, G /* synthesis_keep */;
   wire [1:0] Tstep_Q;
 
   wire Clear = Done || ~Resetn;
   upcount Tstep (Clear, Clock, Tstep_Q);
+  
   assign I = IR[1:3];
   dec3to8 decX (IR[4:6], 1'b1, Xreg);
   dec3to8 decY (IR[7:9], 1'b1, Yreg);
+
   always @(Tstep_Q or I or Xreg or Yreg)
   begin
     //specify initial values
@@ -70,34 +72,38 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
               Ain = 1'b1;
             end
         endcase
+
       T2: //define signals in time step 2
         case (I)
           3'b010:
-          begin
-            Rout = Yreg;
-            Gin = 1'b1;
-          end
+            begin
+                Rout = Yreg;
+                Gin = 1'b1;
+            end
+
           3'b011:
-          begin
-            Rout = Yreg;
-            Gin = 1'b1;
-            AddSub = 1'b1;
-          end
+            begin
+                Rout = Yreg;
+                Gin = 1'b1;
+                AddSub = 1'b1;
+            end
         endcase
+
       T3: //define signals in time step 3
         case (I)
           3'b010:
-          begin
-            Gout = 1'b1;
-            Rin = Xreg;
-            Done = 1'b1;
-          end
+            begin
+                Gout = 1'b1;
+                Rin = Xreg;
+                Done = 1'b1;
+            end
+
           3'b011:
-          begin
-            Gout = 1'b1;
-            Rin = Xreg;
-            Done = 1'b1;
-          end
+            begin
+                Gout = 1'b1;
+                Rin = Xreg;
+                Done = 1'b1;
+            end
         endcase
     endcase
   end
