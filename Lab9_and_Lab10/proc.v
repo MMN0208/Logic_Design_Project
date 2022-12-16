@@ -1,181 +1,227 @@
-module proc (DIN, Resetn, Clock, Run, Done, BusWires);
-  input [8:0] DIN;
-  input Resetn, Clock, Run;
-  output reg Done;
-  output reg [8:0] BusWires;
-  
-  localparam T0 = 2'b00, T1 = 2'b01, T2 = 2'b10, T3 = 2'b11;
+module a_simple_processor (clock, run, DIN, done, BusWire);
+    input clock, run;
+    input [8:0] DIN;
+    output reg done;
+    output reg [8:0] BusWire;
 
-  //declare variables
-  reg IRin, DINout, Ain, Gout, Gin, AddSub;
-  reg [7:0] Rout, Rin;
-  wire [7:0] Xreg, Yreg;
-  wire [1:9] IR;
-  wire [1:3] I;
-  reg [9:0] MUXsel;
-  wire [8:0] R0, R1, R2, R3, R4, R5, R6, R7, result  /* synthesis_keep */;
-  wire [8:0] A, G /* synthesis_keep */;
-  reg [2:0] Tstep_Q /* synthesis_keep */;
-  reg [2:0] Tstep_D;
-  
-  assign I = IR[1:3];
-  dec3to8 decX (IR[4:6], 1'b1, Xreg);
-  dec3to8 decY (IR[7:9], 1'b1, Yreg);
+    parameter T0 = 3'd0, T1 = 3'd1, T2 = 3'd2, T3 = 3'd3;
 
-  always @(Tstep_Q or Run or I)
-  begin
-    case(Tstep_Q)
-        T0: begin
-            if(!Run) Tstep_D = T0;
-            else Tstep_D = T1;
-        end
+    wire [2:0] I;
 
-        T1: begin
-            case(I)
-                0: Tstep_D = T0;
-                1: Tstep_D = T0;
-                2: Tstep_D = T2;
-                3: Tstep_D = T2;
-            endcase
-        end
+    reg IRin;
+    reg [0:7] Rin;
+    reg RAin;
+    reg RGin;
 
-        T2: Tstep_D = T3;
+    reg [8:0] R0, R1, RA, RG;
+    reg [8:0] Rx;
+    reg [8:0] Ry;
+    wire [8:0] R2;
+    wire [8:0] R3;
+    wire [8:0] R4;
+    wire [8:0] R5;
+    wire [8:0] R6;
+    wire [8:0] R7;
 
-        T3: Tstep_D = T0;
+    wire [8:0] IR;
 
-        default: Tstep_D = 3'bxxx;
-    endcase
-  end
+    wire [2:0] Xreg;
+    wire [2:0] Yreg;
 
-  always @(Tstep_Q or I or Xreg or Yreg)
-  begin
-    //specify initial values
-    IRin = 1'b0;
-    Rout[7:0] = 8'b00000000;
-    Rin[7:0] = 8'b00000000;
-    DINout = 1'b0;
-    Ain = 1'b0;
-    Gout = 1'b0;
-    Gin = 1'b0;
-    AddSub = 1'b0;
+    reg [2:0] Ystep_Q;
+    reg [2:0] Ystep_D;
 
-    Done = 1'b0;
+    assign I = IR[8:6];
+    assign Xreg = IR[5:3];
+    assign Yreg = IR[2:0];
 
-    case (Tstep_Q)
-      T0: // store DIN in IR in time step 0
-        begin
-          IRin = 1'b1; // should this be ANDed with Run?
-        end
-		  
-      T1: //define signals in time step 1
-        case (I)
-          3'b000:
-            begin
-              Rout = Yreg;
-              Rin = Xreg;
-              Done = 1'b1;
+    always @(Ystep_Q, run, I) begin
+        case (Ystep_Q)
+            T0: begin
+                if (run) begin
+                    Ystep_D = T1;
+                end else begin
+                    Ystep_D = T0;
+                end
             end
 
-          3'b001:
-            begin
-              DINout = 1'b1;
-              Rin = Xreg;
-              Done = 1'b1;
+            T1: begin
+                case (I)
+                    0: Ystep_D = T0;
+
+                    1: Ystep_D = T0;
+
+                    2: Ystep_D = T2;
+
+                    3: Ystep_D = T2;
+
+                    default: Ystep_D = T0;
+                endcase
             end
 
-          3'b010:
-            begin
-              Rout = Xreg;
-              Ain = 1'b1;
-            end
+            T2: Ystep_D = T3;
 
-          3'b011:
-            begin
-              Rout = Xreg;
-              Ain = 1'b1;
-            end
+            T3: Ystep_D = T0;
+
+            default: Ystep_D = 3'bxxx;
         endcase
+    end
 
-      T2: //define signals in time step 2
-        case (I)
-          3'b010:
-            begin
-                Rout = Yreg;
-                Gin = 1'b1;
+    always @(Ystep_Q, I, Xreg, Yreg) begin
+		  done = 0;
+          IRin = 0;
+          Rin = 0;
+          RAin = 0;
+          RGin = 0;
+	 
+        case (Ystep_Q)
+            T0: begin
+                BusWire = DIN;
+                IRin = 1;
+                case (Xreg)
+                    0: Rx = R0;
+                    1: Rx = R1;
+                    2: Rx = R2;
+                    3: Rx = R3;
+                    4: Rx = R4;
+                    5: Rx = R5;
+                    6: Rx = R6;
+                    7: Rx = R7;
+                    default: Rx = 0;
+                endcase
+                case (Yreg)
+                    0: Ry = R0;
+                    1: Ry = R1;
+                    2: Ry = R2;
+                    3: Ry = R3;
+                    4: Ry = R4;
+                    5: Ry = R5;
+                    6: Ry = R6;
+                    7: Ry = R7; 
+                    default: Ry = 0;
+                endcase
             end
 
-          3'b011:
-            begin
-                Rout = Yreg;
-                Gin = 1'b1;
-                AddSub = 1'b1;
+            T1: begin
+                case (I)
+                    0: begin
+                        BusWire = Ry;
+                        case (Xreg)
+                            0: Rin[0] = 1;
+                            1: Rin[1] = 1;
+                            2: Rin[2] = 1;
+                            3: Rin[3] = 1;
+                            4: Rin[4] = 1;
+                            5: Rin[5] = 1;
+                            6: Rin[6] = 1;
+                            7: Rin[7] = 1;
+                            default: Rin = 0;
+                        endcase
+                        done = 1;
+                    end
+
+                    1: begin
+                        BusWire = DIN;
+                        case (Xreg)
+                            0: Rin[0] = 1;
+                            1: Rin[1] = 1;
+                            2: Rin[2] = 1;
+                            3: Rin[3] = 1;
+                            4: Rin[4] = 1;
+                            5: Rin[5] = 1;
+                            6: Rin[6] = 1;
+                            7: Rin[7] = 1;
+                            default: Rin = 0;
+                        endcase
+                        done = 1;
+                    end
+
+                    2: begin
+                        BusWire = Rx;
+                        RAin = 1;
+                        done = 0;
+                    end
+
+                    3: begin
+                        BusWire = Rx;
+                        RAin = 1;
+                        done = 0;
+                    end
+
+                    default: done = 0;
+                endcase
             end
+
+            T2: begin
+                case (I)
+                    0: begin
+                        done = 0;
+                    end
+
+                    1: begin
+                        done = 0;
+                    end
+
+                    2: begin
+                        BusWire = Ry;
+                        done = 0;
+                    end
+
+                    3: begin
+                        BusWire = Ry;                        
+                        done = 0;
+                    end
+
+                    default: done = 0;
+                endcase
+            end
+
+            T3: begin
+                case (I)
+                    0: begin
+                        done = 0;
+                    end
+
+                    1: begin
+                        done = 0;
+                    end
+
+                    2: begin
+                        BusWire = RA + Ry;
+                        RGin = 1;
+                        
+                        done = 1;
+                    end
+
+                    3: begin
+                        BusWire = RA - Ry;
+                        RGin = 1;
+                        
+                        done = 1;
+                    end
+
+                    default: done = 0;
+                endcase
+            end
+
+            default: done = 0;
         endcase
+    end
 
-      T3: //define signals in time step 3
-        case (I)
-          3'b010:
-            begin
-                Gout = 1'b1;
-                Rin = Xreg;
-                Done = 1'b1;
-            end
+    always @(posedge clock) begin
+        Ystep_Q = Ystep_D;
+    end
 
-          3'b011:
-            begin
-                Gout = 1'b1;
-                Rin = Xreg;
-                Done = 1'b1;
-            end
-        endcase
-    endcase
-  end
-
-  always @(posedge Clock) begin
-    Tstep_Q = Tstep_D;
-  end
-
-  //instantiate registers and the adder/subtracter unit
-  regn reg_0 (BusWires, Rin[0], Clock, R0);
-  regn reg_1 (BusWires, Rin[1], Clock, R1);
-  regn reg_2 (BusWires, Rin[2], Clock, R2);
-  regn reg_3 (BusWires, Rin[3], Clock, R3);
-  regn reg_4 (BusWires, Rin[4], Clock, R4);
-  regn reg_5 (BusWires, Rin[5], Clock, R5);
-  regn reg_6 (BusWires, Rin[6], Clock, R6);
-  regn reg_7 (BusWires, Rin[7], Clock, R7);
-
-  regn reg_IR (DIN, IRin, Clock, IR);
-  defparam reg_IR.n = 9;
-  regn reg_A (BusWires, Ain, Clock, A);
-  regn reg_G (result, Gin, Clock, G);
-
-  addsub AS (~AddSub, A, BusWires, result);
-
-  //define the bus
-  always @ (MUXsel or Rout or Gout or DINout)
-  begin
-    MUXsel[9:2] = Rout;
-    MUXsel[1] = Gout;
-    MUXsel[0] = DINout;
-    
-    case (MUXsel)
-      10'b0000000001: BusWires = DIN;
-      10'b0000000010: BusWires = G;
-      10'b0000000100: BusWires = R0;
-      10'b0000001000: BusWires = R1;
-      10'b0000010000: BusWires = R2;
-      10'b0000100000: BusWires = R3;
-      10'b0001000000: BusWires = R4;
-      10'b0010000000: BusWires = R5;
-      10'b0100000000: BusWires = R6;
-      10'b1000000000: BusWires = R7;
-		default: BusWires = 0;
-    endcase
-  end
+    regn reg_IR (BusWire, IRin, clock, IR);
+    regn reg_R0 (BusWire, Rin[0], clock, R0);
+    regn reg_R1 (BusWire, Rin[1], clock, R1);
+    regn reg_R2 (BusWire, Rin[2], clock, R2);
+    regn reg_R3 (BusWire, Rin[3], clock, R3);
+    regn reg_R4 (BusWire, Rin[4], clock, R4);
+    regn reg_R5 (BusWire, Rin[5], clock, R5);
+    regn reg_R6 (BusWire, Rin[6], clock, R6);
+    regn reg_R7 (BusWire, Rin[7], clock, R7);
+    regn reg_RA (BusWire, RAin, clock, RA);
+    regn reg_RG (BusWire, RGin, clock, RG);
 
 endmodule
-
-
-
-

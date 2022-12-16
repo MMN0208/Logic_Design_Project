@@ -65,9 +65,9 @@ module binary_search (clock, reset, s, din, Tin, found, done, addo, addf);
                 end
             end
 				
-				S3: begin
-				
-				end
+            S3: begin
+                // wait 1 cycle to get data from memory array
+            end
 
             S4: begin
                 if (din < T) L = m + 1; // if current value at index m in memory is less than Target
