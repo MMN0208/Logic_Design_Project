@@ -1,5 +1,5 @@
 Flow report for Lab9_and_Lab10
-Fri Dec 16 22:14:28 2022
+Fri Dec 16 22:55:15 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -41,20 +41,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Dec 16 22:14:28 2022       ;
+; Flow Status                        ; Successful - Fri Dec 16 22:55:15 2022       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; Lab9_and_Lab10                              ;
-; Top-level Entity Name              ; Lab9Part1                                   ;
+; Top-level Entity Name              ; Lab9Part2                                   ;
 ; Family                             ; Cyclone IV GX                               ;
 ; Device                             ; EP4CGX150DF31C7                             ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 222                                         ;
-;     Total combinational functions  ; 140                                         ;
-;     Dedicated logic registers      ; 103                                         ;
-; Total registers                    ; 103                                         ;
-; Total pins                         ; 22                                          ;
+; Total logic elements               ; 228                                         ;
+;     Total combinational functions  ; 146                                         ;
+;     Dedicated logic registers      ; 108                                         ;
+; Total registers                    ; 108                                         ;
+; Total pins                         ; 29                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
+; Total memory bits                  ; 288                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total GXB Receiver Channel PCS     ; 0                                           ;
 ; Total GXB Receiver Channel PMA     ; 0                                           ;
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/16/2022 22:13:44 ;
+; Start date & time ; 12/16/2022 22:50:08 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Lab9_and_Lab10      ;
 +-------------------+---------------------+
@@ -80,18 +80,19 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+----------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value  ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+----------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 103962280305462.167120362412260        ; --             ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 103962280305462.167120580819688        ; --             ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --             ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --             ; --          ; --         ;
 ; MISC_FILE                           ; addsub.bsf                             ; --             ; --          ; --         ;
+; MISC_FILE                           ; inst_mem.bsf                           ; --             ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --             ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --             ; Lab9Part1   ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --             ; Lab9Part1   ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --             ; Lab9Part1   ; Top        ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --             ; Lab9Part2   ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --             ; Lab9Part2   ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --             ; Lab9Part2   ; Top        ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --             ; --          ; --         ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --             ; --          ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --             ; --          ; --         ;
-; TOP_LEVEL_ENTITY                    ; Lab9Part1                              ; Lab9_and_Lab10 ; --          ; --         ;
+; TOP_LEVEL_ENTITY                    ; Lab9Part2                              ; Lab9_and_Lab10 ; --          ; --         ;
 +-------------------------------------+----------------------------------------+----------------+-------------+------------+
 
 
@@ -100,10 +101,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 4873 MB             ; 00:00:06                           ;
+; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 4900 MB             ; 00:00:06                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4729 MB             ; 00:00:00                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4733 MB             ; 00:00:00                           ;
-; Total                ; 00:00:06     ; --                      ; --                  ; 00:00:06                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4733 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4733 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4733 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4733 MB             ; 00:00:00                           ;
+; Total                ; 00:00:07     ; --                      ; --                  ; 00:00:06                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -115,6 +120,10 @@ https://fpgasoftware.intel.com/eula.
 ; Analysis & Synthesis ; DESKTOP-VGDP77D  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-VGDP77D  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-VGDP77D  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-VGDP77D  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-VGDP77D  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-VGDP77D  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-VGDP77D  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -122,7 +131,11 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Lab9_and_Lab10 -c Lab9_and_Lab10
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Lab9_and_Lab10 -c Lab9_and_Lab10 --vector_source=C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/Waveform.vwf --testbench_file=C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/simulation/qsim/Waveform.vwf.vt
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Lab9_and_Lab10 -c Lab9_and_Lab10 --vector_source=C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/Waveform2.vwf --testbench_file=C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/simulation/qsim/Waveform2.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/simulation/qsim/ Lab9_and_Lab10 -c Lab9_and_Lab10
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Lab9_and_Lab10 -c Lab9_and_Lab10 --vector_source=C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/Waveform2.vwf --testbench_file=C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/simulation/qsim/Waveform2.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/simulation/qsim/ Lab9_and_Lab10 -c Lab9_and_Lab10
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Lab9_and_Lab10 -c Lab9_and_Lab10 --vector_source=C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/Waveform2.vwf --testbench_file=C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/simulation/qsim/Waveform2.vwf.vt
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/simulation/qsim/ Lab9_and_Lab10 -c Lab9_and_Lab10
 
 

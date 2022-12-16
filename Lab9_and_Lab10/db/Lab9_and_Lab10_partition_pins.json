@@ -8,6 +8,26 @@
 					"strict" : false
 				},
 				{
+					"name" : "Address[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Address[0]",
+					"strict" : false
+				},
+				{
 					"name" : "BusWires[8]",
 					"strict" : false
 				},
@@ -80,7 +100,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "Clock",
+					"name" : "Pro_Clock",
 					"strict" : false
 				},
 				{
@@ -89,6 +109,14 @@
 				},
 				{
 					"name" : "Run",
+					"strict" : false
+				},
+				{
+					"name" : "Mem_Clock",
+					"strict" : false
+				},
+				{
+					"name" : "rst_neg",
 					"strict" : false
 				}
 			]

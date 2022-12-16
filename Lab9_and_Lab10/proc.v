@@ -1,5 +1,5 @@
 module proc (DIN, Resetn, Clock, Run, Done, BusWires);
-  input [8:0] DIN;
+  input [8:0] DIN /* synthesis_keep */;
   input Resetn, Clock, Run;
   output reg Done;
   output reg [8:0] BusWires;
