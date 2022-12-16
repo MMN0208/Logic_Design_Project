@@ -10,23 +10,23 @@ z2
 cModel Technology
 Z0 dC:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/simulation/qsim
 vLab9Part1
-Z1 !s110 1671199955
+Z1 !s110 1671201406
 !i10b 1
-!s100 XQiXo<UTJWAg]F==2If481
+!s100 A2Vd9[Q3MhQ9ehFRSU[zj2
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I[1]h4FdXiZHm?aF@mkVC40
+IZQY]J1VlH9SQM5Kz6>g;i2
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z4 w1671199954
+Z4 w1671201405
 8Lab9_and_Lab10.vo
 FLab9_and_Lab10.vo
-!i122 2
-L0 32 4742
+!i122 6
+L0 32 4721
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1671199955.000000
+Z6 !s108 1671201406.000000
 !s107 Lab9_and_Lab10.vo|
 !s90 -work|work|Lab9_and_Lab10.vo|
 !i113 1
@@ -44,7 +44,7 @@ R0
 R4
 8Waveform.vwf.vt
 FWaveform.vwf.vt
-!i122 3
+!i122 7
 L0 30 267
 R5
 r1

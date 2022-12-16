@@ -33,10 +33,11 @@ DIN[5] => DIN[5].IN1
 DIN[6] => DIN[6].IN1
 DIN[7] => DIN[7].IN1
 DIN[8] => DIN[8].IN1
-Resetn => comb.IN1
-Clock => Clock.IN12
-Run => ~NO_FANOUT~
-Done <= Mux16.DB_MAX_OUTPUT_PORT_TYPE
+Resetn => ~NO_FANOUT~
+Clock => Clock.IN11
+Run => Selector1.IN2
+Run => Selector20.IN1
+Done <= Selector18.DB_MAX_OUTPUT_PORT_TYPE
 BusWires[0] <= BusWires[0].DB_MAX_OUTPUT_PORT_TYPE
 BusWires[1] <= BusWires[1].DB_MAX_OUTPUT_PORT_TYPE
 BusWires[2] <= BusWires[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -46,15 +47,6 @@ BusWires[5] <= BusWires[5].DB_MAX_OUTPUT_PORT_TYPE
 BusWires[6] <= BusWires[6].DB_MAX_OUTPUT_PORT_TYPE
 BusWires[7] <= BusWires[7].DB_MAX_OUTPUT_PORT_TYPE
 BusWires[8] <= BusWires[8].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Lab9Part1|proc:inst|upcount:Tstep
-Clear => Q.OUTPUTSELECT
-Clear => Q.OUTPUTSELECT
-Clock => Q[0]~reg0.CLK
-Clock => Q[1]~reg0.CLK
-Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Lab9Part1|proc:inst|dec3to8:decX

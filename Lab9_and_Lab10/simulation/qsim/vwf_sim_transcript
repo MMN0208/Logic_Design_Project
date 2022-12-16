@@ -26,12 +26,12 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Fri Dec 16 21:12:33 2022
+    Info: Processing started: Fri Dec 16 21:36:45 2022
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Lab9_and_Lab10 -c Lab9_and_Lab10 --vector_source=C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/Waveform.vwf --testbench_file=C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/simulation/qsim/Waveform.vwf.vt
 Info (119006): Selected device EP4CGX150DF31C7 for design "Lab9_and_Lab10"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
-roc:inst|regn:reg_G|Q" in design
+nd port "proc:inst|regn:reg_A|Q" in design
 
 Completed successfully. 
 
@@ -58,14 +58,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Fri Dec 16 21:12:34 2022
+    Info: Processing started: Fri Dec 16 21:36:45 2022
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/simulation/qsim/ Lab9_and_Lab10 -c Lab9_and_Lab10
 Info (119006): Selected device EP4CGX150DF31C7 for design "Lab9_and_Lab10"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file Lab9_and_Lab10.vo in folder "C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4733 megabytes
-    Info: Processing ended: Fri Dec 16 21:12:34 2022
+    Info: Processing ended: Fri Dec 16 21:36:45 2022
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
@@ -93,7 +93,7 @@ Reading pref.tcl
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 21:12:35 on Dec 16,2022
+# Start time: 21:36:46 on Dec 16,2022
 # vlog -work work Lab9_and_Lab10.vo 
 
 # -- Compiling module Lab9Part1
@@ -103,13 +103,13 @@ Reading pref.tcl
 # Top level modules:
 # 	Lab9Part1
 
-# End time: 21:12:35 on Dec 16,2022, Elapsed time: 0:00:00
+# End time: 21:36:46 on Dec 16,2022, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 21:12:35 on Dec 16,2022
+# Start time: 21:36:46 on Dec 16,2022
 
 # vlog -work work Waveform.vwf.vt 
 
@@ -120,12 +120,12 @@ Reading pref.tcl
 # Top level modules:
 # 	Lab9Part1_vlg_vec_tst
 
-# End time: 21:12:35 on Dec 16,2022, Elapsed time: 0:00:00
+# End time: 21:36:46 on Dec 16,2022, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cycloneiv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.Lab9Part1_vlg_vec_tst 
-# Start time: 21:12:35 on Dec 16,2022
+# Start time: 21:36:46 on Dec 16,2022
 # Loading work.Lab9Part1_vlg_vec_tst
 # Loading work.Lab9Part1
 # Loading cycloneiv_ver.cycloneiv_io_obuf
@@ -139,7 +139,7 @@ Reading pref.tcl
 # ** Note: $finish    : Waveform.vwf.vt(53)
 #    Time: 1 us  Iteration: 0  Instance: /Lab9Part1_vlg_vec_tst
 
-# End time: 21:12:35 on Dec 16,2022, Elapsed time: 0:00:00
+# End time: 21:36:46 on Dec 16,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
@@ -152,7 +152,7 @@ Reading C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/simulation/qsim/Lab9_and_La
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/simulation/qsim/Lab9_and_Lab10_20221216211235.sim.vwf
+Writing the resulting VWF to C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/simulation/qsim/Lab9_and_Lab10_20221216213646.sim.vwf
 
 Finished VCD to VWF conversion.
 

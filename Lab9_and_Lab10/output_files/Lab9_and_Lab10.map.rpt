@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab9_and_Lab10
-Fri Dec 16 21:02:12 2022
+Fri Dec 16 21:39:22 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -14,26 +14,28 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis IP Cores Summary
-  9. User-Specified and Inferred Latches
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: proc:inst|regn:reg_0
- 13. Parameter Settings for User Entity Instance: proc:inst|regn:reg_1
- 14. Parameter Settings for User Entity Instance: proc:inst|regn:reg_2
- 15. Parameter Settings for User Entity Instance: proc:inst|regn:reg_3
- 16. Parameter Settings for User Entity Instance: proc:inst|regn:reg_4
- 17. Parameter Settings for User Entity Instance: proc:inst|regn:reg_5
- 18. Parameter Settings for User Entity Instance: proc:inst|regn:reg_6
- 19. Parameter Settings for User Entity Instance: proc:inst|regn:reg_7
- 20. Parameter Settings for User Entity Instance: proc:inst|regn:reg_IR
- 21. Parameter Settings for User Entity Instance: proc:inst|regn:reg_A
- 22. Parameter Settings for User Entity Instance: proc:inst|regn:reg_G
- 23. Parameter Settings for User Entity Instance: proc:inst|addsub:AS|lpm_add_sub:LPM_ADD_SUB_component
- 24. Port Connectivity Checks: "proc:inst|dec3to8:decY"
- 25. Port Connectivity Checks: "proc:inst|dec3to8:decX"
- 26. Post-Synthesis Netlist Statistics for Top Partition
- 27. Elapsed Time Per Partition
- 28. Analysis & Synthesis Messages
+  9. State Machine - |Lab9Part1|proc:inst|Tstep_Q
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: proc:inst|regn:reg_0
+ 15. Parameter Settings for User Entity Instance: proc:inst|regn:reg_1
+ 16. Parameter Settings for User Entity Instance: proc:inst|regn:reg_2
+ 17. Parameter Settings for User Entity Instance: proc:inst|regn:reg_3
+ 18. Parameter Settings for User Entity Instance: proc:inst|regn:reg_4
+ 19. Parameter Settings for User Entity Instance: proc:inst|regn:reg_5
+ 20. Parameter Settings for User Entity Instance: proc:inst|regn:reg_6
+ 21. Parameter Settings for User Entity Instance: proc:inst|regn:reg_7
+ 22. Parameter Settings for User Entity Instance: proc:inst|regn:reg_IR
+ 23. Parameter Settings for User Entity Instance: proc:inst|regn:reg_A
+ 24. Parameter Settings for User Entity Instance: proc:inst|regn:reg_G
+ 25. Parameter Settings for User Entity Instance: proc:inst|addsub:AS|lpm_add_sub:LPM_ADD_SUB_component
+ 26. Port Connectivity Checks: "proc:inst|dec3to8:decY"
+ 27. Port Connectivity Checks: "proc:inst|dec3to8:decX"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
 
 
 
@@ -60,15 +62,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 16 21:02:12 2022       ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 16 21:39:22 2022       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; Lab9_and_Lab10                              ;
 ; Top-level Entity Name              ; Lab9Part1                                   ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 234                                         ;
-;     Total combinational functions  ; 153                                         ;
-;     Dedicated logic registers      ; 101                                         ;
-; Total registers                    ; 101                                         ;
+; Total logic elements               ; 230                                         ;
+;     Total combinational functions  ; 149                                         ;
+;     Dedicated logic registers      ; 103                                         ;
+; Total registers                    ; 103                                         ;
 ; Total pins                         ; 22                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -194,7 +196,6 @@ https://fpgasoftware.intel.com/eula.
 ; Lab9Part1.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/Lab9Part1.bdf                     ;         ;
 ; regn.v                           ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/regn.v                            ;         ;
 ; dec3to8.v                        ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/dec3to8.v                         ;         ;
-; upcount.v                        ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/upcount.v                         ;         ;
 ; addsub.v                         ; yes             ; User Wizard-Generated File         ; C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/addsub.v                          ;         ;
 ; lpm_add_sub.tdf                  ; yes             ; Megafunction                       ; d:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
 ; addcore.inc                      ; yes             ; Megafunction                       ; d:/intelfpga_lite/21.1/quartus/libraries/megafunctions/addcore.inc             ;         ;
@@ -217,9 +218,9 @@ https://fpgasoftware.intel.com/eula.
 ; DSP block 9-bit elements ; 0                ;
 ;                          ;                  ;
 ; Maximum fan-out node     ; Clock~input      ;
-; Maximum fan-out          ; 101              ;
-; Total fan-out            ; 895              ;
-; Average fan-out          ; 3.00             ;
+; Maximum fan-out          ; 103              ;
+; Total fan-out            ; 870              ;
+; Average fan-out          ; 2.94             ;
 +--------------------------+------------------+
 
 
@@ -228,8 +229,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                         ; Entity Name ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------------------------+-------------+--------------+
-; |Lab9Part1                                   ; 153 (0)             ; 101 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 22   ; 0            ; |Lab9Part1                                                                                  ; Lab9Part1   ; work         ;
-;    |proc:inst|                               ; 153 (132)           ; 101 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab9Part1|proc:inst                                                                        ; proc        ; work         ;
+; |Lab9Part1                                   ; 149 (0)             ; 103 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 22   ; 0            ; |Lab9Part1                                                                                  ; Lab9Part1   ; work         ;
+;    |proc:inst|                               ; 149 (130)           ; 103 (4)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab9Part1|proc:inst                                                                        ; proc        ; work         ;
 ;       |addsub:AS|                            ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab9Part1|proc:inst|addsub:AS                                                              ; addsub      ; work         ;
 ;          |lpm_add_sub:LPM_ADD_SUB_component| ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab9Part1|proc:inst|addsub:AS|lpm_add_sub:LPM_ADD_SUB_component                            ; lpm_add_sub ; work         ;
 ;             |add_sub_oqg:auto_generated|     ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab9Part1|proc:inst|addsub:AS|lpm_add_sub:LPM_ADD_SUB_component|add_sub_oqg:auto_generated ; add_sub_oqg ; work         ;
@@ -244,7 +245,6 @@ https://fpgasoftware.intel.com/eula.
 ;       |regn:reg_A|                           ; 0 (0)               ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab9Part1|proc:inst|regn:reg_A                                                             ; regn        ; work         ;
 ;       |regn:reg_G|                           ; 10 (10)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab9Part1|proc:inst|regn:reg_G                                                             ; regn        ; work         ;
 ;       |regn:reg_IR|                          ; 0 (0)               ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab9Part1|proc:inst|regn:reg_IR                                                            ; regn        ; work         ;
-;       |upcount:Tstep|                        ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab9Part1|proc:inst|upcount:Tstep                                                          ; upcount     ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -258,23 +258,43 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+--------------------------------+-----------------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; proc:inst|BusWires[8]                              ; proc:inst|WideNor1  ; yes                    ;
-; proc:inst|BusWires[7]                              ; proc:inst|WideNor1  ; yes                    ;
-; proc:inst|BusWires[6]                              ; proc:inst|WideNor1  ; yes                    ;
-; proc:inst|BusWires[5]                              ; proc:inst|WideNor1  ; yes                    ;
-; proc:inst|BusWires[4]                              ; proc:inst|WideNor1  ; yes                    ;
-; proc:inst|BusWires[3]                              ; proc:inst|WideNor1  ; yes                    ;
-; proc:inst|BusWires[2]                              ; proc:inst|WideNor1  ; yes                    ;
-; proc:inst|BusWires[1]                              ; proc:inst|WideNor1  ; yes                    ;
-; proc:inst|BusWires[0]                              ; proc:inst|WideNor1  ; yes                    ;
-; Number of user-specified and inferred latches = 9  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
+Encoding Type:  One-Hot
++----------------------------------------------------------------+
+; State Machine - |Lab9Part1|proc:inst|Tstep_Q                   ;
++------------+------------+------------+------------+------------+
+; Name       ; Tstep_Q.T3 ; Tstep_Q.T2 ; Tstep_Q.T1 ; Tstep_Q.T0 ;
++------------+------------+------------+------------+------------+
+; Tstep_Q.T0 ; 0          ; 0          ; 0          ; 0          ;
+; Tstep_Q.T1 ; 0          ; 0          ; 1          ; 1          ;
+; Tstep_Q.T2 ; 0          ; 1          ; 0          ; 1          ;
+; Tstep_Q.T3 ; 1          ; 0          ; 0          ; 1          ;
++------------+------------+------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                      ;
++----------------------------------------------------+----------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal        ; Free of Timing Hazards ;
++----------------------------------------------------+----------------------------+------------------------+
+; proc:inst|Tstep_D.T1_272                           ; proc:inst|Selector0        ; yes                    ;
+; proc:inst|Tstep_D.T3_255                           ; proc:inst|Selector0        ; yes                    ;
+; proc:inst|Tstep_D.T2_262                           ; proc:inst|regn:reg_IR|Q[8] ; yes                    ;
+; proc:inst|Tstep_D.T0_283                           ; proc:inst|Selector0        ; yes                    ;
+; Number of user-specified and inferred latches = 4  ;                            ;                        ;
++----------------------------------------------------+----------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; proc:inst|Tstep_Q~2                   ; Lost fanout        ;
+; proc:inst|Tstep_Q~3                   ; Lost fanout        ;
+; proc:inst|Tstep_Q~4                   ; Lost fanout        ;
+; Total Number of Removed Registers = 3 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -282,7 +302,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 101   ;
+; Total registers                              ; 103   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -292,15 +312,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; No         ; |Lab9Part1|proc:inst|Mux15     ;
-; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; No         ; |Lab9Part1|proc:inst|Mux17     ;
-; 10:1               ; 9 bits    ; 54 LEs        ; 63 LEs               ; -9 LEs                 ; No         ; |Lab9Part1|proc:inst|Selector1 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; No         ; |Lab9Part1|proc:inst|Mux0       ;
+; 11:1               ; 9 bits    ; 63 LEs        ; 63 LEs               ; 0 LEs                  ; No         ; |Lab9Part1|proc:inst|Selector23 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
 
 
 +-------------------------------------------------------------------+
@@ -465,19 +484,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 22                          ;
-; cycloneiii_ff         ; 101                         ;
+; cycloneiii_ff         ; 103                         ;
 ;     ENA               ; 99                          ;
-;     plain             ; 2                           ;
-; cycloneiii_lcell_comb ; 153                         ;
+;     plain             ; 4                           ;
+; cycloneiii_lcell_comb ; 149                         ;
 ;     arith             ; 9                           ;
 ;         3 data inputs ; 9                           ;
-;     normal            ; 144                         ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 23                          ;
-;         4 data inputs ; 112                         ;
+;     normal            ; 140                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 27                          ;
+;         4 data inputs ; 100                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.00                       ;
-; Average LUT depth     ; 5.98                        ;
+; Max LUT depth         ; 9.80                        ;
+; Average LUT depth     ; 6.64                        ;
 +-----------------------+-----------------------------+
 
 
@@ -496,7 +516,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Fri Dec 16 21:02:06 2022
+    Info: Processing started: Fri Dec 16 21:39:17 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab9_and_Lab10 -c Lab9_and_Lab10
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -508,41 +528,33 @@ Info (12021): Found 1 design units, including 1 entities, in source file regn.v
     Info (12023): Found entity 1: regn File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/regn.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file dec3to8.v
     Info (12023): Found entity 1: dec3to8 File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/dec3to8.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file upcount.v
-    Info (12023): Found entity 1: upcount File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/upcount.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file addsub.v
     Info (12023): Found entity 1: addsub File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/addsub.v Line: 40
 Info (12127): Elaborating entity "Lab9Part1" for the top level hierarchy
 Info (12128): Elaborating entity "proc" for hierarchy "proc:inst"
-Warning (10270): Verilog HDL Case Statement warning at proc.v(48): incomplete case statement has no default case item File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 48
-Warning (10270): Verilog HDL Case Statement warning at proc.v(77): incomplete case statement has no default case item File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 77
-Warning (10270): Verilog HDL Case Statement warning at proc.v(93): incomplete case statement has no default case item File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 93
-Warning (10235): Verilog HDL Always Construct warning at proc.v(136): variable "DIN" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 136
-Warning (10235): Verilog HDL Always Construct warning at proc.v(137): variable "G" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 137
-Warning (10235): Verilog HDL Always Construct warning at proc.v(138): variable "R0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 138
-Warning (10235): Verilog HDL Always Construct warning at proc.v(139): variable "R1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 139
-Warning (10235): Verilog HDL Always Construct warning at proc.v(140): variable "R2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 140
-Warning (10235): Verilog HDL Always Construct warning at proc.v(141): variable "R3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 141
-Warning (10235): Verilog HDL Always Construct warning at proc.v(142): variable "R4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 142
-Warning (10235): Verilog HDL Always Construct warning at proc.v(143): variable "R5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 143
-Warning (10235): Verilog HDL Always Construct warning at proc.v(144): variable "R6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 144
-Warning (10235): Verilog HDL Always Construct warning at proc.v(145): variable "R7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 145
-Warning (10270): Verilog HDL Case Statement warning at proc.v(135): incomplete case statement has no default case item File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 135
-Info (10264): Verilog HDL Case Statement information at proc.v(135): all case item expressions in this case statement are onehot File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 135
-Warning (10240): Verilog HDL Always Construct warning at proc.v(129): inferring latch(es) for variable "BusWires", which holds its previous value in one or more paths through the always construct File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-Info (10041): Inferred latch for "BusWires[0]" at proc.v(129) File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-Info (10041): Inferred latch for "BusWires[1]" at proc.v(129) File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-Info (10041): Inferred latch for "BusWires[2]" at proc.v(129) File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-Info (10041): Inferred latch for "BusWires[3]" at proc.v(129) File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-Info (10041): Inferred latch for "BusWires[4]" at proc.v(129) File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-Info (10041): Inferred latch for "BusWires[5]" at proc.v(129) File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-Info (10041): Inferred latch for "BusWires[6]" at proc.v(129) File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-Info (10041): Inferred latch for "BusWires[7]" at proc.v(129) File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-Info (10041): Inferred latch for "BusWires[8]" at proc.v(129) File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-Info (12128): Elaborating entity "upcount" for hierarchy "proc:inst|upcount:Tstep" File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 21
-Info (12128): Elaborating entity "dec3to8" for hierarchy "proc:inst|dec3to8:decX" File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 24
-Info (12128): Elaborating entity "regn" for hierarchy "proc:inst|regn:reg_0" File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 112
-Info (12128): Elaborating entity "addsub" for hierarchy "proc:inst|addsub:AS" File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 126
+Warning (10270): Verilog HDL Case Statement warning at proc.v(34): incomplete case statement has no default case item File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 34
+Warning (10240): Verilog HDL Always Construct warning at proc.v(25): inferring latch(es) for variable "Tstep_D", which holds its previous value in one or more paths through the always construct File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 25
+Warning (10270): Verilog HDL Case Statement warning at proc.v(71): incomplete case statement has no default case item File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 71
+Warning (10270): Verilog HDL Case Statement warning at proc.v(100): incomplete case statement has no default case item File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 100
+Warning (10270): Verilog HDL Case Statement warning at proc.v(116): incomplete case statement has no default case item File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 116
+Warning (10235): Verilog HDL Always Construct warning at proc.v(163): variable "DIN" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 163
+Warning (10235): Verilog HDL Always Construct warning at proc.v(164): variable "G" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 164
+Warning (10235): Verilog HDL Always Construct warning at proc.v(165): variable "R0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 165
+Warning (10235): Verilog HDL Always Construct warning at proc.v(166): variable "R1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 166
+Warning (10235): Verilog HDL Always Construct warning at proc.v(167): variable "R2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 167
+Warning (10235): Verilog HDL Always Construct warning at proc.v(168): variable "R3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 168
+Warning (10235): Verilog HDL Always Construct warning at proc.v(169): variable "R4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 169
+Warning (10235): Verilog HDL Always Construct warning at proc.v(170): variable "R5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 170
+Warning (10235): Verilog HDL Always Construct warning at proc.v(171): variable "R6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 171
+Warning (10235): Verilog HDL Always Construct warning at proc.v(172): variable "R7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 172
+Info (10264): Verilog HDL Case Statement information at proc.v(162): all case item expressions in this case statement are onehot File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 162
+Info (10041): Inferred latch for "Tstep_D.T3" at proc.v(25) File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 25
+Info (10041): Inferred latch for "Tstep_D.T2" at proc.v(25) File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 25
+Info (10041): Inferred latch for "Tstep_D.T1" at proc.v(25) File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 25
+Info (10041): Inferred latch for "Tstep_D.T0" at proc.v(25) File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 25
+Info (12128): Elaborating entity "dec3to8" for hierarchy "proc:inst|dec3to8:decX" File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 22
+Info (12128): Elaborating entity "regn" for hierarchy "proc:inst|regn:reg_0" File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 139
+Info (12128): Elaborating entity "addsub" for hierarchy "proc:inst|addsub:AS" File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 153
 Info (12128): Elaborating entity "lpm_add_sub" for hierarchy "proc:inst|addsub:AS|lpm_add_sub:LPM_ADD_SUB_component" File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/addsub.v Line: 68
 Info (12130): Elaborated megafunction instantiation "proc:inst|addsub:AS|lpm_add_sub:LPM_ADD_SUB_component" File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/addsub.v Line: 68
 Info (12133): Instantiated megafunction "proc:inst|addsub:AS|lpm_add_sub:LPM_ADD_SUB_component" with the following parameter: File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/addsub.v Line: 68
@@ -554,37 +566,22 @@ Info (12133): Instantiated megafunction "proc:inst|addsub:AS|lpm_add_sub:LPM_ADD
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_oqg.tdf
     Info (12023): Found entity 1: add_sub_oqg File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/db/add_sub_oqg.tdf Line: 23
 Info (12128): Elaborating entity "add_sub_oqg" for hierarchy "proc:inst|addsub:AS|lpm_add_sub:LPM_ADD_SUB_component|add_sub_oqg:auto_generated" File: d:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 119
-Warning (13012): Latch proc:inst|BusWires[8] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal proc:inst|upcount:Tstep|Q[0] File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/upcount.v Line: 5
-Warning (13012): Latch proc:inst|BusWires[7] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal proc:inst|upcount:Tstep|Q[0] File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/upcount.v Line: 5
-Warning (13012): Latch proc:inst|BusWires[6] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal proc:inst|upcount:Tstep|Q[0] File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/upcount.v Line: 5
-Warning (13012): Latch proc:inst|BusWires[5] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal proc:inst|upcount:Tstep|Q[0] File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/upcount.v Line: 5
-Warning (13012): Latch proc:inst|BusWires[4] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal proc:inst|upcount:Tstep|Q[0] File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/upcount.v Line: 5
-Warning (13012): Latch proc:inst|BusWires[3] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal proc:inst|upcount:Tstep|Q[0] File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/upcount.v Line: 5
-Warning (13012): Latch proc:inst|BusWires[2] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal proc:inst|upcount:Tstep|Q[0] File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/upcount.v Line: 5
-Warning (13012): Latch proc:inst|BusWires[1] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal proc:inst|upcount:Tstep|Q[0] File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/upcount.v Line: 5
-Warning (13012): Latch proc:inst|BusWires[0] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 129
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal proc:inst|upcount:Tstep|Q[0] File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/upcount.v Line: 5
+Warning (13012): Latch proc:inst|Tstep_D.T0_283 has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 25
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal proc:inst|Tstep_Q.T1 File: C:/Users/ADMIN/Documents/FPGA/Lab9_and_Lab10/proc.v Line: 18
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "Run"
-Info (21057): Implemented 265 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "Resetn"
+Info (21057): Implemented 264 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 243 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
-    Info: Peak virtual memory: 4897 megabytes
-    Info: Processing ended: Fri Dec 16 21:02:12 2022
-    Info: Elapsed time: 00:00:06
+    Info (21061): Implemented 242 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 4901 megabytes
+    Info: Processing ended: Fri Dec 16 21:39:22 2022
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:06
 
 

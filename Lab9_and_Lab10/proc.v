@@ -15,16 +15,14 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
   reg [9:0] MUXsel;
   wire [8:0] R0, R1, R2, R3, R4, R5, R6, R7, result  /* synthesis_keep */;
   wire [8:0] A, G /* synthesis_keep */;
-  wire [2:0] Tstep_Q /* synthesis_keep */;
+  reg [2:0] Tstep_Q /* synthesis_keep */;
   reg [2:0] Tstep_D;
-
-  wire Clear = Done || ~Resetn;
   
   assign I = IR[1:3];
   dec3to8 decX (IR[4:6], 1'b1, Xreg);
   dec3to8 decY (IR[7:9], 1'b1, Yreg);
 
-  always @(TstepQ or Run or Done)
+  always @(Tstep_Q or Run or I)
   begin
     case(Tstep_Q)
         T0: begin
@@ -133,7 +131,7 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
     endcase
   end
 
-  always @(posedge clock) begin
+  always @(posedge Clock) begin
     Tstep_Q = Tstep_D;
   end
 
