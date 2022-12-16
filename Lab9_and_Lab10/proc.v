@@ -15,7 +15,7 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
   reg [9:0] MUXsel;
   wire [8:0] R0, R1, R2, R3, R4, R5, R6, R7, result  /* synthesis_keep */;
   wire [8:0] A, G /* synthesis_keep */;
-  wire [1:0] Tstep_Q;
+  wire [1:0] Tstep_Q /* synthesis_keep */;
 
   wire Clear = Done || ~Resetn;
   upcount Tstep (Clear, Clock, Tstep_Q);
@@ -143,6 +143,7 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
       10'b0010000000: BusWires = R5;
       10'b0100000000: BusWires = R6;
       10'b1000000000: BusWires = R7;
+		default: BusWires = 0;
     endcase
   end
 
