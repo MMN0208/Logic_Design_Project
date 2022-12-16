@@ -17,7 +17,7 @@ module high_bit_counter (clock, reset, s, din, result, done);
 		  high_bit = 0;
 		  done = 0;
         case (y_Q)
-            S1: begin      
+            S1: begin
                 if (s) Y_D = S2; // start the program
                 else Y_D = S1;
             end
