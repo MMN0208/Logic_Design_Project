@@ -1,0 +1,65 @@
+|Lab11Part1
+done <= high_bit_counter:inst.done
+clock => high_bit_counter:inst.clock
+reset => high_bit_counter:inst.reset
+s => high_bit_counter:inst.s
+din[0] => high_bit_counter:inst.din[0]
+din[1] => high_bit_counter:inst.din[1]
+din[2] => high_bit_counter:inst.din[2]
+din[3] => high_bit_counter:inst.din[3]
+din[4] => high_bit_counter:inst.din[4]
+din[5] => high_bit_counter:inst.din[5]
+din[6] => high_bit_counter:inst.din[6]
+din[7] => high_bit_counter:inst.din[7]
+result[0] <= high_bit_counter:inst.result[0]
+result[1] <= high_bit_counter:inst.result[1]
+result[2] <= high_bit_counter:inst.result[2]
+result[3] <= high_bit_counter:inst.result[3]
+
+
+|Lab11Part1|high_bit_counter:inst
+clock => A[0].CLK
+clock => A[1].CLK
+clock => A[2].CLK
+clock => A[3].CLK
+clock => A[4].CLK
+clock => A[5].CLK
+clock => A[6].CLK
+clock => A[7].CLK
+clock => result[0]~reg0.CLK
+clock => result[1]~reg0.CLK
+clock => result[2]~reg0.CLK
+clock => result[3]~reg0.CLK
+clock => y_Q~1.DATAIN
+reset => result[0]~reg0.ACLR
+reset => result[1]~reg0.ACLR
+reset => result[2]~reg0.ACLR
+reset => result[3]~reg0.ACLR
+reset => y_Q~3.DATAIN
+s => Selector1.IN2
+s => done.DATAB
+s => Selector2.IN2
+s => A.OUTPUTSELECT
+s => A.OUTPUTSELECT
+s => A.OUTPUTSELECT
+s => A.OUTPUTSELECT
+s => A.OUTPUTSELECT
+s => A.OUTPUTSELECT
+s => A.OUTPUTSELECT
+s => A.OUTPUTSELECT
+s => Selector0.IN1
+din[0] => A.DATAB
+din[1] => A.DATAB
+din[2] => A.DATAB
+din[3] => A.DATAB
+din[4] => A.DATAB
+din[5] => A.DATAB
+din[6] => A.DATAB
+din[7] => A.DATAB
+result[0] <= result[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+done <= done.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,6 @@
+
+State Machine - |Lab11Part1|high_bit_counter:inst|y_Q
+Name y_Q.S1 y_Q.S3 y_Q.S2 
+y_Q.S1 0 0 0 
+y_Q.S2 1 0 1 
+y_Q.S3 1 1 0 

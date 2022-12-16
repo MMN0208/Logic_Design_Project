@@ -4,16 +4,18 @@ module high_bit_counter (clock, reset, s, din, result, done);
     output reg [3:0] result;
     output reg done;
 
-    parameter S1 = 1'd0;
-    parameter S2 = 1'd1;
-    parameter S3 = 1'd2;
+    parameter S1 = 'd0;
+    parameter S2 = 'd1;
+    parameter S3 = 'd2;
 
     
-    reg y_Q, Y_D;
-	reg [7:0] A;
+    reg [1:0] y_Q, Y_D;
+	 reg [7:0] A;
     reg high_bit;
 
-    always @(y_Q, A[0], s) begin
+    always @(y_Q, A, s) begin
+		  high_bit = 0;
+		  done = 0;
         case (y_Q)
             S1: begin      
                 if (s) Y_D = S2; // start the program
@@ -29,7 +31,8 @@ module high_bit_counter (clock, reset, s, din, result, done);
             end
 
             S3: begin
-                done = 1;
+                if (s) done = 1;
+					 else done = 0;
 
                 if (!s) Y_D = S1;
                 else Y_D = S3;
@@ -45,7 +48,7 @@ module high_bit_counter (clock, reset, s, din, result, done);
         end else begin 
             y_Q <= Y_D;
             if (high_bit) begin
-                result <= result + 1;
+                result <= result + 1'b1;
             end else begin
                 result <= result;
             end
