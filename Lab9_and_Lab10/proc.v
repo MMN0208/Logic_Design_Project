@@ -15,14 +15,39 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
   reg [9:0] MUXsel;
   wire [8:0] R0, R1, R2, R3, R4, R5, R6, R7, result  /* synthesis_keep */;
   wire [8:0] A, G /* synthesis_keep */;
-  wire [1:0] Tstep_Q /* synthesis_keep */;
+  wire [2:0] Tstep_Q /* synthesis_keep */;
+  reg [2:0] Tstep_D;
 
   wire Clear = Done || ~Resetn;
-  upcount Tstep (Clear, Clock, Tstep_Q);
   
   assign I = IR[1:3];
   dec3to8 decX (IR[4:6], 1'b1, Xreg);
   dec3to8 decY (IR[7:9], 1'b1, Yreg);
+
+  always @(TstepQ or Run or Done)
+  begin
+    case(Tstep_Q)
+        T0: begin
+            if(!Run) Tstep_D = T0;
+            else Tstep_D = T1;
+        end
+
+        T1: begin
+            case(I)
+                0: Tstep_D = T0;
+                1: Tstep_D = T0;
+                2: Tstep_D = T2;
+                3: Tstep_D = T2;
+            endcase
+        end
+
+        T2: Tstep_D = T3;
+
+        T3: Tstep_D = T0;
+
+        default: Tstep_D = 3'bxxx;
+    endcase
+  end
 
   always @(Tstep_Q or I or Xreg or Yreg)
   begin
@@ -106,6 +131,10 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
             end
         endcase
     endcase
+  end
+
+  always @(posedge clock) begin
+    Tstep_Q = Tstep_D;
   end
 
   //instantiate registers and the adder/subtracter unit
