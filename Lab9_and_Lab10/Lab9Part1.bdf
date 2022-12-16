@@ -22,23 +22,7 @@ https://fpgasoftware.intel.com/eula.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 280 216 448 232)
-	(text "INPUT" (rect 125 0 161 13)(font "Arial" (font_size 6)))
-	(text "Resetn" (rect 5 0 47 19)(font "Intel Clear" ))
-	(pt 168 8)
-	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
-	)
-	(text "VCC" (rect 128 7 152 20)(font "Arial" (font_size 6)))
-)
-(pin
-	(input)
-	(rect 280 232 448 248)
+	(rect 288 200 456 216)
 	(text "INPUT" (rect 125 0 161 13)(font "Arial" (font_size 6)))
 	(text "Clock" (rect 5 0 40 19)(font "Intel Clear" ))
 	(pt 168 8)
@@ -54,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(input)
-	(rect 280 248 448 264)
+	(rect 288 216 456 232)
 	(text "INPUT" (rect 125 0 161 13)(font "Arial" (font_size 6)))
 	(text "Run" (rect 5 0 29 19)(font "Intel Clear" ))
 	(pt 168 8)
@@ -70,9 +54,9 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(input)
-	(rect 280 200 448 216)
+	(rect 288 232 456 248)
 	(text "INPUT" (rect 125 0 161 13)(font "Arial" (font_size 6)))
-	(text "DIN[8..0]" (rect 5 0 61 15)(font "Arial" ))
+	(text "DIN[8..0]" (rect 5 0 60 15)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -117,52 +101,66 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 448 176 648 288)
+	(rect 456 176 648 288)
 	(text "proc" (rect 5 0 33 15)(font "Arial" ))
 	(text "inst" (rect 8 96 31 111)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "DIN[8..0]" (rect 0 0 55 15)(font "Arial" ))
-		(text "DIN[8..0]" (rect 21 27 76 42)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
+		(text "clock" (rect 0 0 33 15)(font "Arial" ))
+		(text "clock" (rect 21 27 54 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "Resetn" (rect 0 0 47 15)(font "Arial" ))
-		(text "Resetn" (rect 21 43 68 58)(font "Arial" ))
+		(text "run" (rect 0 0 21 15)(font "Arial" ))
+		(text "run" (rect 21 43 42 58)(font "Arial" ))
 		(line (pt 0 48)(pt 16 48))
 	)
 	(port
 		(pt 0 64)
 		(input)
-		(text "Clock" (rect 0 0 36 15)(font "Arial" ))
-		(text "Clock" (rect 21 59 57 74)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
+		(text "DIN[8..0]" (rect 0 0 55 15)(font "Arial" ))
+		(text "DIN[8..0]" (rect 21 59 76 74)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
 	)
 	(port
-		(pt 0 80)
-		(input)
-		(text "Run" (rect 0 0 27 15)(font "Arial" ))
-		(text "Run" (rect 21 75 48 90)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 200 32)
+		(pt 192 32)
 		(output)
-		(text "Done" (rect 0 0 35 15)(font "Arial" ))
-		(text "Done" (rect 150 27 179 42)(font "Arial" ))
-		(line (pt 200 32)(pt 184 32))
+		(text "done" (rect 0 0 33 15)(font "Arial" ))
+		(text "done" (rect 144 27 177 42)(font "Arial" ))
+		(line (pt 192 32)(pt 176 32))
 	)
 	(port
-		(pt 200 48)
+		(pt 192 48)
 		(output)
-		(text "BusWires[8..0]" (rect 0 0 94 15)(font "Arial" ))
-		(text "BusWires[8..0]" (rect 100 43 179 58)(font "Arial" ))
-		(line (pt 200 48)(pt 184 48)(line_width 3))
+		(text "BusWire[8..0]" (rect 0 0 86 15)(font "Arial" ))
+		(text "BusWire[8..0]" (rect 99 43 185 58)(font "Arial" ))
+		(line (pt 192 48)(pt 176 48)(line_width 3))
 	)
+	(parameter
+		"T0"
+		"000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"T1"
+		"001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"T2"
+		"010"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"T3"
+		"011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing
-		(rectangle (rect 16 16 184 96))
+		(rectangle (rect 16 16 176 96))
 	)
+	(annotation_block (parameter)(rect 648 72 864 176))
 )

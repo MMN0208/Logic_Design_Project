@@ -1,4 +1,4 @@
-module a_simple_processor (clock, run, DIN, done, BusWire);
+module proc (clock, run, DIN, done, BusWire);
     input clock, run;
     input [8:0] DIN;
     output reg done;
@@ -13,7 +13,7 @@ module a_simple_processor (clock, run, DIN, done, BusWire);
     reg RAin;
     reg RGin;
 
-    reg [8:0] R0, R1, RA, RG;
+    wire [8:0] R0, R1, RA, RG /* synthesis_keep */;
     reg [8:0] Rx;
     reg [8:0] Ry;
     wire [8:0] R2;
