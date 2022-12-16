@@ -1,15 +1,15 @@
-Analysis & Synthesis Status : Successful - Fri Dec 16 18:40:28 2022
+Analysis & Synthesis Status : Successful - Fri Dec 16 20:06:19 2022
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : Lab11
-Top-level Entity Name : Lab11Part1
+Top-level Entity Name : Lab11Part2
 Family : Cyclone IV GX
-Total logic elements : 20
-    Total combinational functions : 20
-    Dedicated logic registers : 15
-Total registers : 15
-Total pins : 16
+Total logic elements : 109
+    Total combinational functions : 108
+    Dedicated logic registers : 5
+Total registers : 5
+Total pins : 27
 Total virtual pins : 0
-Total memory bits : 0
+Total memory bits : 256
 Embedded Multiplier 9-bit elements : 0
 Total GXB Receiver Channel PCS : 0
 Total GXB Receiver Channel PMA : 0

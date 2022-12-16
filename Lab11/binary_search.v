@@ -1,4 +1,4 @@
-module binary_counter_module (clock, reset, s, din, Tin, found, done, addo, addf);
+module binary_search (clock, reset, s, din, Tin, found, done, addo, addf);
     input clock, reset, s;
     input [7:0] din, Tin; // din is 8-bit word from memory, Tin is target input
     output reg found, done;
@@ -8,6 +8,7 @@ module binary_counter_module (clock, reset, s, din, Tin, found, done, addo, addf
     localparam S2 = 3'd1;
     localparam S3 = 3'd2;
     localparam S4 = 3'd3;
+	 localparam S5 = 3'd4;
 
     reg [2:0] y_Q, Y_D; // current state and next state
     reg [7:0] T; // Target reg
@@ -24,16 +25,20 @@ module binary_counter_module (clock, reset, s, din, Tin, found, done, addo, addf
 
             S2: begin
                 if (L <= R) Y_D = S3;
-                else Y_D = S4; // end program when L > R
+                else Y_D = S5; // end program when L > R
             end
+				
+				S3: begin
+					Y_D = S4;
+				end
 
-            S3: begin
-                if (din == T) Y_D = S4;
+            S4: begin
+                if (din == T) Y_D = S5;
                 else Y_D = S2;
             end
 
-            S4: begin
-                if (s) Y_D = S4;
+            S5: begin
+                if (s) Y_D = S5;
                 else Y_D = S1;
             end
             default: Y_D = S1;
@@ -59,8 +64,12 @@ module binary_counter_module (clock, reset, s, din, Tin, found, done, addo, addf
                     addo = m[4:0]; // middle address
                 end
             end
+				
+				S3: begin
+				
+				end
 
-            S3: begin
+            S4: begin
                 if (din < T) L = m + 1; // if current value at index m in memory is less than Target
                 else if (din > T) R = m - 1; // if current value at index m in memory is greater than Target
                 else if (din == T) begin
@@ -69,7 +78,7 @@ module binary_counter_module (clock, reset, s, din, Tin, found, done, addo, addf
                 end
             end
 
-            S4: begin
+            S5: begin
                 done = 1;
                 if (found) begin
                     found = 1;

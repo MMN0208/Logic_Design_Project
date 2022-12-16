@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab11
-Fri Dec 16 18:40:28 2022
+Fri Dec 16 20:06:19 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -13,12 +13,19 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |Lab11Part1|high_bit_counter:inst|y_Q
-  9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: high_bit_counter:inst
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |Lab11Part2|binary_search:inst|y_Q
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for my_array:inst1|altsyncram:altsyncram_component|altsyncram_8gi1:auto_generated
+ 16. Parameter Settings for User Entity Instance: my_array:inst1|altsyncram:altsyncram_component
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -45,18 +52,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 16 18:40:28 2022       ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 16 20:06:19 2022       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; Lab11                                       ;
-; Top-level Entity Name              ; Lab11Part1                                  ;
+; Top-level Entity Name              ; Lab11Part2                                  ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 20                                          ;
-;     Total combinational functions  ; 20                                          ;
-;     Dedicated logic registers      ; 15                                          ;
-; Total registers                    ; 15                                          ;
-; Total pins                         ; 16                                          ;
+; Total logic elements               ; 109                                         ;
+;     Total combinational functions  ; 108                                         ;
+;     Dedicated logic registers      ; 5                                           ;
+; Total registers                    ; 5                                           ;
+; Total pins                         ; 27                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
+; Total memory bits                  ; 256                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total GXB Receiver Channel PCS     ; 0                                           ;
 ; Total GXB Receiver Channel PMA     ; 0                                           ;
@@ -72,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CGX150DF31C7    ;                    ;
-; Top-level entity name                                            ; Lab11Part1         ; Lab11              ;
+; Top-level entity name                                            ; Lab11Part2         ; Lab11              ;
 ; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -169,53 +176,144 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                           ; Library ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------+---------+
-; high_bit_counter.v               ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab11/high_bit_counter.v ;         ;
-; Lab11Part1.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/ADMIN/Documents/FPGA/Lab11/Lab11Part1.bdf     ;         ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
+; my_array.mif                     ; yes             ; User Memory Initialization File    ; C:/Users/ADMIN/Documents/FPGA/Lab11/my_array.mif                             ;         ;
+; binary_search.v                  ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v                          ;         ;
+; my_array.v                       ; yes             ; User Wizard-Generated File         ; C:/Users/ADMIN/Documents/FPGA/Lab11/my_array.v                               ;         ;
+; Lab11Part2.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/ADMIN/Documents/FPGA/Lab11/Lab11Part2.bdf                           ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; d:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; d:/intelfpga_lite/21.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; d:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; d:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal211.inc                   ; yes             ; Megafunction                       ; d:/intelfpga_lite/21.1/quartus/libraries/megafunctions/aglobal211.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; d:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; d:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; d:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; d:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_8gi1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/ADMIN/Documents/FPGA/Lab11/db/altsyncram_8gi1.tdf                   ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary ;
-+--------------------------+------------------+
-; Resource                 ; Usage            ;
-+--------------------------+------------------+
-; I/O pins                 ; 16               ;
-;                          ;                  ;
-; DSP block 9-bit elements ; 0                ;
-;                          ;                  ;
-; Maximum fan-out node     ; clock~input      ;
-; Maximum fan-out          ; 15               ;
-; Total fan-out            ; 119              ;
-; Average fan-out          ; 1.78             ;
-+--------------------------+------------------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++--------------------------+---------------------------+
+; Resource                 ; Usage                     ;
++--------------------------+---------------------------+
+; I/O pins                 ; 27                        ;
+; Total memory bits        ; 256                       ;
+;                          ;                           ;
+; DSP block 9-bit elements ; 0                         ;
+;                          ;                           ;
+; Maximum fan-out node     ; binary_search:inst|y_Q.S4 ;
+; Maximum fan-out          ; 16                        ;
+; Total fan-out            ; 422                       ;
+; Average fan-out          ; 2.41                      ;
++--------------------------+---------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                     ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------+------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Entity Name      ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------+------------------+--------------+
-; |Lab11Part1                ; 20 (0)              ; 15 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 16   ; 0            ; |Lab11Part1                       ; Lab11Part1       ; work         ;
-;    |high_bit_counter:inst| ; 20 (20)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab11Part1|high_bit_counter:inst ; high_bit_counter ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------+------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                           ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                       ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------+-----------------+--------------+
+; |Lab11Part2                               ; 108 (0)             ; 5 (0)                     ; 256         ; 0            ; 0       ; 0         ; 0         ; 27   ; 0            ; |Lab11Part2                                                                               ; Lab11Part2      ; work         ;
+;    |binary_search:inst|                   ; 108 (108)           ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab11Part2|binary_search:inst                                                            ; binary_search   ; work         ;
+;    |my_array:inst1|                       ; 0 (0)               ; 0 (0)                     ; 256         ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab11Part2|my_array:inst1                                                                ; my_array        ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 256         ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab11Part2|my_array:inst1|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
+;          |altsyncram_8gi1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 256         ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab11Part2|my_array:inst1|altsyncram:altsyncram_component|altsyncram_8gi1:auto_generated ; altsyncram_8gi1 ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                ;
++------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+--------------+
+; Name                                                                                     ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF          ;
++------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+--------------+
+; my_array:inst1|altsyncram:altsyncram_component|altsyncram_8gi1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 32           ; 8            ; --           ; --           ; 256  ; my_array.mif ;
++------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                        ;
++--------+--------------+---------+--------------+--------------+----------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File ;
++--------+--------------+---------+--------------+--------------+----------------------------+-----------------+
+; Altera ; RAM: 1-PORT  ; 21.1    ; N/A          ; N/A          ; |Lab11Part2|my_array:inst1 ; my_array.v      ;
++--------+--------------+---------+--------------+--------------+----------------------------+-----------------+
+
+
 Encoding Type:  One-Hot
-+-------------------------------------------------------+
-; State Machine - |Lab11Part1|high_bit_counter:inst|y_Q ;
-+--------+--------+--------+----------------------------+
-; Name   ; y_Q.S1 ; y_Q.S3 ; y_Q.S2                     ;
-+--------+--------+--------+----------------------------+
-; y_Q.S1 ; 0      ; 0      ; 0                          ;
-; y_Q.S2 ; 1      ; 0      ; 1                          ;
-; y_Q.S3 ; 1      ; 1      ; 0                          ;
-+--------+--------+--------+----------------------------+
++-----------------------------------------------------+
+; State Machine - |Lab11Part2|binary_search:inst|y_Q  ;
++--------+--------+--------+--------+--------+--------+
+; Name   ; y_Q.S4 ; y_Q.S3 ; y_Q.S2 ; y_Q.S1 ; y_Q.S5 ;
++--------+--------+--------+--------+--------+--------+
+; y_Q.S1 ; 0      ; 0      ; 0      ; 0      ; 0      ;
+; y_Q.S2 ; 0      ; 0      ; 1      ; 1      ; 0      ;
+; y_Q.S3 ; 0      ; 1      ; 0      ; 1      ; 0      ;
+; y_Q.S4 ; 1      ; 0      ; 0      ; 1      ; 0      ;
+; y_Q.S5 ; 0      ; 0      ; 0      ; 1      ; 1      ;
++--------+--------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                          ;
++-----------------------------------------------------+-------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal           ; Free of Timing Hazards ;
++-----------------------------------------------------+-------------------------------+------------------------+
+; binary_search:inst|found                            ; binary_search:inst|Selector15 ; yes                    ;
+; binary_search:inst|addf[4]                          ; binary_search:inst|Selector15 ; yes                    ;
+; binary_search:inst|addf[3]                          ; binary_search:inst|Selector15 ; yes                    ;
+; binary_search:inst|addf[2]                          ; binary_search:inst|Selector15 ; yes                    ;
+; binary_search:inst|addf[1]                          ; binary_search:inst|Selector15 ; yes                    ;
+; binary_search:inst|addf[0]                          ; binary_search:inst|Selector15 ; yes                    ;
+; binary_search:inst|T[0]                             ; binary_search:inst|T[7]       ; yes                    ;
+; binary_search:inst|T[1]                             ; binary_search:inst|T[7]       ; yes                    ;
+; binary_search:inst|T[2]                             ; binary_search:inst|T[7]       ; yes                    ;
+; binary_search:inst|T[3]                             ; binary_search:inst|T[7]       ; yes                    ;
+; binary_search:inst|T[4]                             ; binary_search:inst|T[7]       ; yes                    ;
+; binary_search:inst|T[5]                             ; binary_search:inst|T[7]       ; yes                    ;
+; binary_search:inst|T[6]                             ; binary_search:inst|T[7]       ; yes                    ;
+; binary_search:inst|T[7]                             ; binary_search:inst|T[7]       ; yes                    ;
+; binary_search:inst|R[4]                             ; binary_search:inst|Selector16 ; yes                    ;
+; binary_search:inst|L[4]                             ; binary_search:inst|Selector17 ; yes                    ;
+; binary_search:inst|R[3]                             ; binary_search:inst|Selector16 ; yes                    ;
+; binary_search:inst|L[3]                             ; binary_search:inst|Selector17 ; yes                    ;
+; binary_search:inst|R[2]                             ; binary_search:inst|Selector16 ; yes                    ;
+; binary_search:inst|L[2]                             ; binary_search:inst|Selector17 ; yes                    ;
+; binary_search:inst|R[1]                             ; binary_search:inst|Selector16 ; yes                    ;
+; binary_search:inst|L[1]                             ; binary_search:inst|Selector17 ; yes                    ;
+; binary_search:inst|R[0]                             ; binary_search:inst|Selector16 ; yes                    ;
+; binary_search:inst|L[0]                             ; binary_search:inst|Selector17 ; yes                    ;
+; binary_search:inst|m[4]                             ; binary_search:inst|Selector23 ; yes                    ;
+; binary_search:inst|m[3]                             ; binary_search:inst|Selector23 ; yes                    ;
+; binary_search:inst|m[2]                             ; binary_search:inst|Selector23 ; yes                    ;
+; binary_search:inst|m[1]                             ; binary_search:inst|Selector23 ; yes                    ;
+; binary_search:inst|m[0]                             ; binary_search:inst|Selector23 ; yes                    ;
+; binary_search:inst|addo[0]                          ; binary_search:inst|Selector23 ; yes                    ;
+; binary_search:inst|addo[1]                          ; binary_search:inst|Selector23 ; yes                    ;
+; binary_search:inst|addo[2]                          ; binary_search:inst|Selector23 ; yes                    ;
+; binary_search:inst|addo[3]                          ; binary_search:inst|Selector23 ; yes                    ;
+; binary_search:inst|addo[4]                          ; binary_search:inst|Selector23 ; yes                    ;
+; Number of user-specified and inferred latches = 34  ;                               ;                        ;
++-----------------------------------------------------+-------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; binary_search:inst|y_Q~4              ; Lost fanout        ;
+; binary_search:inst|y_Q~5              ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -223,26 +321,113 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 15    ;
+; Total registers                              ; 5     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 7     ;
+; Number of registers using Asynchronous Clear ; 5     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: high_bit_counter:inst  ;
-+----------------+----------------------------------+-----------------+
-; Parameter Name ; Value                            ; Type            ;
-+----------------+----------------------------------+-----------------+
-; S1             ; 00000000000000000000000000000000 ; Unsigned Binary ;
-; S2             ; 00000000000000000000000000000001 ; Unsigned Binary ;
-; S3             ; 00000000000000000000000000000010 ; Unsigned Binary ;
-+----------------+----------------------------------+-----------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |Lab11Part2|binary_search:inst|Selector6 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Source assignments for my_array:inst1|altsyncram:altsyncram_component|altsyncram_8gi1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------+
+; Assignment                      ; Value              ; From ; To                                     ;
++---------------------------------+--------------------+------+----------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                      ;
++---------------------------------+--------------------+------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: my_array:inst1|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------+
+; Parameter Name                     ; Value                ; Type                            ;
++------------------------------------+----------------------+---------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                         ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                  ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                         ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                         ;
+; WIDTH_A                            ; 8                    ; Signed Integer                  ;
+; WIDTHAD_A                          ; 5                    ; Signed Integer                  ;
+; NUMWORDS_A                         ; 32                   ; Signed Integer                  ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                         ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                         ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                         ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                         ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                         ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                         ;
+; WIDTH_B                            ; 1                    ; Untyped                         ;
+; WIDTHAD_B                          ; 1                    ; Untyped                         ;
+; NUMWORDS_B                         ; 1                    ; Untyped                         ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                         ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                         ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                         ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                         ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                         ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                         ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                         ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                         ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                         ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                         ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                         ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                         ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                  ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                         ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                         ;
+; BYTE_SIZE                          ; 8                    ; Untyped                         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                         ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
+; INIT_FILE                          ; my_array.mif         ; Untyped                         ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                         ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                         ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                         ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                         ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                         ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                         ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                         ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                         ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                         ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                         ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                         ;
+; DEVICE_FAMILY                      ; Cyclone IV GX        ; Untyped                         ;
+; CBXI_PARAMETER                     ; altsyncram_8gi1      ; Untyped                         ;
++------------------------------------+----------------------+---------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                           ;
++-------------------------------------------+------------------------------------------------+
+; Name                                      ; Value                                          ;
++-------------------------------------------+------------------------------------------------+
+; Number of entity instances                ; 1                                              ;
+; Entity Instance                           ; my_array:inst1|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                    ;
+;     -- WIDTH_A                            ; 8                                              ;
+;     -- NUMWORDS_A                         ; 32                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                   ;
+;     -- WIDTH_B                            ; 1                                              ;
+;     -- NUMWORDS_B                         ; 1                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                      ;
++-------------------------------------------+------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -250,18 +435,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 16                          ;
-; cycloneiii_ff         ; 15                          ;
-;     CLR               ; 7                           ;
-;     plain             ; 8                           ;
-; cycloneiii_lcell_comb ; 20                          ;
-;     normal            ; 20                          ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 6                           ;
+; boundary_port         ; 27                          ;
+; cycloneiii_ff         ; 5                           ;
+;     CLR               ; 5                           ;
+; cycloneiii_lcell_comb ; 108                         ;
+;     arith             ; 27                          ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 19                          ;
+;     normal            ; 81                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 39                          ;
+;         4 data inputs ; 20                          ;
+; cycloneiii_ram_block  ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.46                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.18                        ;
 +-----------------------+-----------------------------+
 
 
@@ -280,26 +470,140 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Fri Dec 16 18:40:22 2022
+    Info: Processing started: Fri Dec 16 20:06:13 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab11 -c Lab11
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file binary_search.v
+    Info (12023): Found entity 1: binary_search File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file high_bit_counter.v
     Info (12023): Found entity 1: high_bit_counter File: C:/Users/ADMIN/Documents/FPGA/Lab11/high_bit_counter.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file lab11part1.bdf
     Info (12023): Found entity 1: Lab11Part1
-Info (12127): Elaborating entity "Lab11Part1" for the top level hierarchy
-Info (12128): Elaborating entity "high_bit_counter" for hierarchy "high_bit_counter:inst"
+Info (12021): Found 1 design units, including 1 entities, in source file part1.v
+    Info (12023): Found entity 1: part1 File: C:/Users/ADMIN/Documents/FPGA/Lab11/Part1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file my_array.v
+    Info (12023): Found entity 1: my_array File: C:/Users/ADMIN/Documents/FPGA/Lab11/my_array.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file lab11part2.bdf
+    Info (12023): Found entity 1: Lab11Part2
+Info (12127): Elaborating entity "Lab11Part2" for the top level hierarchy
+Info (12128): Elaborating entity "binary_search" for hierarchy "binary_search:inst"
+Warning (10235): Verilog HDL Always Construct warning at binary_search.v(57): variable "Tin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 57
+Warning (10230): Verilog HDL assignment warning at binary_search.v(63): truncated value with size 32 to match size of target (8) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 63
+Warning (10230): Verilog HDL assignment warning at binary_search.v(73): truncated value with size 32 to match size of target (5) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 73
+Warning (10230): Verilog HDL assignment warning at binary_search.v(74): truncated value with size 32 to match size of target (5) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 74
+Warning (10230): Verilog HDL assignment warning at binary_search.v(77): truncated value with size 8 to match size of target (5) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 77
+Warning (10230): Verilog HDL assignment warning at binary_search.v(85): truncated value with size 8 to match size of target (5) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 85
+Warning (10240): Verilog HDL Always Construct warning at binary_search.v(48): inferring latch(es) for variable "m", which holds its previous value in one or more paths through the always construct File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Warning (10240): Verilog HDL Always Construct warning at binary_search.v(48): inferring latch(es) for variable "L", which holds its previous value in one or more paths through the always construct File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Warning (10240): Verilog HDL Always Construct warning at binary_search.v(48): inferring latch(es) for variable "R", which holds its previous value in one or more paths through the always construct File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Warning (10240): Verilog HDL Always Construct warning at binary_search.v(48): inferring latch(es) for variable "found", which holds its previous value in one or more paths through the always construct File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Warning (10240): Verilog HDL Always Construct warning at binary_search.v(48): inferring latch(es) for variable "addf", which holds its previous value in one or more paths through the always construct File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Warning (10240): Verilog HDL Always Construct warning at binary_search.v(48): inferring latch(es) for variable "T", which holds its previous value in one or more paths through the always construct File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Warning (10240): Verilog HDL Always Construct warning at binary_search.v(48): inferring latch(es) for variable "addo", which holds its previous value in one or more paths through the always construct File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "addo[0]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "addo[1]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "addo[2]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "addo[3]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "addo[4]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "T[0]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "T[1]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "T[2]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "T[3]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "T[4]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "T[5]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "T[6]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "T[7]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "addf[0]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "addf[1]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "addf[2]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "addf[3]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "addf[4]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "found" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "R[0]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "R[1]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "R[2]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "R[3]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "R[4]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "L[0]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "L[1]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "L[2]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "L[3]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "L[4]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "m[0]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "m[1]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "m[2]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "m[3]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "m[4]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "m[5]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "m[6]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (10041): Inferred latch for "m[7]" at binary_search.v(48) File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+Info (12128): Elaborating entity "my_array" for hierarchy "my_array:inst1"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "my_array:inst1|altsyncram:altsyncram_component" File: C:/Users/ADMIN/Documents/FPGA/Lab11/my_array.v Line: 86
+Info (12130): Elaborated megafunction instantiation "my_array:inst1|altsyncram:altsyncram_component" File: C:/Users/ADMIN/Documents/FPGA/Lab11/my_array.v Line: 86
+Info (12133): Instantiated megafunction "my_array:inst1|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/ADMIN/Documents/FPGA/Lab11/my_array.v Line: 86
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "my_array.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV GX"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "32"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "5"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_8gi1.tdf
+    Info (12023): Found entity 1: altsyncram_8gi1 File: C:/Users/ADMIN/Documents/FPGA/Lab11/db/altsyncram_8gi1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_8gi1" for hierarchy "my_array:inst1|altsyncram:altsyncram_component|altsyncram_8gi1:auto_generated" File: d:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (13012): Latch binary_search:inst|found has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S4 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
+Warning (13012): Latch binary_search:inst|R[4] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S4 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
+Warning (13012): Latch binary_search:inst|L[4] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S4 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
+Warning (13012): Latch binary_search:inst|R[3] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S4 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
+Warning (13012): Latch binary_search:inst|L[3] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S4 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
+Warning (13012): Latch binary_search:inst|R[2] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S4 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
+Warning (13012): Latch binary_search:inst|L[2] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S4 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
+Warning (13012): Latch binary_search:inst|R[1] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S4 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
+Warning (13012): Latch binary_search:inst|L[1] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S4 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
+Warning (13012): Latch binary_search:inst|R[0] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S4 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
+Warning (13012): Latch binary_search:inst|L[0] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S4 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
+Warning (13012): Latch binary_search:inst|m[4] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S2 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
+Warning (13012): Latch binary_search:inst|m[3] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S2 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
+Warning (13012): Latch binary_search:inst|m[2] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S2 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
+Warning (13012): Latch binary_search:inst|m[1] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S2 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
+Warning (13012): Latch binary_search:inst|m[0] has unsafe behavior File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_search:inst|y_Q.S2 File: C:/Users/ADMIN/Documents/FPGA/Lab11/binary_search.v Line: 13
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 36 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 20 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4875 megabytes
-    Info: Processing ended: Fri Dec 16 18:40:28 2022
+Info (21057): Implemented 144 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 20 input pins
+    Info (21059): Implemented 7 output pins
+    Info (21061): Implemented 109 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
+    Info: Peak virtual memory: 4868 megabytes
+    Info: Processing ended: Fri Dec 16 20:06:19 2022
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:06
 
