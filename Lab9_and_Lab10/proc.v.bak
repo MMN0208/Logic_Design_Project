@@ -1,10 +1,8 @@
 module proc (DIN, Resetn, Clock, Run, Done, BusWires);
-  input [8:0] DIN;
+  input [15:0] DIN;
   input Resetn, Clock, Run;
   output reg Done;
-  output reg [8:0] BusWires;
-  
-  localparam T0 = 2'b00, T1 = 2'b01, T2 = 2'b10, T3 = 2'b11;
+  output reg [15:0] BusWires;
 
   //declare variables
   reg IRin, DINout, Ain, Gout, Gin, AddSub;
@@ -37,12 +35,11 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
     Done = 1'b0;
 
     case (Tstep_Q)
-      T0: // store DIN in IR in time step 0
+      2'b00: // store DIN in IR in time step 0
         begin
           IRin = 1'b1; // should this be ANDed with Run?
         end
-		  
-      T1: //define signals in time step 1
+      2'b01: //define signals in time step 1
         case (I)
           3'b000:
             begin
@@ -70,7 +67,7 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
               Ain = 1'b1;
             end
         endcase
-      T2: //define signals in time step 2
+      2'b10: //define signals in time step 2
         case (I)
           3'b010:
           begin
@@ -84,7 +81,7 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
             AddSub = 1'b1;
           end
         endcase
-      T3: //define signals in time step 3
+      2'b11: //define signals in time step 3
         case (I)
           3'b010:
           begin
@@ -143,5 +140,49 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
 endmodule
 
 
+module upcount(Clear, Clock, Q);
+  input Clear, Clock;
+  output reg [1:0] Q;
+
+  always @(posedge Clock)
+    if (Clear)
+      Q <= 2'b0;
+    else
+      Q <= Q + 1'b1;
+endmodule
 
 
+module dec3to8(W, En, Y);
+  input [2:0] W;
+  input En;
+  output reg [0:7] Y;
+
+  always @(W or En)
+  begin
+    if (En == 1)
+      case (W)
+        3'b000: Y = 8'b10000000;
+        3'b001: Y = 8'b01000000;
+        3'b010: Y = 8'b00100000;
+        3'b011: Y = 8'b00010000;
+        3'b100: Y = 8'b00001000;
+        3'b101: Y = 8'b00000100;
+        3'b110: Y = 8'b00000010;
+        3'b111: Y = 8'b00000001;
+      endcase
+    else
+      Y = 8'b00000000;
+  end
+endmodule
+
+
+module regn(R, Rin, Clock, Q);
+  parameter n = 16;
+  input [n-1:0] R;
+  input Rin, Clock;
+  output reg [n-1:0] Q;
+
+  always @(posedge Clock)
+    if (Rin)
+      Q <= R;
+endmodule
