@@ -1,5 +1,5 @@
 
-State Machine - |Lab11Part2|binary_search:inst|y_Q
+State Machine - |Lab11Part2_Tested|binary_search:inst|y_Q
 Name y_Q.S4 y_Q.S3 y_Q.S2 y_Q.S1 y_Q.S5 
 y_Q.S1 0 0 0 0 0 
 y_Q.S2 0 0 1 1 0 

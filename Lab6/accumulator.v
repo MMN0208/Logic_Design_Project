@@ -3,6 +3,12 @@ module accumulator (rst, clk, A, carry, overflow, sum);
     input [7:0] A;
     output reg carry, overflow;
     output reg [7:0] sum;
+	 
+	 reg [7:0] temp;
+	 
+	 always @(*) begin
+		temp = sum;
+	 end
 
     always @(posedge clk, negedge rst) begin
         if (~rst) begin
@@ -11,10 +17,12 @@ module accumulator (rst, clk, A, carry, overflow, sum);
             overflow <= 0;
         end
         else begin
-            {carry, sum} <= sum + A;
-            if (sum > 8'b11111111) begin
-                overflow <= 1;
-            end
+            {carry, sum} <= temp + A;
+            if (sum < temp || sum < A) begin
+                overflow <= 1'b1;
+            end else begin
+					 overflow <= 0;
+				end
         end
     end
 endmodule

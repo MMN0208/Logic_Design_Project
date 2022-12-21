@@ -4,111 +4,103 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "found",
+					"name" : "HEX0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "done",
+					"name" : "HEX0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "addf[4]",
+					"name" : "HEX0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "addf[3]",
+					"name" : "HEX0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "addf[2]",
+					"name" : "HEX0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "addf[1]",
+					"name" : "HEX0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "addf[0]",
+					"name" : "HEX0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "s",
+					"name" : "HEX1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "clock",
+					"name" : "HEX1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "HEX1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "wren",
+					"name" : "HEX1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "data[7]",
+					"name" : "HEX1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Tin[7]",
+					"name" : "HEX1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "data[6]",
+					"name" : "LEDR[9]",
 					"strict" : false
 				},
 				{
-					"name" : "Tin[6]",
+					"name" : "SW[0]",
 					"strict" : false
 				},
 				{
-					"name" : "data[5]",
+					"name" : "SW[8]",
 					"strict" : false
 				},
 				{
-					"name" : "Tin[5]",
+					"name" : "SW[1]",
 					"strict" : false
 				},
 				{
-					"name" : "data[4]",
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
-					"name" : "Tin[4]",
+					"name" : "SW[2]",
 					"strict" : false
 				},
 				{
-					"name" : "data[3]",
+					"name" : "SW[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Tin[3]",
+					"name" : "SW[4]",
 					"strict" : false
 				},
 				{
-					"name" : "data[2]",
+					"name" : "SW[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Tin[2]",
+					"name" : "SW[6]",
 					"strict" : false
 				},
 				{
-					"name" : "data[1]",
+					"name" : "SW[7]",
 					"strict" : false
 				},
 				{
-					"name" : "Tin[1]",
-					"strict" : false
-				},
-				{
-					"name" : "data[0]",
-					"strict" : false
-				},
-				{
-					"name" : "Tin[0]",
+					"name" : "KEY[0]",
 					"strict" : false
 				}
 			]

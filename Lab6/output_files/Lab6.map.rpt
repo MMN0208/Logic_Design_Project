@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab6
-Fri Dec 16 03:12:06 2022
+Tue Dec 20 16:16:23 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -13,12 +13,26 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
+  8. User-Specified and Inferred Latches
   9. General Register Statistics
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
- 13. Analysis & Synthesis Suppressed Messages
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F01
+ 12. Parameter Settings for User Entity Instance: adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F02
+ 13. Parameter Settings for User Entity Instance: adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F03
+ 14. Parameter Settings for User Entity Instance: adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F04
+ 15. Parameter Settings for User Entity Instance: adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F11
+ 16. Parameter Settings for User Entity Instance: adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F12
+ 17. Parameter Settings for User Entity Instance: adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F21
+ 18. Port Connectivity Checks: "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F21"
+ 19. Port Connectivity Checks: "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F12"
+ 20. Port Connectivity Checks: "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F11"
+ 21. Port Connectivity Checks: "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F04"
+ 22. Port Connectivity Checks: "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F03"
+ 23. Port Connectivity Checks: "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F02"
+ 24. Port Connectivity Checks: "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F01"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -45,15 +59,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 16 03:12:06 2022       ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 20 16:16:23 2022       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; Lab6                                        ;
-; Top-level Entity Name              ; part1                                       ;
+; Top-level Entity Name              ; part5                                       ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 37                                          ;
-;     Total combinational functions  ; 37                                          ;
-;     Dedicated logic registers      ; 9                                           ;
-; Total registers                    ; 9                                           ;
+; Total logic elements               ; 180                                         ;
+;     Total combinational functions  ; 180                                         ;
+;     Dedicated logic registers      ; 16                                          ;
+; Total registers                    ; 16                                          ;
 ; Total pins                         ; 48                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -72,7 +86,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CGX150DF31C7    ;                    ;
-; Top-level entity name                                            ; part1              ; Lab6               ;
+; Top-level entity name                                            ; part5              ; Lab6               ;
 ; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -169,56 +183,81 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                   ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                     ; Library ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
-; Part1.v                          ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab6/Part1.v       ;         ;
-; displayHEX.v                     ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab6/displayHEX.v  ;         ;
-; accumulator.v                    ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab6/accumulator.v ;         ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                     ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                       ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------+---------+
+; Part5.v                          ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab6/Part5.v                         ;         ;
+; displayHEX.v                     ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab6/displayHEX.v                    ;         ;
+; full_adder.v                     ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab6/full_adder.v                    ;         ;
+; adder_tree_multiplier.v          ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier.v         ;         ;
+; adder_tree_multiplier_with_en.v  ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary      ;
-+--------------------------+-----------------------+
-; Resource                 ; Usage                 ;
-+--------------------------+-----------------------+
-; I/O pins                 ; 48                    ;
-;                          ;                       ;
-; DSP block 9-bit elements ; 0                     ;
-;                          ;                       ;
-; Maximum fan-out node     ; accumulator:A0|sum[0] ;
-; Maximum fan-out          ; 9                     ;
-; Total fan-out            ; 248                   ;
-; Average fan-out          ; 1.75                  ;
-+--------------------------+-----------------------+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 48               ;
+;                          ;                  ;
+; DSP block 9-bit elements ; 0                ;
+;                          ;                  ;
+; Maximum fan-out node     ; SW[8]~input      ;
+; Maximum fan-out          ; 16               ;
+; Total fan-out            ; 625              ;
+; Average fan-out          ; 2.14             ;
++--------------------------+------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name   ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------+-------------+--------------+
-; |part1                     ; 37 (0)              ; 9 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 48   ; 0            ; |part1                ; part1       ; work         ;
-;    |accumulator:A0|        ; 9 (9)               ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part1|accumulator:A0 ; accumulator ; work         ;
-;    |displayHEX:H0|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part1|displayHEX:H0  ; displayHEX  ; work         ;
-;    |displayHEX:H1|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part1|displayHEX:H1  ; displayHEX  ; work         ;
-;    |displayHEX:H2|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part1|displayHEX:H2  ; displayHEX  ; work         ;
-;    |displayHEX:H3|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part1|displayHEX:H3  ; displayHEX  ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------+-------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                           ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------------+-------------------------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                             ; Entity Name                   ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------------+-------------------------------+--------------+
+; |part5                                ; 180 (0)             ; 16 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 48   ; 0            ; |part5                                                                          ; part5                         ; work         ;
+;    |adder_tree_multiplier_with_en:A0| ; 152 (36)            ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|adder_tree_multiplier_with_en:A0                                         ; adder_tree_multiplier_with_en ; work         ;
+;       |adder_tree_multiplier:A0|      ; 116 (60)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0                ; adder_tree_multiplier         ; work         ;
+;          |full_adder:F01|             ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F01 ; full_adder                    ; work         ;
+;          |full_adder:F02|             ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F02 ; full_adder                    ; work         ;
+;          |full_adder:F03|             ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F03 ; full_adder                    ; work         ;
+;          |full_adder:F04|             ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F04 ; full_adder                    ; work         ;
+;          |full_adder:F11|             ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F11 ; full_adder                    ; work         ;
+;          |full_adder:F12|             ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F12 ; full_adder                    ; work         ;
+;    |displayHEX:H0|                    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|displayHEX:H0                                                            ; displayHEX                    ; work         ;
+;    |displayHEX:H1|                    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|displayHEX:H1                                                            ; displayHEX                    ; work         ;
+;    |displayHEX:H2|                    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|displayHEX:H2                                                            ; displayHEX                    ; work         ;
+;    |displayHEX:H3|                    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part5|displayHEX:H3                                                            ; displayHEX                    ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------------+-------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                  ;
-+---------------------------------------+---------------------------------------------+
-; Register name                         ; Reason for Removal                          ;
-+---------------------------------------+---------------------------------------------+
-; accumulator:A0|overflow               ; Stuck at GND due to stuck port clock_enable ;
-; Total Number of Removed Registers = 1 ;                                             ;
-+---------------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; adder_tree_multiplier_with_en:A0|B[0]               ; SW[8]               ; yes                    ;
+; adder_tree_multiplier_with_en:A0|A[0]               ; SW[9]               ; yes                    ;
+; adder_tree_multiplier_with_en:A0|B[1]               ; SW[8]               ; yes                    ;
+; adder_tree_multiplier_with_en:A0|A[1]               ; SW[9]               ; yes                    ;
+; adder_tree_multiplier_with_en:A0|B[2]               ; SW[8]               ; yes                    ;
+; adder_tree_multiplier_with_en:A0|A[2]               ; SW[9]               ; yes                    ;
+; adder_tree_multiplier_with_en:A0|B[3]               ; SW[8]               ; yes                    ;
+; adder_tree_multiplier_with_en:A0|A[3]               ; SW[9]               ; yes                    ;
+; adder_tree_multiplier_with_en:A0|B[4]               ; SW[8]               ; yes                    ;
+; adder_tree_multiplier_with_en:A0|A[4]               ; SW[9]               ; yes                    ;
+; adder_tree_multiplier_with_en:A0|B[5]               ; SW[8]               ; yes                    ;
+; adder_tree_multiplier_with_en:A0|A[5]               ; SW[9]               ; yes                    ;
+; adder_tree_multiplier_with_en:A0|B[6]               ; SW[8]               ; yes                    ;
+; adder_tree_multiplier_with_en:A0|A[6]               ; SW[9]               ; yes                    ;
+; adder_tree_multiplier_with_en:A0|B[7]               ; SW[8]               ; yes                    ;
+; adder_tree_multiplier_with_en:A0|A[7]               ; SW[9]               ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -226,14 +265,173 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 9     ;
+; Total registers                              ; 16    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 9     ;
+; Number of registers using Asynchronous Clear ; 16    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |part5|adder_tree_multiplier_with_en:A0|display[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F01 ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                                               ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F02 ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                                               ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F03 ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                                               ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F04 ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                                               ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F11 ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; n              ; 10    ; Signed Integer                                                                               ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F12 ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; n              ; 10    ; Signed Integer                                                                               ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F21 ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; n              ; 12    ; Signed Integer                                                                               ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F21"                                                                                                              ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A[11..8] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Cin      ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Cin[-1]  ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Cout     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F12"                                                                                                             ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                            ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A[9..8] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Cin     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Cin[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Cout    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F11"                                                                                                             ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                            ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A[9..8] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Cin     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Cin[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Cout    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F04"                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A[7]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Cin     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Cin[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F03"                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A[7]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Cin     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Cin[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F02"                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A[7]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Cin     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Cin[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F01"                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A[7]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; Cin     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Cin[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -242,18 +440,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 48                          ;
-; cycloneiii_ff         ; 9                           ;
-;     CLR               ; 9                           ;
-; cycloneiii_lcell_comb ; 42                          ;
-;     arith             ; 8                           ;
-;         3 data inputs ; 8                           ;
-;     normal            ; 34                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 4                           ;
-;         4 data inputs ; 28                          ;
+; cycloneiii_ff         ; 16                          ;
+;     CLR               ; 16                          ;
+; cycloneiii_lcell_comb ; 184                         ;
+;     arith             ; 61                          ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 56                          ;
+;     normal            ; 123                         ;
+;         0 data inputs ; 4                           ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 60                          ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 36                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.43                        ;
+; Max LUT depth         ; 5.40                        ;
+; Average LUT depth     ; 3.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -272,11 +473,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Fri Dec 16 03:12:00 2022
+    Info: Processing started: Tue Dec 20 16:16:18 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab6 -c Lab6
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Info (12021): Found 0 design units, including 0 entities, in source file part5.v
+Info (12021): Found 1 design units, including 1 entities, in source file part5.v
+    Info (12023): Found entity 1: part5 File: C:/Users/ADMIN/Documents/FPGA/Lab6/Part5.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file part4.v
     Info (12023): Found entity 1: part4 File: C:/Users/ADMIN/Documents/FPGA/Lab6/Part4.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file part3.v
@@ -295,29 +497,51 @@ Info (12021): Found 1 design units, including 1 entities, in source file accumul
     Info (12023): Found entity 1: accumulator_ex File: C:/Users/ADMIN/Documents/FPGA/Lab6/accumulator_ex.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file accumulator.v
     Info (12023): Found entity 1: accumulator File: C:/Users/ADMIN/Documents/FPGA/Lab6/accumulator.v Line: 1
-Info (12127): Elaborating entity "part1" for the top level hierarchy
-Info (12128): Elaborating entity "accumulator" for hierarchy "accumulator:A0" File: C:/Users/ADMIN/Documents/FPGA/Lab6/Part1.v Line: 12
-Info (12128): Elaborating entity "displayHEX" for hierarchy "displayHEX:H0" File: C:/Users/ADMIN/Documents/FPGA/Lab6/Part1.v Line: 16
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/ADMIN/Documents/FPGA/Lab6/Part1.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file full_adder.v
+    Info (12023): Found entity 1: full_adder File: C:/Users/ADMIN/Documents/FPGA/Lab6/full_adder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file adder_tree_multiplier.v
+    Info (12023): Found entity 1: adder_tree_multiplier File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lab6part5_test.bdf
+    Info (12023): Found entity 1: Lab6Part5_Test
+Info (12021): Found 1 design units, including 1 entities, in source file adder_tree_multiplier_with_en.v
+    Info (12023): Found entity 1: adder_tree_multiplier_with_en File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 1
+Info (12127): Elaborating entity "part5" for the top level hierarchy
+Info (12128): Elaborating entity "adder_tree_multiplier_with_en" for hierarchy "adder_tree_multiplier_with_en:A0" File: C:/Users/ADMIN/Documents/FPGA/Lab6/Part5.v Line: 10
+Warning (10240): Verilog HDL Always Construct warning at adder_tree_multiplier_with_en.v(22): inferring latch(es) for variable "A", which holds its previous value in one or more paths through the always construct File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 22
+Warning (10240): Verilog HDL Always Construct warning at adder_tree_multiplier_with_en.v(22): inferring latch(es) for variable "B", which holds its previous value in one or more paths through the always construct File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 22
+Info (10041): Inferred latch for "B[0]" at adder_tree_multiplier_with_en.v(26) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 26
+Info (10041): Inferred latch for "B[1]" at adder_tree_multiplier_with_en.v(26) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 26
+Info (10041): Inferred latch for "B[2]" at adder_tree_multiplier_with_en.v(26) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 26
+Info (10041): Inferred latch for "B[3]" at adder_tree_multiplier_with_en.v(26) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 26
+Info (10041): Inferred latch for "B[4]" at adder_tree_multiplier_with_en.v(26) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 26
+Info (10041): Inferred latch for "B[5]" at adder_tree_multiplier_with_en.v(26) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 26
+Info (10041): Inferred latch for "B[6]" at adder_tree_multiplier_with_en.v(26) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 26
+Info (10041): Inferred latch for "B[7]" at adder_tree_multiplier_with_en.v(26) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 26
+Info (10041): Inferred latch for "A[0]" at adder_tree_multiplier_with_en.v(23) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 23
+Info (10041): Inferred latch for "A[1]" at adder_tree_multiplier_with_en.v(23) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 23
+Info (10041): Inferred latch for "A[2]" at adder_tree_multiplier_with_en.v(23) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 23
+Info (10041): Inferred latch for "A[3]" at adder_tree_multiplier_with_en.v(23) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 23
+Info (10041): Inferred latch for "A[4]" at adder_tree_multiplier_with_en.v(23) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 23
+Info (10041): Inferred latch for "A[5]" at adder_tree_multiplier_with_en.v(23) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 23
+Info (10041): Inferred latch for "A[6]" at adder_tree_multiplier_with_en.v(23) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 23
+Info (10041): Inferred latch for "A[7]" at adder_tree_multiplier_with_en.v(23) File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 23
+Info (12128): Elaborating entity "adder_tree_multiplier" for hierarchy "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0" File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier_with_en.v Line: 39
+Info (12128): Elaborating entity "full_adder" for hierarchy "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F01" File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier.v Line: 27
+Info (12128): Elaborating entity "full_adder" for hierarchy "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F11" File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier.v Line: 33
+Info (12128): Elaborating entity "full_adder" for hierarchy "adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F21" File: C:/Users/ADMIN/Documents/FPGA/Lab6/adder_tree_multiplier.v Line: 39
+Info (12128): Elaborating entity "displayHEX" for hierarchy "displayHEX:H0" File: C:/Users/ADMIN/Documents/FPGA/Lab6/Part5.v Line: 12
+Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file C:/Users/ADMIN/Documents/FPGA/Lab6/output_files/Lab6.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 85 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 38 output pins
-    Info (21061): Implemented 37 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4863 megabytes
-    Info: Processing ended: Fri Dec 16 03:12:06 2022
-    Info: Elapsed time: 00:00:06
+Info (21057): Implemented 228 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 36 output pins
+    Info (21061): Implemented 180 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4875 megabytes
+    Info: Processing ended: Tue Dec 20 16:16:23 2022
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:06
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/ADMIN/Documents/FPGA/Lab6/output_files/Lab6.map.smsg.
 
 

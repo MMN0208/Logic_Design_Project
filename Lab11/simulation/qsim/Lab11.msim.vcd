@@ -3,7 +3,7 @@ $comment
 		vcd file Lab11.msim.vcd -direction
 $end
 $date
-	Fri Dec 16 20:06:42 2022
+	Sun Dec 18 16:29:13 2022
 $end
 $version
 	ModelSim Version 2020.1
@@ -41,170 +41,171 @@ $var wire 1 7 addf[3]~output_o $end
 $var wire 1 8 addf[2]~output_o $end
 $var wire 1 9 addf[1]~output_o $end
 $var wire 1 : addf[0]~output_o $end
-$var wire 1 ; clock~input_o $end
+$var wire 1 ; Tin[0]~input_o $end
 $var wire 1 < s~input_o $end
-$var wire 1 = Tin[0]~input_o $end
-$var wire 1 > inst|Add2~4_combout $end
-$var wire 1 ? inst|Add2~12_combout $end
-$var wire 1 @ Tin[7]~input_o $end
-$var wire 1 A wren~input_o $end
-$var wire 1 B data[7]~input_o $end
-$var wire 1 C inst|Selector22~0_combout $end
-$var wire 1 D inst|Selector23~0_combout $end
-$var wire 1 E inst|Add1~1 $end
-$var wire 1 F inst|Add1~2_combout $end
-$var wire 1 G inst|Add1~13_combout $end
-$var wire 1 H data[6]~input_o $end
-$var wire 1 I inst|Add2~6_combout $end
-$var wire 1 J inst|Add2~8_combout $end
-$var wire 1 K inst|Add2~1 $end
-$var wire 1 L inst|Add2~2_combout $end
-$var wire 1 M inst|Add2~14_combout $end
-$var wire 1 N inst|Add1~0_combout $end
-$var wire 1 O inst|Add1~14_combout $end
-$var wire 1 P inst|Add2~0_combout $end
-$var wire 1 Q inst|Add2~13_combout $end
-$var wire 1 R inst|Add0~1_cout $end
-$var wire 1 S inst|Add0~3 $end
-$var wire 1 T inst|Add0~5 $end
-$var wire 1 U inst|Add0~7 $end
-$var wire 1 V inst|Add0~9 $end
-$var wire 1 W inst|Add0~10_combout $end
-$var wire 1 X Tin[6]~input_o $end
-$var wire 1 Y data[5]~input_o $end
-$var wire 1 Z Tin[5]~input_o $end
-$var wire 1 [ data[4]~input_o $end
-$var wire 1 \ Tin[4]~input_o $end
-$var wire 1 ] data[3]~input_o $end
-$var wire 1 ^ Tin[3]~input_o $end
-$var wire 1 _ data[2]~input_o $end
-$var wire 1 ` Tin[2]~input_o $end
-$var wire 1 a data[1]~input_o $end
-$var wire 1 b Tin[1]~input_o $end
-$var wire 1 c data[0]~input_o $end
-$var wire 1 d inst|LessThan1~1_cout $end
-$var wire 1 e inst|LessThan1~3_cout $end
-$var wire 1 f inst|LessThan1~5_cout $end
-$var wire 1 g inst|LessThan1~7_cout $end
-$var wire 1 h inst|LessThan1~9_cout $end
-$var wire 1 i inst|LessThan1~11_cout $end
-$var wire 1 j inst|LessThan1~13_cout $end
-$var wire 1 k inst|LessThan1~14_combout $end
-$var wire 1 l inst|Selector17~0_combout $end
-$var wire 1 m inst|Add0~2_combout $end
-$var wire 1 n inst|LessThan2~1_cout $end
-$var wire 1 o inst|LessThan2~3_cout $end
-$var wire 1 p inst|LessThan2~5_cout $end
-$var wire 1 q inst|LessThan2~7_cout $end
-$var wire 1 r inst|LessThan2~9_cout $end
-$var wire 1 s inst|LessThan2~11_cout $end
-$var wire 1 t inst|LessThan2~13_cout $end
-$var wire 1 u inst|LessThan2~14_combout $end
-$var wire 1 v inst|Selector16~0_combout $end
+$var wire 1 = clock~input_o $end
+$var wire 1 > inst|Add1~2_combout $end
+$var wire 1 ? inst|Add1~13_combout $end
+$var wire 1 @ wren~input_o $end
+$var wire 1 A data[7]~input_o $end
+$var wire 1 B Tin[7]~input_o $end
+$var wire 1 C data[6]~input_o $end
+$var wire 1 D Tin[6]~input_o $end
+$var wire 1 E data[5]~input_o $end
+$var wire 1 F Tin[5]~input_o $end
+$var wire 1 G data[4]~input_o $end
+$var wire 1 H Tin[4]~input_o $end
+$var wire 1 I data[3]~input_o $end
+$var wire 1 J Tin[3]~input_o $end
+$var wire 1 K data[2]~input_o $end
+$var wire 1 L Tin[2]~input_o $end
+$var wire 1 M data[1]~input_o $end
+$var wire 1 N Tin[1]~input_o $end
+$var wire 1 O data[0]~input_o $end
+$var wire 1 P inst|LessThan1~1_cout $end
+$var wire 1 Q inst|LessThan1~3_cout $end
+$var wire 1 R inst|LessThan1~5_cout $end
+$var wire 1 S inst|LessThan1~7_cout $end
+$var wire 1 T inst|LessThan1~9_cout $end
+$var wire 1 U inst|LessThan1~11_cout $end
+$var wire 1 V inst|LessThan1~13_cout $end
+$var wire 1 W inst|LessThan1~14_combout $end
+$var wire 1 X inst|Selector18~0_combout $end
+$var wire 1 Y inst|Add2~1 $end
+$var wire 1 Z inst|Add2~2_combout $end
+$var wire 1 [ inst|Add2~14_combout $end
+$var wire 1 \ inst|LessThan2~1_cout $end
+$var wire 1 ] inst|LessThan2~3_cout $end
+$var wire 1 ^ inst|LessThan2~5_cout $end
+$var wire 1 _ inst|LessThan2~7_cout $end
+$var wire 1 ` inst|LessThan2~9_cout $end
+$var wire 1 a inst|LessThan2~11_cout $end
+$var wire 1 b inst|LessThan2~13_cout $end
+$var wire 1 c inst|LessThan2~14_combout $end
+$var wire 1 d inst|Selector17~0_combout $end
+$var wire 1 e inst|Add1~0_combout $end
+$var wire 1 f inst|Add1~14_combout $end
+$var wire 1 g inst|Add2~0_combout $end
+$var wire 1 h inst|Add2~13_combout $end
+$var wire 1 i inst|Add0~1_cout $end
+$var wire 1 j inst|Add0~2_combout $end
+$var wire 1 k inst|Selector23~0_combout $end
+$var wire 1 l inst|Add2~4_combout $end
+$var wire 1 m inst|Add2~12_combout $end
+$var wire 1 n inst|LessThan0~1_combout $end
+$var wire 1 o inst|LessThan0~2_combout $end
+$var wire 1 p inst|LessThan0~3_combout $end
+$var wire 1 q inst|Selector24~0_combout $end
+$var wire 1 r inst|Add1~1 $end
+$var wire 1 s inst|Add1~3 $end
+$var wire 1 t inst|Add1~4_combout $end
+$var wire 1 u inst|Add1~12_combout $end
+$var wire 1 v inst|Add0~3 $end
 $var wire 1 w inst|Add0~4_combout $end
-$var wire 1 x inst|Selector24~0_combout $end
+$var wire 1 x inst|Selector25~0_combout $end
 $var wire 1 y inst|Add2~3 $end
 $var wire 1 z inst|Add2~5 $end
-$var wire 1 { inst|Add2~7 $end
-$var wire 1 | inst|Add2~9_combout $end
-$var wire 1 } inst|Add2~11_combout $end
-$var wire 1 ~ inst|Add0~8_combout $end
+$var wire 1 { inst|Add2~6_combout $end
+$var wire 1 | inst|Add2~8_combout $end
+$var wire 1 } inst|Add0~5 $end
+$var wire 1 ~ inst|Add0~6_combout $end
 $var wire 1 !! inst|Selector26~0_combout $end
-$var wire 1 "! inst|Add1~3 $end
-$var wire 1 #! inst|Add1~5 $end
-$var wire 1 $! inst|Add1~6_combout $end
-$var wire 1 %! inst|Add1~11_combout $end
-$var wire 1 &! inst|Add0~6_combout $end
-$var wire 1 '! inst|Selector25~0_combout $end
-$var wire 1 (! inst|Add1~4_combout $end
-$var wire 1 )! inst|Add1~12_combout $end
-$var wire 1 *! inst|LessThan0~1_combout $end
-$var wire 1 +! inst|LessThan0~2_combout $end
-$var wire 1 ,! inst|LessThan0~3_combout $end
-$var wire 1 -! inst|Selector3~0_combout $end
-$var wire 1 .! inst|Selector3~1_combout $end
-$var wire 1 /! reset~input_o $end
-$var wire 1 0! inst|y_Q.S5~q $end
-$var wire 1 1! inst|Selector1~0_combout $end
-$var wire 1 2! inst|y_Q.S1~q $end
-$var wire 1 3! inst|T[7]~0_combout $end
-$var wire 1 4! inst|Equal0~0_combout $end
-$var wire 1 5! inst|Equal0~1_combout $end
-$var wire 1 6! inst|Equal0~2_combout $end
-$var wire 1 7! inst|Equal0~3_combout $end
-$var wire 1 8! inst|Equal0~4_combout $end
-$var wire 1 9! inst|Selector2~0_combout $end
-$var wire 1 :! inst|y_Q.S2~q $end
-$var wire 1 ;! inst|Selector27~0_combout $end
-$var wire 1 <! inst|Add1~7 $end
-$var wire 1 =! inst|Add1~8_combout $end
-$var wire 1 >! inst|Add1~10_combout $end
-$var wire 1 ?! inst|LessThan0~0_combout $end
-$var wire 1 @! inst|Y_D.S3~0_combout $end
-$var wire 1 A! inst|y_Q.S3~0_combout $end
-$var wire 1 B! inst|y_Q.S3~q $end
-$var wire 1 C! inst|y_Q.S4~q $end
-$var wire 1 D! inst|Selector5~0_combout $end
-$var wire 1 E! inst|Selector15~0_combout $end
-$var wire 1 F! inst|Selector15~1_combout $end
-$var wire 1 G! inst|found~combout $end
-$var wire 1 H! inst|Selector6~0_combout $end
-$var wire 1 I! inst|Selector7~0_combout $end
-$var wire 1 J! inst|Selector8~0_combout $end
-$var wire 1 K! inst|Selector9~0_combout $end
-$var wire 1 L! inst|Selector0~0_combout $end
-$var wire 1 M! inst1|altsyncram_component|auto_generated|q_a [7] $end
-$var wire 1 N! inst1|altsyncram_component|auto_generated|q_a [6] $end
-$var wire 1 O! inst1|altsyncram_component|auto_generated|q_a [5] $end
-$var wire 1 P! inst1|altsyncram_component|auto_generated|q_a [4] $end
-$var wire 1 Q! inst1|altsyncram_component|auto_generated|q_a [3] $end
-$var wire 1 R! inst1|altsyncram_component|auto_generated|q_a [2] $end
-$var wire 1 S! inst1|altsyncram_component|auto_generated|q_a [1] $end
-$var wire 1 T! inst1|altsyncram_component|auto_generated|q_a [0] $end
-$var wire 1 U! inst|addf [4] $end
-$var wire 1 V! inst|addf [3] $end
-$var wire 1 W! inst|addf [2] $end
-$var wire 1 X! inst|addf [1] $end
-$var wire 1 Y! inst|addf [0] $end
-$var wire 1 Z! inst|T [7] $end
-$var wire 1 [! inst|T [6] $end
-$var wire 1 \! inst|T [5] $end
-$var wire 1 ]! inst|T [4] $end
-$var wire 1 ^! inst|T [3] $end
-$var wire 1 _! inst|T [2] $end
-$var wire 1 `! inst|T [1] $end
-$var wire 1 a! inst|T [0] $end
-$var wire 1 b! inst|L [4] $end
-$var wire 1 c! inst|L [3] $end
-$var wire 1 d! inst|L [2] $end
-$var wire 1 e! inst|L [1] $end
-$var wire 1 f! inst|L [0] $end
-$var wire 1 g! inst|R [4] $end
-$var wire 1 h! inst|R [3] $end
-$var wire 1 i! inst|R [2] $end
-$var wire 1 j! inst|R [1] $end
-$var wire 1 k! inst|R [0] $end
-$var wire 1 l! inst|m [7] $end
-$var wire 1 m! inst|m [6] $end
-$var wire 1 n! inst|m [5] $end
-$var wire 1 o! inst|m [4] $end
-$var wire 1 p! inst|m [3] $end
-$var wire 1 q! inst|m [2] $end
-$var wire 1 r! inst|m [1] $end
-$var wire 1 s! inst|m [0] $end
-$var wire 1 t! inst|addo [4] $end
-$var wire 1 u! inst|addo [3] $end
-$var wire 1 v! inst|addo [2] $end
-$var wire 1 w! inst|addo [1] $end
-$var wire 1 x! inst|addo [0] $end
-$var wire 1 y! inst1|altsyncram_component|auto_generated|ram_block1a7_PORTADATAOUT_bus [0] $end
-$var wire 1 z! inst1|altsyncram_component|auto_generated|ram_block1a6_PORTADATAOUT_bus [0] $end
-$var wire 1 {! inst1|altsyncram_component|auto_generated|ram_block1a5_PORTADATAOUT_bus [0] $end
-$var wire 1 |! inst1|altsyncram_component|auto_generated|ram_block1a4_PORTADATAOUT_bus [0] $end
-$var wire 1 }! inst1|altsyncram_component|auto_generated|ram_block1a3_PORTADATAOUT_bus [0] $end
-$var wire 1 ~! inst1|altsyncram_component|auto_generated|ram_block1a2_PORTADATAOUT_bus [0] $end
-$var wire 1 !" inst1|altsyncram_component|auto_generated|ram_block1a1_PORTADATAOUT_bus [0] $end
-$var wire 1 "" inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [0] $end
+$var wire 1 "! inst|Add1~5 $end
+$var wire 1 #! inst|Add1~6_combout $end
+$var wire 1 $! inst|Add1~11_combout $end
+$var wire 1 %! inst|Add0~7 $end
+$var wire 1 &! inst|Add0~8_combout $end
+$var wire 1 '! inst|Selector27~0_combout $end
+$var wire 1 (! inst|Add2~7 $end
+$var wire 1 )! inst|Add2~9_combout $end
+$var wire 1 *! inst|Add2~11_combout $end
+$var wire 1 +! inst|Add0~9 $end
+$var wire 1 ,! inst|Add0~10_combout $end
+$var wire 1 -! inst|Selector28~0_combout $end
+$var wire 1 .! inst|Add1~7 $end
+$var wire 1 /! inst|Add1~8_combout $end
+$var wire 1 0! inst|Add1~10_combout $end
+$var wire 1 1! inst|LessThan0~0_combout $end
+$var wire 1 2! inst|Y_D.S3~0_combout $end
+$var wire 1 3! inst|y_Q.S3~0_combout $end
+$var wire 1 4! reset~input_o $end
+$var wire 1 5! inst|y_Q.S3~q $end
+$var wire 1 6! inst|y_Q.S4~q $end
+$var wire 1 7! inst|Selector6~0_combout $end
+$var wire 1 8! inst|Selector6~1_combout $end
+$var wire 1 9! inst|y_Q.S2~q $end
+$var wire 1 :! inst|Selector7~0_combout $end
+$var wire 1 ;! inst|Selector7~1_combout $end
+$var wire 1 <! inst|Selector7~2_combout $end
+$var wire 1 =! inst|y_Q.S5~q $end
+$var wire 1 >! inst|Selector5~0_combout $end
+$var wire 1 ?! inst|y_Q.S1~q $end
+$var wire 1 @! inst|T[0]~0_combout $end
+$var wire 1 A! inst|Equal0~0_combout $end
+$var wire 1 B! inst|Equal0~1_combout $end
+$var wire 1 C! inst|Equal0~2_combout $end
+$var wire 1 D! inst|Equal0~3_combout $end
+$var wire 1 E! inst|Equal0~4_combout $end
+$var wire 1 F! inst|Selector14~0_combout $end
+$var wire 1 G! inst|Selector14~1_combout $end
+$var wire 1 H! inst|found~combout $end
+$var wire 1 I! inst|Selector12~0_combout $end
+$var wire 1 J! inst|Selector12~1_combout $end
+$var wire 1 K! inst|Selector12~2_combout $end
+$var wire 1 L! inst|Selector11~0_combout $end
+$var wire 1 M! inst|Selector10~0_combout $end
+$var wire 1 N! inst|Selector9~0_combout $end
+$var wire 1 O! inst|Selector8~0_combout $end
+$var wire 1 P! inst1|altsyncram_component|auto_generated|q_a [7] $end
+$var wire 1 Q! inst1|altsyncram_component|auto_generated|q_a [6] $end
+$var wire 1 R! inst1|altsyncram_component|auto_generated|q_a [5] $end
+$var wire 1 S! inst1|altsyncram_component|auto_generated|q_a [4] $end
+$var wire 1 T! inst1|altsyncram_component|auto_generated|q_a [3] $end
+$var wire 1 U! inst1|altsyncram_component|auto_generated|q_a [2] $end
+$var wire 1 V! inst1|altsyncram_component|auto_generated|q_a [1] $end
+$var wire 1 W! inst1|altsyncram_component|auto_generated|q_a [0] $end
+$var wire 1 X! inst|addf [4] $end
+$var wire 1 Y! inst|addf [3] $end
+$var wire 1 Z! inst|addf [2] $end
+$var wire 1 [! inst|addf [1] $end
+$var wire 1 \! inst|addf [0] $end
+$var wire 1 ]! inst|T [7] $end
+$var wire 1 ^! inst|T [6] $end
+$var wire 1 _! inst|T [5] $end
+$var wire 1 `! inst|T [4] $end
+$var wire 1 a! inst|T [3] $end
+$var wire 1 b! inst|T [2] $end
+$var wire 1 c! inst|T [1] $end
+$var wire 1 d! inst|T [0] $end
+$var wire 1 e! inst|L [4] $end
+$var wire 1 f! inst|L [3] $end
+$var wire 1 g! inst|L [2] $end
+$var wire 1 h! inst|L [1] $end
+$var wire 1 i! inst|L [0] $end
+$var wire 1 j! inst|R [4] $end
+$var wire 1 k! inst|R [3] $end
+$var wire 1 l! inst|R [2] $end
+$var wire 1 m! inst|R [1] $end
+$var wire 1 n! inst|R [0] $end
+$var wire 1 o! inst|m [5] $end
+$var wire 1 p! inst|m [4] $end
+$var wire 1 q! inst|m [3] $end
+$var wire 1 r! inst|m [2] $end
+$var wire 1 s! inst|m [1] $end
+$var wire 1 t! inst|m [0] $end
+$var wire 1 u! inst|addo [4] $end
+$var wire 1 v! inst|addo [3] $end
+$var wire 1 w! inst|addo [2] $end
+$var wire 1 x! inst|addo [1] $end
+$var wire 1 y! inst|addo [0] $end
+$var wire 1 z! inst1|altsyncram_component|auto_generated|ram_block1a1_PORTADATAOUT_bus [0] $end
+$var wire 1 {! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [0] $end
+$var wire 1 |! inst1|altsyncram_component|auto_generated|ram_block1a3_PORTADATAOUT_bus [0] $end
+$var wire 1 }! inst1|altsyncram_component|auto_generated|ram_block1a2_PORTADATAOUT_bus [0] $end
+$var wire 1 ~! inst1|altsyncram_component|auto_generated|ram_block1a5_PORTADATAOUT_bus [0] $end
+$var wire 1 !" inst1|altsyncram_component|auto_generated|ram_block1a4_PORTADATAOUT_bus [0] $end
+$var wire 1 "" inst1|altsyncram_component|auto_generated|ram_block1a7_PORTADATAOUT_bus [0] $end
+$var wire 1 #" inst1|altsyncram_component|auto_generated|ram_block1a6_PORTADATAOUT_bus [0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -214,7 +215,7 @@ $dumpvars
 b0 "
 1#
 0$
-b100000 %
+b11111111 %
 0&
 0+
 0*
@@ -236,59 +237,59 @@ x0
 08
 09
 0:
-0;
+1;
 0<
 0=
-1>
-1?
+0>
+0?
 0@
 0A
-0B
+1B
 0C
 1D
 0E
-0F
+1F
 0G
-0H
-1I
+1H
+0I
 1J
 0K
 1L
-1M
+0M
 1N
 0O
 1P
-1Q
-0R
-1S
-0T
-1U
-0V
-0W
-0X
+0Q
+1R
+0S
+1T
+0U
+1V
+1W
+1X
 0Y
 1Z
-0[
+1[
 0\
-0]
+1]
 0^
-0_
+1_
 0`
-0a
+1a
 0b
 0c
-0d
+1d
 1e
 0f
 1g
-0h
+1h
 0i
 1j
-1k
+0k
 1l
 1m
 0n
-1o
+0o
 0p
 1q
 0r
@@ -302,97 +303,97 @@ x0
 0z
 1{
 1|
-1}
+0}
 1~
 0!!
-1"!
+0"!
 0#!
 0$!
-0%!
+1%!
 1&!
 0'!
-0(!
-0)!
-0*!
+1(!
+1)!
+1*!
 0+!
 0,!
 0-!
-0.!
-1/!
+1.!
+0/!
 00!
 01!
-02!
+12!
 03!
 14!
-15!
+05!
 06!
-17!
+07!
 08!
 09!
 0:!
 0;!
-1<!
+0<!
 0=!
 0>!
 0?!
-1@!
+0@!
 0A!
 0B!
 0C!
 0D!
 0E!
-1F!
+0F!
 0G!
 0H!
 0I!
 0J!
 0K!
 0L!
+0M!
+0N!
+0O!
+0W!
+0V!
+0U!
 0T!
 0S!
 0R!
 0Q!
 0P!
-0O!
-0N!
-0M!
-0Y!
-0X!
-0W!
-0V!
-0U!
-0a!
-0`!
-0_!
-0^!
-0]!
-1\!
+0\!
 0[!
 0Z!
+0Y!
+0X!
+1d!
+1c!
+1b!
+1a!
+1`!
+1_!
+1^!
+1]!
+0i!
+0h!
+0g!
 0f!
 0e!
-0d!
-0c!
-0b!
+1n!
+1m!
+1l!
 1k!
 1j!
-1i!
-1h!
-1g!
+0t!
 0s!
 0r!
 0q!
 0p!
-0o!
-zn!
-zm!
-zl!
+zo!
+xy!
 xx!
 xw!
 xv!
 xu!
-xt!
-0y!
 0z!
 0{!
 0|!
@@ -400,804 +401,1272 @@ xt!
 0~!
 0!"
 0""
+0#"
 $end
 #10000
 1!
-1;
+1=
 #10001
-xy!
-x""
-x!"
-x~!
-x}!
-x|!
 x{!
 xz!
-xN!
-xO!
+x}!
+x|!
+x!"
+x~!
+x#"
+x""
 xP!
 xQ!
 xR!
 xS!
 xT!
-xM!
-x7!
-xt
-xj
-x6!
-xi
-xr
-x5!
-xq
-xp
-x4!
-xo
-xn
-xu
-xk
-x8!
-xs
+xU!
+xV!
+xW!
+xD!
+xC!
+xB!
+xA!
+xP
 xE!
+xQ
+xI!
+xR
+xS
+xT
+xU
+xV
+xW
 #20000
 0#
 0!
-0/!
-0;
+04!
+0=
 #30000
 1!
-1;
+1=
 #40000
 0!
-0;
+0=
 #50000
 1$
 1!
 1<
-1;
-13!
-19!
-11!
+1=
+1@!
+17!
+1>!
+18!
 #60000
 0!
-0;
+0=
 #70000
 1!
-1;
-1:!
-12!
-0F!
-0@!
+1=
+1?!
+19!
+1J!
+07!
+0d
+0X
+02!
 1'!
 1!!
 1x
-1C
-0v
-0l
-09!
-1x!
-0t!
-1u!
+1k
+0u!
 1v!
 1w!
+1x!
+1y!
 1q!
-1p!
 1r!
 1s!
-1A!
-1J!
-1(!
-1z
-0>
-1I!
-1$!
-0{
-0I
-1K!
-0y
-0L
-1F
-1L!
-1K
-0P
-1E
-0N
-1I
-0|
-1>
-1L
-0"!
-0F
+1t!
+08!
+13!
 1#!
 0(!
-0<!
-0$!
-1=!
+0{
+1t
+1z
+0l
+0y
+0Z
+1>
+1r
+0e
+1Y
+0g
+0)!
+1{
+1l
+0s
+0>
+1Z
+1"!
+0t
+0.!
+0#!
+1/!
 #80000
 0!
-0;
+0=
 #90000
 1!
-1;
-0:!
-1B!
-1@!
+1=
+09!
+15!
+xO!
+xN!
+xM!
+xL!
+12!
 0'!
 0!!
 0x
-0D
-0C
-0A!
+0q
+0k
+03!
 #90001
-0y!
-0""
-0!"
-0~!
-0}!
-1|!
 0{!
 0z!
-0N!
-0O!
-1P!
+0}!
+0|!
+1!"
+0~!
+0#"
+0""
+0P!
 0Q!
 0R!
-0S!
+1S!
 0T!
-0M!
-17!
-06!
-1s
-0i
-1r
-15!
-14!
-0n
-08!
-0t
-1j
-1o
+0U!
+0V!
+0W!
+0D!
+1W
+1V
+0C!
+0U
+0B!
+0S
+1R
+0A!
+0Q
+1P
 0E!
-0u
-1k
-0p
-1q
+1T
+0I!
+0O!
+0N!
+0M!
+0L!
 #100000
 0!
-0;
+0=
 #110000
 1!
-1;
-1C!
-0B!
-1D!
-1>!
-0}
-1l
-0Q
-19!
-1b!
-1V
-0~
-1W
+1=
+16!
+05!
+0J!
+17!
+10!
+0*!
+0h
+1X
+18!
+1e!
+1+!
+0&!
+1,!
 #120000
 0!
-0;
+0=
 #130000
 1!
-1;
-0C!
-1:!
-0D!
-0>!
-1}
-0l
-1Q
-0@!
-1;!
-1'!
-1x
-1D
-1C
-09!
-1t!
-0u!
-1o!
-0p!
-1A!
-1H!
-0=!
-1|
-0I!
-1<!
-1$!
-0I
-1=!
-#140000
-0!
-0;
-#150000
-1!
-1;
-0:!
-1B!
-1@!
-0;!
-0'!
-0x
-0D
-0C
-0A!
-#150001
-1}!
-1Q!
-05!
-0q
-#160000
-0!
-0;
-#170000
-1!
-1;
-1C!
-0B!
-1D!
-1>!
-1%!
-1l
-0Q
-0J
+1=
 19!
-1c!
-1*!
-0U
-0&!
-1~
-#180000
-0!
-0;
-#190000
-1!
-1;
-0C!
-1:!
-0D!
-0>!
-0%!
-0l
-1Q
-1J
-0@!
-1;!
+06!
+02!
+1-!
 1!!
 1x
-1D
-1C
-09!
+1q
+1k
+1J!
+07!
+00!
+1*!
+1h
+0X
 1u!
 0v!
 1p!
 0q!
-1A!
-1I!
-0<!
-0$!
-1I
-0J!
-0#!
-1(!
-0>
-0=!
-1<!
-1$!
-1=!
-#200000
+13!
+08!
+0/!
+1)!
+1.!
+1#!
+0{
+1/!
+#140000
 0!
-0;
-#210000
+0=
+#150000
 1!
-1;
-0:!
-1B!
-1@!
-0;!
+1=
+09!
+15!
+12!
+0-!
 0!!
 0x
-0D
-0C
-0A!
-#210001
-1~!
-1R!
-1p
-#220000
+0q
+0k
+03!
+#150001
+1|!
+1T!
+#160000
 0!
-0;
-#230000
+0=
+#170000
 1!
-1;
-1C!
-0B!
-1D!
-1>!
-1)!
-1%!
-1l
-0Q
-0?
-19!
-1d!
-1T
-0w
-1&!
-#240000
-0!
-0;
-#250000
-1!
-1;
-0C!
-1:!
-0D!
-0>!
-0)!
+1=
+16!
+05!
+0J!
+17!
+10!
+1$!
+0|
+0h
+1X
+18!
+1f!
 0%!
-0l
-1Q
-1?
-0@!
-1;!
+0~
+1n
+1&!
+#180000
+0!
+0=
+#190000
+1!
+1=
+19!
+06!
+02!
+1-!
 1'!
-1!!
-1D
-1C
-09!
+1x
+1q
+1k
+1J!
+07!
+00!
+0$!
+1|
+1h
+0X
 1v!
 0w!
 1q!
 0r!
-1A!
-1J!
-1#!
-0(!
-1>
-0K!
-0L
-1"!
-1F
-0<!
-0$!
+13!
+08!
+0.!
 0#!
-1(!
-0=!
-1<!
+1{
+0"!
+1t
+0l
+0/!
+1.!
+1#!
+1/!
+#200000
+0!
+0=
+#210000
+1!
+1=
+09!
+15!
+12!
+0-!
+0'!
+0x
+0q
+0k
+03!
+#210001
+1}!
+1U!
+1B!
+#220000
+0!
+0=
+#230000
+1!
+1=
+16!
+05!
+0J!
+17!
+10!
 1$!
-1=!
+1u
+0m
+0h
+1X
+18!
+1g!
+1}
+0w
+1~
+#240000
+0!
+0=
+#250000
+1!
+1=
+19!
+06!
+02!
+1-!
+1'!
+1!!
+1q
+1k
+1J!
+07!
+00!
+0$!
+0u
+1m
+1h
+0X
+1w!
+0x!
+1r!
+0s!
+13!
+08!
+1"!
+0t
+1l
+0Z
+1s
+1>
+0.!
+0#!
+0"!
+1t
+0/!
+1.!
+1#!
+1/!
 #260000
 0!
-0;
+0=
 #270000
 1!
-1;
-0:!
-1B!
-1@!
-0;!
+1=
+09!
+15!
+12!
+0-!
 0'!
 0!!
-0D
-0C
-0A!
+0q
+0k
+03!
 #270001
-1!"
-1S!
-04!
-0o
+1z!
+1V!
 #280000
 0!
-0;
+0=
 #290000
 1!
-1;
-1C!
-0B!
-1D!
-1>!
-1)!
-1%!
-1l
-0Q
-0M
-1G
-19!
-1e!
-0S
-0m
+1=
+16!
+05!
+0J!
+17!
+10!
+1$!
+1u
+0h
+0[
+1X
+1?
+18!
+1h!
+0v
+0j
 1w
 #300000
 0!
-0;
+0=
 #310000
 1!
-1;
-0C!
-1:!
-0D!
-0>!
-0)!
-0%!
-0l
-1Q
-1M
-0G
-0@!
-1;!
+1=
+19!
+06!
+02!
+1-!
 1'!
 1!!
 1x
-1D
-09!
-0x!
-1w!
-1r!
-0s!
-1A!
-1K!
-1L
-0"!
-0F
-0L!
-0K
-1P
-0E
-1N
-1#!
-0(!
-0L
-1"!
-1F
-0<!
+1q
+1J!
+07!
+00!
 0$!
+0u
+1h
+1[
+0X
+0?
+1x!
+0y!
+1s!
+0t!
+13!
+08!
+1Z
+0s
+0>
+0r
+1e
+0Y
+1g
+1"!
+0t
+1s
+1>
+0Z
+0.!
 0#!
-1(!
-0=!
-1<!
-1$!
-1=!
+0"!
+1t
+0/!
+1.!
+1#!
+1/!
 #320000
 0!
-0;
+0=
 #330000
 1!
-1;
-0:!
-1B!
-1@!
-0;!
+1=
+09!
+15!
+12!
+0-!
 0'!
 0!!
 0x
-0D
-0A!
+0q
+03!
 #330001
-1""
-1T!
-1n
+1{!
+1W!
+1A!
+0P
+1Q
+0R
+1S
+0T
 #340000
 0!
-0;
+0=
 #350000
 1!
-1;
-1C!
-0B!
-1D!
-1>!
-1)!
-1%!
-1l
-1O
-0M
-1G
-19!
-1f!
-1R
-1m
+1=
+16!
+05!
+0J!
+17!
+10!
+1$!
+1u
+1f
+0[
+1X
+1?
+18!
+1i!
+1i
+1j
 #360000
 0!
-0;
+0=
 #370000
 1!
-1;
-0C!
-1:!
-0D!
-0>!
-0)!
-0%!
-0l
-0O
-1M
-0G
-0@!
-1;!
+1=
+19!
+06!
+02!
+1-!
 1'!
 1!!
 1x
-1D
-1C
-09!
-1x!
-1s!
-1A!
-1L!
-1K
-0P
-1E
-0N
-1L
-0"!
-0F
-1#!
-0(!
-0<!
+1q
+1k
+1J!
+07!
+00!
 0$!
-0=!
+0u
+0f
+1[
+0X
+0?
+1y!
+1t!
+13!
+08!
+1r
+0e
+1Y
+0g
+0s
+0>
+1Z
+1"!
+0t
+0.!
+0#!
+0/!
 #380000
 0!
-0;
+0=
 #390000
 1!
-1;
-0:!
-1B!
-1@!
-0;!
+1=
+09!
+15!
+12!
+0-!
 0'!
 0!!
 0x
-0D
-0C
-0A!
+0q
+0k
+03!
 #390001
-0""
-0!"
-0~!
+0{!
+0z!
 0}!
 0|!
-1{!
-1O!
-0P!
-0Q!
-0R!
+0!"
+1~!
+1R!
 0S!
 0T!
-16!
-0s
-1i
-15!
-14!
-0n
-18!
-1t
-0j
-1o
-1u
-0k
-0p
-1q
-0r
-1s
-0t
-0u
-1E!
+0U!
+0V!
+0W!
+1U
+1T
+0B!
+0S
+1R
+0A!
+0Q
+1P
+0U
 #400000
 0!
-0;
+0=
 #410000
 1!
-1;
-1C!
-0B!
-1F!
-1D!
-1-!
-0Q
-1Y!
-1X!
-1W!
-1V!
-1U!
-1G!
-1.!
-14
-16
-17
-18
-19
-1:
-1+
-1*
-1)
-1(
-1'
-1-
+1=
+16!
+05!
+0J!
+17!
+0h
+1X
+18!
+0e!
+0f!
+0g!
+0i!
+0h!
+0&!
+0n
+0~
+0w
+0i
+0j
+1v
+1j
+0}
+1w
+1%!
+1~
+0+!
+1&!
+0,!
 #420000
 0!
-0;
+0=
 #430000
 1!
-1;
-0C!
-10!
-15
-1Q
-1,
+1=
+19!
+06!
+02!
+1'!
+1!!
+1x
+1q
+1k
+1J!
+07!
+1h
+0X
+0u!
+0p!
+13!
+08!
+1/!
+0)!
 #440000
 0!
-0;
+0=
 #450000
 1!
-1;
+1=
+09!
+15!
+12!
+0'!
+0!!
+0x
+0q
+0k
+03!
+#450001
+1!"
+0~!
+0R!
+1S!
 #460000
 0!
-0;
+0=
 #470000
 1!
-1;
+1=
+16!
+05!
+0J!
+17!
+10!
+0*!
+0h
+1X
+18!
+1e!
+1+!
+0&!
+1,!
 #480000
+1#
 0!
-0;
+14!
+0=
+06!
+0?!
+00!
+1*!
+1h
+1d
+1q
+0e!
+0q!
+0r!
+0s!
+0t!
+0+!
+1&!
+1.!
+1#!
+0{
+0"!
+1t
+0l
+0Z
+1s
+1>
+0r
+1e
+0Y
+1g
+0,!
+0/!
+0#!
+0t
+0>
+1y
+1Z
+0z
+1l
+1(!
+1{
+1)!
 #490000
+0$
 1!
-1;
+0<
+1=
+0@!
+07!
+0>!
+08!
 #500000
+b1111111 %
+b111111 %
+b11111 %
+b10111 %
+b10011 %
+b10001 %
 0!
-0;
+0N
+0L
+0J
+0F
+0D
+0B
+0=
+0c!
+0b!
+0a!
+0_!
+0^!
+0]!
+1B!
+1C!
+1D!
 #510000
 1!
-1;
+1=
 #520000
 0!
-0;
+0=
 #530000
 1!
-1;
+1=
 #540000
 0!
-0;
+0=
 #550000
 1!
-1;
+1=
 #560000
+0#
 0!
-0;
+04!
+0=
 #570000
 1!
-1;
+1=
 #580000
 0!
-0;
+0=
 #590000
 1!
-1;
+1=
 #600000
 0!
-0;
+0=
 #610000
+1$
 1!
-1;
+1<
+1=
+1@!
+17!
+1>!
+18!
 #620000
 0!
-0;
+0=
 #630000
 1!
-1;
+1=
+1?!
+19!
+1J!
+07!
+0d
+0X
+02!
+1'!
+1!!
+1x
+1k
+1q!
+1r!
+1s!
+1t!
+08!
+13!
+1#!
+0(!
+0{
+1t
+1z
+0l
+0y
+0Z
+1>
+1r
+0e
+1Y
+0g
+0)!
+1{
+1l
+0s
+0>
+1Z
+1"!
+0t
+0.!
+0#!
+1/!
 #640000
 0!
-0;
+0=
 #650000
 1!
-1;
+1=
+09!
+15!
+12!
+0'!
+0!!
+0x
+0q
+0k
+03!
 #660000
 0!
-0;
+0=
 #670000
 1!
-1;
+1=
+16!
+05!
+0J!
+17!
+10!
+0*!
+0h
+1X
+18!
+1e!
+1+!
+0&!
+1,!
 #680000
 0!
-0;
+0=
 #690000
 1!
-1;
+1=
+19!
+06!
+02!
+1-!
+1!!
+1x
+1q
+1k
+1J!
+07!
+00!
+1*!
+1h
+0X
+1u!
+0v!
+1p!
+0q!
+13!
+08!
+0/!
+1)!
+1.!
+1#!
+0{
+1/!
 #700000
 0!
-0;
+0=
 #710000
 1!
-1;
+1=
+09!
+15!
+12!
+0-!
+0!!
+0x
+0q
+0k
+03!
+#710001
+1|!
+1T!
+0B!
+0_
+1S
+1`
+0T
+0a
+1U
+1b
+0V
+1c
+0W
 #720000
 0!
-0;
+0=
 #730000
 1!
-1;
+1=
+16!
+05!
+0J!
+10!
+1$!
+0|
+0h
+1d
+18!
+0k!
+0n!
+0~
+1n
 #740000
 0!
-0;
+0=
 #750000
 1!
-1;
+1=
+19!
+06!
+02!
+1-!
+1x
+1q
+1k
+1J!
+00!
+0$!
+1|
+1h
+0d
+08!
+0w!
+0r!
+13!
+0"!
+1t
+0l
+0#!
 #760000
 0!
-0;
+0=
 #770000
 1!
-1;
+1=
+09!
+15!
+12!
+0-!
+0x
+0q
+0k
+03!
+#770001
+1}!
+0|!
+0T!
+1U!
+1_
+0S
+1^
+0R
+0`
+1T
+0_
+1S
+1a
+0U
+1`
+0T
+0b
+1V
+0a
+1U
+0c
+1W
+1b
+0V
+1c
+0W
 #780000
 0!
-0;
+0=
 #790000
 1!
-1;
+1=
+16!
+05!
+0J!
+10!
+0|
+1u
+0m
+0h
+1d
+18!
+0l!
+0w
 #800000
 0!
-0;
+0=
 #810000
 1!
-1;
+1=
+19!
+06!
+02!
+1-!
+1q
+1k
+1J!
+00!
+1|
+0u
+1m
+1h
+0d
+08!
+0x!
+0s!
+13!
+0Z
+1s
+1>
+0t
 #820000
 0!
-0;
+0=
 #830000
 1!
-1;
+1=
+09!
+15!
+12!
+0-!
+0q
+0k
+03!
+#830001
+1z!
+0}!
+0U!
+1V!
+1B!
+0^
+1R
+0]
+1Q
+1_
+0S
+1^
+0R
+0`
+1T
+0_
+1S
+1a
+0U
+1`
+0T
+0b
+1V
+0a
+1U
+0c
+1W
+1b
+0V
+1c
+0W
 #840000
 0!
-0;
+0=
 #850000
 1!
-1;
+1=
+16!
+05!
+0J!
+10!
+0|
+0m
+0h
+1d
+0[
+1?
+18!
+0m!
+0j
 #860000
 0!
-0;
+0=
 #870000
 1!
-1;
+1=
+19!
+06!
+02!
+1-!
+1q
+1J!
+00!
+1|
+1m
+1h
+0d
+1[
+0?
+08!
+0y!
+0t!
+13!
+0r
+1e
+0Y
+1g
+0>
+1y
+1Z
+0z
+1l
+1(!
+1{
+0)!
 #880000
 0!
-0;
+0=
 #890000
 1!
-1;
+1=
+09!
+15!
+12!
+0-!
+0q
+03!
+#890001
+1{!
+0z!
+0V!
+1W!
+1A!
+1]
+0Q
+0P
+1E!
+0^
+1R
+1Q
+1I!
+1_
+0S
+0R
+1K!
+0`
+1T
+1S
+1a
+0U
+0T
+0b
+1V
+1U
+0c
+1W
+0V
+0W
 #900000
 0!
-0;
+0=
 #910000
 1!
-1;
+1=
+16!
+05!
+1F!
+1:!
+10!
+0*!
+1f
+1X!
+16
+1G!
+1;!
+1'
+1H!
+1<!
+14
+1-
 #920000
 0!
-0;
+0=
 #930000
 1!
-1;
+1=
+06!
+1=!
+15
+0F!
+0:!
+00!
+1*!
+0f
+1,
 #940000
 0!
-0;
+0=
 #950000
 1!
-1;
+1=
 #960000
 0!
-0;
+0=
 #970000
 1!
-1;
+1=
 #980000
 0!
-0;
+0=
 #990000
 1!
-1;
+1=
 #1000000

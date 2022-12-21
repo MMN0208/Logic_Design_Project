@@ -31,7 +31,7 @@ module multiplier_with_en (clk, rst, en_A, en_B, I, display, P);
             P <= 0;
         end
         else begin
-            P = A * B;
+            P <= A * B;
         end
     end
 endmodule

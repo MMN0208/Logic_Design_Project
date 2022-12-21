@@ -1,0 +1,14 @@
+module full_adder (A, B, Cin S, Cout);
+	localparam n = 4;
+	
+	input [n-1:0] A, B;
+	input Cin;
+	output [2*n-1:0] S;
+	output Cout;
+	
+	wire D;
+	
+	assign D = A ^ B;
+	assign S = D ^ Cin;
+	assign Cout = (B & ~D) | (D & Cin);
+endmodule

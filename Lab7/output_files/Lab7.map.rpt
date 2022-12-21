@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab7
-Fri Dec 16 02:29:38 2022
+Sun Dec 18 16:35:00 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -13,15 +13,13 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |part4|complete_morse_decoder:D0|morse_decoder_fsm:M0|y_Q
+  8. State Machine - |Lab7Part4|complete_morse_decoder:inst|morse_decoder_fsm:M0|y_Q
   9. Registers Removed During Synthesis
  10. General Register Statistics
- 11. Parameter Settings for User Entity Instance: counter_modk:C0
- 12. Parameter Settings for User Entity Instance: complete_morse_decoder:D0|morse_decoder_fsm:M0
- 13. Port Connectivity Checks: "counter_modk:C0"
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+ 11. Parameter Settings for User Entity Instance: complete_morse_decoder:inst|morse_decoder_fsm:M0
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -48,16 +46,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 16 02:29:38 2022       ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 18 16:35:00 2022       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; Lab7                                        ;
-; Top-level Entity Name              ; part4                                       ;
+; Top-level Entity Name              ; Lab7Part4                                   ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 75                                          ;
-;     Total combinational functions  ; 75                                          ;
-;     Dedicated logic registers      ; 37                                          ;
-; Total registers                    ; 37                                          ;
-; Total pins                         ; 8                                           ;
+; Total logic elements               ; 20                                          ;
+;     Total combinational functions  ; 20                                          ;
+;     Dedicated logic registers      ; 11                                          ;
+; Total registers                    ; 11                                          ;
+; Total pins                         ; 7                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -75,7 +73,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CGX150DF31C7    ;                    ;
-; Top-level entity name                                            ; part4              ; Lab7               ;
+; Top-level entity name                                            ; Lab7Part4          ; Lab7               ;
 ; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
 ; State Machine Processing                                         ; User-Encoded       ; Auto               ;
 ; Use smart compilation                                            ; Off                ; Off                ;
@@ -172,84 +170,82 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                              ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
-; counter_modk.v                   ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab7/counter_modk.v           ;         ;
-; complete_morse_decoder.v         ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab7/complete_morse_decoder.v ;         ;
-; select_character.v               ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab7/select_character.v       ;         ;
-; Part4.v                          ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab7/Part4.v                  ;         ;
-; morse_decoder_fsm.v              ; yes             ; User Verilog HDL File  ; C:/Users/ADMIN/Documents/FPGA/Lab7/morse_decoder_fsm.v      ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------+---------+
+; complete_morse_decoder.v         ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab7/complete_morse_decoder.v ;         ;
+; select_character.v               ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab7/select_character.v       ;         ;
+; morse_decoder_fsm.v              ; yes             ; User Verilog HDL File              ; C:/Users/ADMIN/Documents/FPGA/Lab7/morse_decoder_fsm.v      ;         ;
+; Lab7Part4.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/ADMIN/Documents/FPGA/Lab7/Lab7Part4.bdf            ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------+---------+
 
 
-+---------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary ;
-+--------------------------+------------------+
-; Resource                 ; Usage            ;
-+--------------------------+------------------+
-; I/O pins                 ; 8                ;
-;                          ;                  ;
-; DSP block 9-bit elements ; 0                ;
-;                          ;                  ;
-; Maximum fan-out node     ; KEY[0]~input     ;
-; Maximum fan-out          ; 30               ;
-; Total fan-out            ; 344              ;
-; Average fan-out          ; 2.69             ;
-+--------------------------+------------------+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                       ;
++--------------------------+--------------------------------------------------------+
+; Resource                 ; Usage                                                  ;
++--------------------------+--------------------------------------------------------+
+; I/O pins                 ; 7                                                      ;
+;                          ;                                                        ;
+; DSP block 9-bit elements ; 0                                                      ;
+;                          ;                                                        ;
+; Maximum fan-out node     ; complete_morse_decoder:inst|morse_decoder_fsm:M0|y_Q~5 ;
+; Maximum fan-out          ; 8                                                      ;
+; Total fan-out            ; 101                                                    ;
+; Average fan-out          ; 2.24                                                   ;
++--------------------------+--------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                   ;
-+--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------+------------------------+--------------+
-; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Entity Name            ; Library Name ;
-+--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------+------------------------+--------------+
-; |part4                         ; 75 (0)              ; 37 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 8    ; 0            ; |part4                                                ; part4                  ; work         ;
-;    |complete_morse_decoder:D0| ; 19 (0)              ; 11 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part4|complete_morse_decoder:D0                      ; complete_morse_decoder ; work         ;
-;       |morse_decoder_fsm:M0|   ; 12 (12)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part4|complete_morse_decoder:D0|morse_decoder_fsm:M0 ; morse_decoder_fsm      ; work         ;
-;       |select_character:S0|    ; 7 (7)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part4|complete_morse_decoder:D0|select_character:S0  ; select_character       ; work         ;
-;    |counter_modk:C0|           ; 56 (56)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |part4|counter_modk:C0                                ; counter_modk           ; work         ;
-+--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------+------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                           ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Entity Name            ; Library Name ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------+------------------------+--------------+
+; |Lab7Part4                       ; 20 (0)              ; 11 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 7    ; 0            ; |Lab7Part4                                                  ; Lab7Part4              ; work         ;
+;    |complete_morse_decoder:inst| ; 20 (0)              ; 11 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part4|complete_morse_decoder:inst                      ; complete_morse_decoder ; work         ;
+;       |morse_decoder_fsm:M0|     ; 13 (13)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part4|complete_morse_decoder:inst|morse_decoder_fsm:M0 ; morse_decoder_fsm      ; work         ;
+;       |select_character:S0|      ; 7 (7)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Lab7Part4|complete_morse_decoder:inst|select_character:S0  ; select_character       ; work         ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  User-Encoded
-+---------------------------------------------------------------------------+
-; State Machine - |part4|complete_morse_decoder:D0|morse_decoder_fsm:M0|y_Q ;
-+-------------+-------+-------+-------+-------------------------------------+
-; Name        ; y_Q~7 ; y_Q~6 ; y_Q~5 ; y_Q~4                               ;
-+-------------+-------+-------+-------+-------------------------------------+
-; y_Q.state0  ; 0     ; 0     ; 0     ; 0                                   ;
-; y_Q.state1  ; 0     ; 0     ; 0     ; 1                                   ;
-; y_Q.state2  ; 0     ; 0     ; 1     ; 0                                   ;
-; y_Q.state3  ; 0     ; 0     ; 1     ; 1                                   ;
-; y_Q.state4  ; 0     ; 1     ; 0     ; 0                                   ;
-; y_Q.state5  ; 0     ; 1     ; 0     ; 1                                   ;
-; y_Q.state6  ; 0     ; 1     ; 1     ; 0                                   ;
-; y_Q.state7  ; 0     ; 1     ; 1     ; 1                                   ;
-; y_Q.state8  ; 1     ; 0     ; 0     ; 0                                   ;
-; y_Q.state9  ; 1     ; 0     ; 0     ; 1                                   ;
-; y_Q.state10 ; 1     ; 0     ; 1     ; 0                                   ;
-; y_Q.state11 ; 1     ; 0     ; 1     ; 1                                   ;
-; y_Q.state12 ; 1     ; 1     ; 0     ; 0                                   ;
-; y_Q.state13 ; 1     ; 1     ; 0     ; 1                                   ;
-+-------------+-------+-------+-------+-------------------------------------+
++---------------------------------------------------------------------------------+
+; State Machine - |Lab7Part4|complete_morse_decoder:inst|morse_decoder_fsm:M0|y_Q ;
++-------------+-------+-------+-------+-------------------------------------------+
+; Name        ; y_Q~7 ; y_Q~6 ; y_Q~5 ; y_Q~4                                     ;
++-------------+-------+-------+-------+-------------------------------------------+
+; y_Q.state0  ; 0     ; 0     ; 0     ; 0                                         ;
+; y_Q.state1  ; 0     ; 0     ; 0     ; 1                                         ;
+; y_Q.state2  ; 0     ; 0     ; 1     ; 0                                         ;
+; y_Q.state3  ; 0     ; 0     ; 1     ; 1                                         ;
+; y_Q.state4  ; 0     ; 1     ; 0     ; 0                                         ;
+; y_Q.state5  ; 0     ; 1     ; 0     ; 1                                         ;
+; y_Q.state6  ; 0     ; 1     ; 1     ; 0                                         ;
+; y_Q.state7  ; 0     ; 1     ; 1     ; 1                                         ;
+; y_Q.state8  ; 1     ; 0     ; 0     ; 0                                         ;
+; y_Q.state9  ; 1     ; 0     ; 0     ; 1                                         ;
+; y_Q.state10 ; 1     ; 0     ; 1     ; 0                                         ;
+; y_Q.state11 ; 1     ; 0     ; 1     ; 1                                         ;
+; y_Q.state12 ; 1     ; 1     ; 0     ; 0                                         ;
+; y_Q.state13 ; 1     ; 1     ; 0     ; 1                                         ;
++-------------+-------+-------+-------+-------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                ;
-+-------------------------------------------------------------+---------------------------------------------------------------------+
-; Register name                                               ; Reason for Removal                                                  ;
-+-------------------------------------------------------------+---------------------------------------------------------------------+
-; complete_morse_decoder:D0|select_character:S0|signal[0,2]   ; Stuck at GND due to stuck port data_in                              ;
-; complete_morse_decoder:D0|select_character:S0|signal[11]    ; Stuck at VCC due to stuck port data_in                              ;
-; complete_morse_decoder:D0|select_character:S0|signal[12,13] ; Stuck at GND due to stuck port data_in                              ;
-; complete_morse_decoder:D0|select_character:S0|signal[9]     ; Merged with complete_morse_decoder:D0|select_character:S0|signal[7] ;
-; complete_morse_decoder:D0|select_character:S0|signal[4]     ; Merged with complete_morse_decoder:D0|select_character:S0|signal[1] ;
-; Total Number of Removed Registers = 7                       ;                                                                     ;
-+-------------------------------------------------------------+---------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                    ;
++---------------------------------------------------------------+-----------------------------------------------------------------------+
+; Register name                                                 ; Reason for Removal                                                    ;
++---------------------------------------------------------------+-----------------------------------------------------------------------+
+; complete_morse_decoder:inst|select_character:S0|signal[0,2]   ; Stuck at GND due to stuck port data_in                                ;
+; complete_morse_decoder:inst|select_character:S0|signal[11]    ; Stuck at VCC due to stuck port data_in                                ;
+; complete_morse_decoder:inst|select_character:S0|signal[12,13] ; Stuck at GND due to stuck port data_in                                ;
+; complete_morse_decoder:inst|select_character:S0|signal[9]     ; Merged with complete_morse_decoder:inst|select_character:S0|signal[7] ;
+; complete_morse_decoder:inst|select_character:S0|signal[4]     ; Merged with complete_morse_decoder:inst|select_character:S0|signal[1] ;
+; Total Number of Removed Registers = 7                         ;                                                                       ;
++---------------------------------------------------------------+-----------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -257,57 +253,37 @@ Encoding Type:  User-Encoded
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 37    ;
+; Total registers                              ; 11    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 30    ;
+; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: counter_modk:C0 ;
-+----------------+----------+----------------------------------+
-; Parameter Name ; Value    ; Type                             ;
-+----------------+----------+----------------------------------+
-; n              ; 25       ; Signed Integer                   ;
-; k              ; 25000000 ; Signed Integer                   ;
-+----------------+----------+----------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: complete_morse_decoder:inst|morse_decoder_fsm:M0 ;
++----------------+----------------------------------+-------------------------------------------+
+; Parameter Name ; Value                            ; Type                                      ;
++----------------+----------------------------------+-------------------------------------------+
+; state0         ; 00000000000000000000000000000000 ; Unsigned Binary                           ;
+; state1         ; 00000000000000000000000000000001 ; Unsigned Binary                           ;
+; state2         ; 00000000000000000000000000000010 ; Unsigned Binary                           ;
+; state3         ; 00000000000000000000000000000011 ; Unsigned Binary                           ;
+; state4         ; 00000000000000000000000000000100 ; Unsigned Binary                           ;
+; state5         ; 00000000000000000000000000000101 ; Unsigned Binary                           ;
+; state6         ; 00000000000000000000000000000110 ; Unsigned Binary                           ;
+; state7         ; 00000000000000000000000000000111 ; Unsigned Binary                           ;
+; state8         ; 00000000000000000000000000001000 ; Unsigned Binary                           ;
+; state9         ; 00000000000000000000000000001001 ; Unsigned Binary                           ;
+; state10        ; 00000000000000000000000000001010 ; Unsigned Binary                           ;
+; state11        ; 00000000000000000000000000001011 ; Unsigned Binary                           ;
+; state12        ; 00000000000000000000000000001100 ; Unsigned Binary                           ;
+; state13        ; 00000000000000000000000000001101 ; Unsigned Binary                           ;
++----------------+----------------------------------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: complete_morse_decoder:D0|morse_decoder_fsm:M0 ;
-+----------------+----------------------------------+-----------------------------------------+
-; Parameter Name ; Value                            ; Type                                    ;
-+----------------+----------------------------------+-----------------------------------------+
-; state0         ; 00000000000000000000000000000000 ; Unsigned Binary                         ;
-; state1         ; 00000000000000000000000000000001 ; Unsigned Binary                         ;
-; state2         ; 00000000000000000000000000000010 ; Unsigned Binary                         ;
-; state3         ; 00000000000000000000000000000011 ; Unsigned Binary                         ;
-; state4         ; 00000000000000000000000000000100 ; Unsigned Binary                         ;
-; state5         ; 00000000000000000000000000000101 ; Unsigned Binary                         ;
-; state6         ; 00000000000000000000000000000110 ; Unsigned Binary                         ;
-; state7         ; 00000000000000000000000000000111 ; Unsigned Binary                         ;
-; state8         ; 00000000000000000000000000001000 ; Unsigned Binary                         ;
-; state9         ; 00000000000000000000000000001001 ; Unsigned Binary                         ;
-; state10        ; 00000000000000000000000000001010 ; Unsigned Binary                         ;
-; state11        ; 00000000000000000000000000001011 ; Unsigned Binary                         ;
-; state12        ; 00000000000000000000000000001100 ; Unsigned Binary                         ;
-; state13        ; 00000000000000000000000000001101 ; Unsigned Binary                         ;
-+----------------+----------------------------------+-----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter_modk:C0"                                                                    ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -315,22 +291,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 8                           ;
-; cycloneiii_ff         ; 37                          ;
-;     CLR               ; 30                          ;
+; boundary_port         ; 7                           ;
+; cycloneiii_ff         ; 11                          ;
+;     CLR               ; 4                           ;
 ;     plain             ; 7                           ;
-; cycloneiii_lcell_comb ; 76                          ;
-;     arith             ; 24                          ;
-;         2 data inputs ; 24                          ;
-;     normal            ; 52                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
+; cycloneiii_lcell_comb ; 20                          ;
+;     normal            ; 20                          ;
+;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 2                           ;
-;         3 data inputs ; 11                          ;
-;         4 data inputs ; 36                          ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 11                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.34                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.08                        ;
 +-----------------------+-----------------------------+
 
 
@@ -349,7 +322,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Fri Dec 16 02:29:32 2022
+    Info: Processing started: Sun Dec 18 16:34:55 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab7 -c Lab7
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -387,25 +360,23 @@ Info (12021): Found 1 design units, including 1 entities, in source file lab7par
     Info (12023): Found entity 1: Lab7Part4
 Info (12021): Found 1 design units, including 1 entities, in source file roll_over_test.bdf
     Info (12023): Found entity 1: roll_over_test
-Info (12127): Elaborating entity "part4" for the top level hierarchy
-Warning (10034): Output port "LEDR[1]" at Part4.v(5) has no driver File: C:/Users/ADMIN/Documents/FPGA/Lab7/Part4.v Line: 5
-Info (12128): Elaborating entity "counter_modk" for hierarchy "counter_modk:C0" File: C:/Users/ADMIN/Documents/FPGA/Lab7/Part4.v Line: 12
-Info (12128): Elaborating entity "complete_morse_decoder" for hierarchy "complete_morse_decoder:D0" File: C:/Users/ADMIN/Documents/FPGA/Lab7/Part4.v Line: 16
-Info (12128): Elaborating entity "select_character" for hierarchy "complete_morse_decoder:D0|select_character:S0" File: C:/Users/ADMIN/Documents/FPGA/Lab7/complete_morse_decoder.v Line: 8
-Info (12128): Elaborating entity "morse_decoder_fsm" for hierarchy "complete_morse_decoder:D0|morse_decoder_fsm:M0" File: C:/Users/ADMIN/Documents/FPGA/Lab7/complete_morse_decoder.v Line: 9
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/ADMIN/Documents/FPGA/Lab7/Part4.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file lab7part4_tested.bdf
+    Info (12023): Found entity 1: Lab7Part4_Tested
+Info (12127): Elaborating entity "Lab7Part4" for the top level hierarchy
+Info (12128): Elaborating entity "complete_morse_decoder" for hierarchy "complete_morse_decoder:inst"
+Info (12128): Elaborating entity "select_character" for hierarchy "complete_morse_decoder:inst|select_character:S0" File: C:/Users/ADMIN/Documents/FPGA/Lab7/complete_morse_decoder.v Line: 8
+Info (12128): Elaborating entity "morse_decoder_fsm" for hierarchy "complete_morse_decoder:inst|morse_decoder_fsm:M0" File: C:/Users/ADMIN/Documents/FPGA/Lab7/complete_morse_decoder.v Line: 9
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 83 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 27 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 75 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 20 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4863 megabytes
-    Info: Processing ended: Fri Dec 16 02:29:38 2022
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Processing ended: Sun Dec 18 16:35:00 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

@@ -19,50 +19,36 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/16/2022 02:28:17"
+// Generated on "12/18/2022 16:35:06"
                                                                                 
-// Verilog Test Bench (with test vectors) for design :                          roll_over_test
+// Verilog Test Bench (with test vectors) for design :                          Lab7Part4
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module roll_over_test_vlg_vec_tst();
+module Lab7Part4_vlg_vec_tst();
 // constants                                           
 // general purpose registers
-reg clock;
-reg rst_neg;
+reg clk;
+reg en;
+reg rst;
+reg [2:0] sel;
 // wires                                               
-wire [3:0] Q;
-wire roll_over;
+wire Q;
 
 // assign statements (if any)                          
-roll_over_test i1 (
+Lab7Part4 i1 (
 // port map - connection between master ports and signals/registers   
-	.clock(clock),
+	.clk(clk),
+	.en(en),
 	.Q(Q),
-	.roll_over(roll_over),
-	.rst_neg(rst_neg)
+	.rst(rst),
+	.sel(sel)
 );
 initial 
 begin 
 #1000000 $finish;
-end 
-
-// clock
-always
-begin
-	clock = 1'b0;
-	clock = #10000 1'b1;
-	#10000;
-end 
-
-// rst_neg
-initial
-begin
-	rst_neg = 1'b1;
-	rst_neg = #130000 1'b0;
-	rst_neg = #50000 1'b1;
 end 
 endmodule
 

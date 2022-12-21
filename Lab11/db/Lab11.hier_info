@@ -1,41 +1,104 @@
-|Lab11Part2
-found <= binary_search:inst.found
-clock => binary_search:inst.clock
-clock => my_array:inst1.clock
-reset => binary_search:inst.reset
-s => binary_search:inst.s
-wren => my_array:inst1.wren
-data[0] => my_array:inst1.data[0]
-data[1] => my_array:inst1.data[1]
-data[2] => my_array:inst1.data[2]
-data[3] => my_array:inst1.data[3]
-data[4] => my_array:inst1.data[4]
-data[5] => my_array:inst1.data[5]
-data[6] => my_array:inst1.data[6]
-data[7] => my_array:inst1.data[7]
-Tin[0] => binary_search:inst.Tin[0]
-Tin[1] => binary_search:inst.Tin[1]
-Tin[2] => binary_search:inst.Tin[2]
-Tin[3] => binary_search:inst.Tin[3]
-Tin[4] => binary_search:inst.Tin[4]
-Tin[5] => binary_search:inst.Tin[5]
-Tin[6] => binary_search:inst.Tin[6]
-Tin[7] => binary_search:inst.Tin[7]
-done <= binary_search:inst.done
-addf[0] <= binary_search:inst.addf[0]
-addf[1] <= binary_search:inst.addf[1]
-addf[2] <= binary_search:inst.addf[2]
-addf[3] <= binary_search:inst.addf[3]
-addf[4] <= binary_search:inst.addf[4]
+|Lab11Part2_Tested
+HEX0[0] <= displayAddr:inst3.Output0[0]
+HEX0[1] <= displayAddr:inst3.Output0[1]
+HEX0[2] <= displayAddr:inst3.Output0[2]
+HEX0[3] <= displayAddr:inst3.Output0[3]
+HEX0[4] <= displayAddr:inst3.Output0[4]
+HEX0[5] <= displayAddr:inst3.Output0[5]
+HEX0[6] <= displayAddr:inst3.Output0[6]
+CLOCK_50 => binary_search:inst.clock
+CLOCK_50 => my_array:inst1.clock
+KEY[0] => inst4.IN0
+SW[0] => binary_search:inst.Tin[0]
+SW[1] => binary_search:inst.Tin[1]
+SW[2] => binary_search:inst.Tin[2]
+SW[3] => binary_search:inst.Tin[3]
+SW[4] => binary_search:inst.Tin[4]
+SW[5] => binary_search:inst.Tin[5]
+SW[6] => binary_search:inst.Tin[6]
+SW[7] => binary_search:inst.Tin[7]
+SW[8] => binary_search:inst.s
+HEX1[0] <= displayAddr:inst3.Output1[0]
+HEX1[1] <= displayAddr:inst3.Output1[1]
+HEX1[2] <= displayAddr:inst3.Output1[2]
+HEX1[3] <= displayAddr:inst3.Output1[3]
+HEX1[4] <= displayAddr:inst3.Output1[4]
+HEX1[5] <= displayAddr:inst3.Output1[5]
+HEX1[6] <= displayAddr:inst3.Output1[6]
+LEDR[9] <= binary_search:inst.found
 
 
-|Lab11Part2|binary_search:inst
+|Lab11Part2_Tested|displayAddr:inst3
+Addr[0] => Addr[0].IN1
+Addr[1] => Addr[1].IN1
+Addr[2] => Addr[2].IN1
+Addr[3] => Addr[3].IN1
+Addr[4] => Addr[4].IN1
+En => Output0.OUTPUTSELECT
+En => Output0.OUTPUTSELECT
+En => Output0.OUTPUTSELECT
+En => Output0.OUTPUTSELECT
+En => Output0.OUTPUTSELECT
+En => Output0.OUTPUTSELECT
+En => Output0.OUTPUTSELECT
+En => Output1.OUTPUTSELECT
+En => Output1.OUTPUTSELECT
+En => Output1.OUTPUTSELECT
+En => Output1.OUTPUTSELECT
+En => Output1.OUTPUTSELECT
+En => Output1.OUTPUTSELECT
+En => Output1.OUTPUTSELECT
+Output0[0] <= Output0.DB_MAX_OUTPUT_PORT_TYPE
+Output0[1] <= Output0.DB_MAX_OUTPUT_PORT_TYPE
+Output0[2] <= Output0.DB_MAX_OUTPUT_PORT_TYPE
+Output0[3] <= Output0.DB_MAX_OUTPUT_PORT_TYPE
+Output0[4] <= Output0.DB_MAX_OUTPUT_PORT_TYPE
+Output0[5] <= Output0.DB_MAX_OUTPUT_PORT_TYPE
+Output0[6] <= Output0.DB_MAX_OUTPUT_PORT_TYPE
+Output1[0] <= Output1.DB_MAX_OUTPUT_PORT_TYPE
+Output1[1] <= Output1.DB_MAX_OUTPUT_PORT_TYPE
+Output1[2] <= Output1.DB_MAX_OUTPUT_PORT_TYPE
+Output1[3] <= Output1.DB_MAX_OUTPUT_PORT_TYPE
+Output1[4] <= Output1.DB_MAX_OUTPUT_PORT_TYPE
+Output1[5] <= Output1.DB_MAX_OUTPUT_PORT_TYPE
+Output1[6] <= Output1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab11Part2_Tested|displayAddr:inst3|displayHEX:H0
+Input[0] => Decoder0.IN3
+Input[1] => Decoder0.IN2
+Input[2] => Decoder0.IN1
+Input[3] => Decoder0.IN0
+Output[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+Output[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+Output[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+Output[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+Output[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+Output[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+Output[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab11Part2_Tested|displayAddr:inst3|displayHEX:H1
+Input[0] => Decoder0.IN3
+Input[1] => Decoder0.IN2
+Input[2] => Decoder0.IN1
+Input[3] => Decoder0.IN0
+Output[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+Output[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+Output[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+Output[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+Output[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+Output[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+Output[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab11Part2_Tested|binary_search:inst
 clock => y_Q~1.DATAIN
 reset => y_Q~3.DATAIN
-s => Selector2.IN3
-s => Selector3.IN4
-s => T[7].IN0
-s => Selector1.IN2
+s => Selector6.IN3
+s => Selector7.IN4
+s => T[0].IN0
+s => Selector5.IN1
 din[0] => LessThan1.IN8
 din[0] => LessThan2.IN8
 din[0] => Equal0.IN7
@@ -82,7 +145,7 @@ addf[3] <= addf[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
 addf[4] <= addf[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Lab11Part2|my_array:inst1
+|Lab11Part2_Tested|my_array:inst1
 address[0] => address[0].IN1
 address[1] => address[1].IN1
 address[2] => address[2].IN1
@@ -108,7 +171,7 @@ q[6] <= altsyncram:altsyncram_component.q_a
 q[7] <= altsyncram:altsyncram_component.q_a
 
 
-|Lab11Part2|my_array:inst1|altsyncram:altsyncram_component
+|Lab11Part2_Tested|my_array:inst1|altsyncram:altsyncram_component
 wren_a => altsyncram_8gi1:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -154,7 +217,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|Lab11Part2|my_array:inst1|altsyncram:altsyncram_component|altsyncram_8gi1:auto_generated
+|Lab11Part2_Tested|my_array:inst1|altsyncram:altsyncram_component|altsyncram_8gi1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR

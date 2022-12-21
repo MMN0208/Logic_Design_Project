@@ -3,6 +3,12 @@ module accumulator_ex (rst, clk, add_sub, A, carry, overflow, res);
     input [7:0] A;
     output reg carry, overflow;
     output reg [7:0] res;
+	 
+	 reg [7:0] temp;
+	 
+	 always @(*) begin
+		temp = res;
+	 end
 
     always @(posedge clk, posedge rst) begin
         if (rst) begin
@@ -12,13 +18,20 @@ module accumulator_ex (rst, clk, add_sub, A, carry, overflow, res);
         end
         else begin
             if (add_sub) begin
-                {carry, res} <= res - A;
+                {carry, res} <= temp - A;
+					 if (res > temp || res > A) begin
+						  overflow <= 1'b1;
+					 end else begin
+						  overflow <= 0;
+					 end
             end
             else begin
-                {carry, res} <= res + A;
-                if (res > 8'b11111111) begin
-                    overflow <= 1;
-                end
+                {carry, res} <= temp + A;
+                if (res < temp || res < A) begin
+                    overflow <= 1'b1;
+                end else begin
+					     overflow <= 0;
+					 end
             end
         end
     end

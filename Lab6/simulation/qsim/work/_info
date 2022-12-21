@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ADMIN/Documents/FPGA/Lab6/simulation/qsim
+vLab6Part5_Test
+Z1 !s110 1671527348
+!i10b 1
+!s100 5EH[@<JcOdLe;cS7@`zU01
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IDb@ZLHBNn?BaQ:@YkoAP52
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1671527347
+8Lab6.vo
+FLab6.vo
+!i122 0
+L0 32 2681
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1671527348.000000
+!s107 Lab6.vo|
+!s90 -work|work|Lab6.vo|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+n@lab6@part5_@test
+vLab6Part5_Test_vlg_vec_tst
+R1
+!i10b 1
+!s100 QT7Pl@2:9N7Lzm^3Tai2H1
+R2
+Ic2bmCgQ3gD;TnDaYOY3Be3
+R3
+R0
+w1671527346
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 1
+L0 30 121
+R4
+r1
+!s85 0
+31
+R5
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R6
+R7
+n@lab6@part5_@test_vlg_vec_tst

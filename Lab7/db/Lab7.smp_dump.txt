@@ -1,5 +1,5 @@
 
-State Machine - |part4|complete_morse_decoder:D0|morse_decoder_fsm:M0|y_Q
+State Machine - |Lab7Part4|complete_morse_decoder:inst|morse_decoder_fsm:M0|y_Q
 Name y_Q~7 y_Q~6 y_Q~5 y_Q~4 
 y_Q.state0 0 0 0 0 
 y_Q.state1 0 0 0 1 
