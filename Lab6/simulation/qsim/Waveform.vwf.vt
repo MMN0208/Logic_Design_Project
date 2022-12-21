@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/20/2022 16:09:06"
+// Generated on "12/21/2022 21:56:53"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          Lab6Part5_Test
 // 
@@ -52,6 +52,7 @@ begin
 	A[7] = 1'b0;
 	A[7] = #330000 1'b1;
 	A[7] = #230000 1'b0;
+	A[7] = #350000 1'b1;
 end 
 // A[ 6 ]
 initial
@@ -59,6 +60,7 @@ begin
 	A[6] = 1'b0;
 	A[6] = #330000 1'b1;
 	A[6] = #230000 1'b0;
+	A[6] = #350000 1'b1;
 end 
 // A[ 5 ]
 initial
@@ -72,6 +74,7 @@ begin
 	A[4] = 1'b0;
 	A[4] = #160000 1'b1;
 	A[4] = #400000 1'b0;
+	A[4] = #350000 1'b1;
 end 
 // A[ 3 ]
 initial
@@ -88,6 +91,7 @@ begin
 	A[2] = #160000 1'b0;
 	A[2] = #170000 1'b1;
 	A[2] = #230000 1'b0;
+	A[2] = #350000 1'b1;
 end 
 // A[ 1 ]
 initial
@@ -103,11 +107,13 @@ begin
 	A[0] = 1'b0;
 	A[0] = #330000 1'b1;
 	A[0] = #420000 1'b0;
+	A[0] = #160000 1'b1;
 end 
 // B[ 7 ]
 initial
 begin
 	B[7] = 1'b0;
+	B[7] = #910000 1'b1;
 end 
 // B[ 6 ]
 initial
@@ -124,17 +130,20 @@ initial
 begin
 	B[4] = 1'b1;
 	B[4] = #330000 1'b0;
+	B[4] = #580000 1'b1;
 end 
 // B[ 3 ]
 initial
 begin
 	B[3] = 1'b1;
 	B[3] = #330000 1'b0;
+	B[3] = #580000 1'b1;
 end 
 // B[ 2 ]
 initial
 begin
 	B[2] = 1'b0;
+	B[2] = #910000 1'b1;
 end 
 // B[ 1 ]
 initial
@@ -146,6 +155,7 @@ end
 initial
 begin
 	B[0] = 1'b0;
+	B[0] = #910000 1'b1;
 end 
 endmodule
 

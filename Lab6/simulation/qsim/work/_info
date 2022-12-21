@@ -10,50 +10,96 @@ z2
 cModel Technology
 Z0 dC:/Users/ADMIN/Documents/FPGA/Lab6/simulation/qsim
 vLab6Part5_Test
-Z1 !s110 1671527348
+Z1 !s110 1671634614
 !i10b 1
 !s100 5EH[@<JcOdLe;cS7@`zU01
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
 IDb@ZLHBNn?BaQ:@YkoAP52
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1671527347
-8Lab6.vo
-FLab6.vo
-!i122 0
+Z4 w1671634613
+Z5 8Lab6.vo
+Z6 FLab6.vo
+!i122 4
 L0 32 2681
-Z4 OV;L;2020.1;71
+Z7 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1671527348.000000
-!s107 Lab6.vo|
-!s90 -work|work|Lab6.vo|
+Z8 !s108 1671634614.000000
+Z9 !s107 Lab6.vo|
+Z10 !s90 -work|work|Lab6.vo|
 !i113 1
-Z6 o-work work
-Z7 tCvgOpt 0
+Z11 o-work work
+Z12 tCvgOpt 0
 n@lab6@part5_@test
 vLab6Part5_Test_vlg_vec_tst
 R1
 !i10b 1
-!s100 QT7Pl@2:9N7Lzm^3Tai2H1
+!s100 U:0n6m2MRY^oWOQFBYfXc3
 R2
-Ic2bmCgQ3gD;TnDaYOY3Be3
+Id^e3i1gajQ:RLZma8^f:Z2
 R3
 R0
-w1671527346
-8Waveform.vwf.vt
-FWaveform.vwf.vt
-!i122 1
-L0 30 121
 R4
+Z13 8Waveform.vwf.vt
+Z14 FWaveform.vwf.vt
+!i122 5
+L0 30 131
+R7
 r1
 !s85 0
 31
-R5
-!s107 Waveform.vwf.vt|
-!s90 -work|work|Waveform.vwf.vt|
+R8
+Z15 !s107 Waveform.vwf.vt|
+Z16 !s90 -work|work|Waveform.vwf.vt|
 !i113 1
-R6
-R7
+R11
+R12
 n@lab6@part5_@test_vlg_vec_tst
+vpart5
+Z17 !s110 1671634534
+!i10b 1
+!s100 @>jfN[STZR`a<nb_^kIgF0
+R2
+IBU]Um5S^T0W=]Lg0GYC801
+R3
+R0
+Z18 w1671634533
+R5
+R6
+!i122 2
+L0 32 4108
+R7
+r1
+!s85 0
+31
+Z19 !s108 1671634534.000000
+R9
+R10
+!i113 1
+R11
+R12
+vpart5_vlg_vec_tst
+R17
+!i10b 1
+!s100 _?Eo4Z3?^0E:[>b_ggMGX3
+R2
+IHWR?T<B2;J_QSMAV5inLC1
+R3
+R0
+R18
+R13
+R14
+!i122 3
+L0 30 28
+R7
+r1
+!s85 0
+31
+R19
+R15
+R16
+!i113 1
+R11
+R12

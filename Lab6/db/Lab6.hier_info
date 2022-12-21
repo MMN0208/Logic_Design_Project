@@ -1,162 +1,39 @@
-|part5
-SW[0] => SW[0].IN1
-SW[1] => SW[1].IN1
-SW[2] => SW[2].IN1
-SW[3] => SW[3].IN1
-SW[4] => SW[4].IN1
-SW[5] => SW[5].IN1
-SW[6] => SW[6].IN1
-SW[7] => SW[7].IN1
-SW[8] => SW[8].IN1
-SW[9] => SW[9].IN1
-KEY[0] => KEY[0].IN1
-KEY[1] => KEY[1].IN1
-LEDR[0] << adder_tree_multiplier_with_en:A0.port5
-LEDR[1] << adder_tree_multiplier_with_en:A0.port5
-LEDR[2] << adder_tree_multiplier_with_en:A0.port5
-LEDR[3] << adder_tree_multiplier_with_en:A0.port5
-LEDR[4] << adder_tree_multiplier_with_en:A0.port5
-LEDR[5] << adder_tree_multiplier_with_en:A0.port5
-LEDR[6] << adder_tree_multiplier_with_en:A0.port5
-LEDR[7] << adder_tree_multiplier_with_en:A0.port5
-HEX0[0] << displayHEX:H0.port1
-HEX0[1] << displayHEX:H0.port1
-HEX0[2] << displayHEX:H0.port1
-HEX0[3] << displayHEX:H0.port1
-HEX0[4] << displayHEX:H0.port1
-HEX0[5] << displayHEX:H0.port1
-HEX0[6] << displayHEX:H0.port1
-HEX1[0] << displayHEX:H1.port1
-HEX1[1] << displayHEX:H1.port1
-HEX1[2] << displayHEX:H1.port1
-HEX1[3] << displayHEX:H1.port1
-HEX1[4] << displayHEX:H1.port1
-HEX1[5] << displayHEX:H1.port1
-HEX1[6] << displayHEX:H1.port1
-HEX2[0] << displayHEX:H2.port1
-HEX2[1] << displayHEX:H2.port1
-HEX2[2] << displayHEX:H2.port1
-HEX2[3] << displayHEX:H2.port1
-HEX2[4] << displayHEX:H2.port1
-HEX2[5] << displayHEX:H2.port1
-HEX2[6] << displayHEX:H2.port1
-HEX3[0] << displayHEX:H3.port1
-HEX3[1] << displayHEX:H3.port1
-HEX3[2] << displayHEX:H3.port1
-HEX3[3] << displayHEX:H3.port1
-HEX3[4] << displayHEX:H3.port1
-HEX3[5] << displayHEX:H3.port1
-HEX3[6] << displayHEX:H3.port1
+|Lab6Part5_Test
+P[0] <= adder_tree_multiplier:inst.P[0]
+P[1] <= adder_tree_multiplier:inst.P[1]
+P[2] <= adder_tree_multiplier:inst.P[2]
+P[3] <= adder_tree_multiplier:inst.P[3]
+P[4] <= adder_tree_multiplier:inst.P[4]
+P[5] <= adder_tree_multiplier:inst.P[5]
+P[6] <= adder_tree_multiplier:inst.P[6]
+P[7] <= adder_tree_multiplier:inst.P[7]
+P[8] <= adder_tree_multiplier:inst.P[8]
+P[9] <= adder_tree_multiplier:inst.P[9]
+P[10] <= adder_tree_multiplier:inst.P[10]
+P[11] <= adder_tree_multiplier:inst.P[11]
+P[12] <= adder_tree_multiplier:inst.P[12]
+P[13] <= adder_tree_multiplier:inst.P[13]
+P[14] <= adder_tree_multiplier:inst.P[14]
+P[15] <= adder_tree_multiplier:inst.P[15]
+A[0] => adder_tree_multiplier:inst.A[0]
+A[1] => adder_tree_multiplier:inst.A[1]
+A[2] => adder_tree_multiplier:inst.A[2]
+A[3] => adder_tree_multiplier:inst.A[3]
+A[4] => adder_tree_multiplier:inst.A[4]
+A[5] => adder_tree_multiplier:inst.A[5]
+A[6] => adder_tree_multiplier:inst.A[6]
+A[7] => adder_tree_multiplier:inst.A[7]
+B[0] => adder_tree_multiplier:inst.B[0]
+B[1] => adder_tree_multiplier:inst.B[1]
+B[2] => adder_tree_multiplier:inst.B[2]
+B[3] => adder_tree_multiplier:inst.B[3]
+B[4] => adder_tree_multiplier:inst.B[4]
+B[5] => adder_tree_multiplier:inst.B[5]
+B[6] => adder_tree_multiplier:inst.B[6]
+B[7] => adder_tree_multiplier:inst.B[7]
 
 
-|part5|adder_tree_multiplier_with_en:A0
-clk => P[0]~reg0.CLK
-clk => P[1]~reg0.CLK
-clk => P[2]~reg0.CLK
-clk => P[3]~reg0.CLK
-clk => P[4]~reg0.CLK
-clk => P[5]~reg0.CLK
-clk => P[6]~reg0.CLK
-clk => P[7]~reg0.CLK
-clk => P[8]~reg0.CLK
-clk => P[9]~reg0.CLK
-clk => P[10]~reg0.CLK
-clk => P[11]~reg0.CLK
-clk => P[12]~reg0.CLK
-clk => P[13]~reg0.CLK
-clk => P[14]~reg0.CLK
-clk => P[15]~reg0.CLK
-rst => P[0]~reg0.ACLR
-rst => P[1]~reg0.ACLR
-rst => P[2]~reg0.ACLR
-rst => P[3]~reg0.ACLR
-rst => P[4]~reg0.ACLR
-rst => P[5]~reg0.ACLR
-rst => P[6]~reg0.ACLR
-rst => P[7]~reg0.ACLR
-rst => P[8]~reg0.ACLR
-rst => P[9]~reg0.ACLR
-rst => P[10]~reg0.ACLR
-rst => P[11]~reg0.ACLR
-rst => P[12]~reg0.ACLR
-rst => P[13]~reg0.ACLR
-rst => P[14]~reg0.ACLR
-rst => P[15]~reg0.ACLR
-en_A => display.OUTPUTSELECT
-en_A => display.OUTPUTSELECT
-en_A => display.OUTPUTSELECT
-en_A => display.OUTPUTSELECT
-en_A => display.OUTPUTSELECT
-en_A => display.OUTPUTSELECT
-en_A => display.OUTPUTSELECT
-en_A => display.OUTPUTSELECT
-en_A => A[0].LATCH_ENABLE
-en_A => A[1].LATCH_ENABLE
-en_A => A[2].LATCH_ENABLE
-en_A => A[3].LATCH_ENABLE
-en_A => A[4].LATCH_ENABLE
-en_A => A[5].LATCH_ENABLE
-en_A => A[6].LATCH_ENABLE
-en_A => A[7].LATCH_ENABLE
-en_B => display.OUTPUTSELECT
-en_B => display.OUTPUTSELECT
-en_B => display.OUTPUTSELECT
-en_B => display.OUTPUTSELECT
-en_B => display.OUTPUTSELECT
-en_B => display.OUTPUTSELECT
-en_B => display.OUTPUTSELECT
-en_B => display.OUTPUTSELECT
-en_B => B[0].LATCH_ENABLE
-en_B => B[1].LATCH_ENABLE
-en_B => B[2].LATCH_ENABLE
-en_B => B[3].LATCH_ENABLE
-en_B => B[4].LATCH_ENABLE
-en_B => B[5].LATCH_ENABLE
-en_B => B[6].LATCH_ENABLE
-en_B => B[7].LATCH_ENABLE
-I[0] => B[0].DATAIN
-I[0] => A[0].DATAIN
-I[1] => B[1].DATAIN
-I[1] => A[1].DATAIN
-I[2] => B[2].DATAIN
-I[2] => A[2].DATAIN
-I[3] => B[3].DATAIN
-I[3] => A[3].DATAIN
-I[4] => B[4].DATAIN
-I[4] => A[4].DATAIN
-I[5] => B[5].DATAIN
-I[5] => A[5].DATAIN
-I[6] => B[6].DATAIN
-I[6] => A[6].DATAIN
-I[7] => B[7].DATAIN
-I[7] => A[7].DATAIN
-display[0] <= display.DB_MAX_OUTPUT_PORT_TYPE
-display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
-display[2] <= display.DB_MAX_OUTPUT_PORT_TYPE
-display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
-display[4] <= display.DB_MAX_OUTPUT_PORT_TYPE
-display[5] <= display.DB_MAX_OUTPUT_PORT_TYPE
-display[6] <= display.DB_MAX_OUTPUT_PORT_TYPE
-display[7] <= display.DB_MAX_OUTPUT_PORT_TYPE
-P[0] <= P[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-P[1] <= P[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-P[2] <= P[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-P[3] <= P[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-P[4] <= P[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-P[5] <= P[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-P[6] <= P[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-P[7] <= P[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-P[8] <= P[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-P[9] <= P[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-P[10] <= P[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-P[11] <= P[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-P[12] <= P[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-P[13] <= P[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-P[14] <= P[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-P[15] <= P[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|part5|adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0
+|Lab6Part5_Test|adder_tree_multiplier:inst
 A[0] => p0.IN0
 A[0] => p1.IN0
 A[0] => p2.IN0
@@ -303,7 +180,7 @@ P[14] <= full_adder:F21.port3
 P[15] <= full_adder:F21.port3
 
 
-|part5|adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F01
+|Lab6Part5_Test|adder_tree_multiplier:inst|full_adder:F01
 A[0] => Add0.IN8
 A[1] => Add0.IN7
 A[2] => Add0.IN6
@@ -332,7 +209,7 @@ S[7] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|part5|adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F02
+|Lab6Part5_Test|adder_tree_multiplier:inst|full_adder:F02
 A[0] => Add0.IN8
 A[1] => Add0.IN7
 A[2] => Add0.IN6
@@ -361,7 +238,7 @@ S[7] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|part5|adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F03
+|Lab6Part5_Test|adder_tree_multiplier:inst|full_adder:F03
 A[0] => Add0.IN8
 A[1] => Add0.IN7
 A[2] => Add0.IN6
@@ -390,7 +267,7 @@ S[7] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|part5|adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F04
+|Lab6Part5_Test|adder_tree_multiplier:inst|full_adder:F04
 A[0] => Add0.IN8
 A[1] => Add0.IN7
 A[2] => Add0.IN6
@@ -419,7 +296,7 @@ S[7] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|part5|adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F11
+|Lab6Part5_Test|adder_tree_multiplier:inst|full_adder:F11
 A[0] => Add0.IN10
 A[1] => Add0.IN9
 A[2] => Add0.IN8
@@ -454,7 +331,7 @@ S[9] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|part5|adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F12
+|Lab6Part5_Test|adder_tree_multiplier:inst|full_adder:F12
 A[0] => Add0.IN10
 A[1] => Add0.IN9
 A[2] => Add0.IN8
@@ -489,7 +366,7 @@ S[9] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|part5|adder_tree_multiplier_with_en:A0|adder_tree_multiplier:A0|full_adder:F21
+|Lab6Part5_Test|adder_tree_multiplier:inst|full_adder:F21
 A[0] => Add0.IN12
 A[1] => Add0.IN11
 A[2] => Add0.IN10
@@ -528,61 +405,5 @@ S[9] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 S[10] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 S[11] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|part5|displayHEX:H0
-Input[0] => Decoder0.IN3
-Input[1] => Decoder0.IN2
-Input[2] => Decoder0.IN1
-Input[3] => Decoder0.IN0
-Output[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-Output[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-Output[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-Output[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-Output[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-Output[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-Output[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|part5|displayHEX:H1
-Input[0] => Decoder0.IN3
-Input[1] => Decoder0.IN2
-Input[2] => Decoder0.IN1
-Input[3] => Decoder0.IN0
-Output[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-Output[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-Output[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-Output[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-Output[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-Output[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-Output[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|part5|displayHEX:H2
-Input[0] => Decoder0.IN3
-Input[1] => Decoder0.IN2
-Input[2] => Decoder0.IN1
-Input[3] => Decoder0.IN0
-Output[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-Output[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-Output[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-Output[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-Output[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-Output[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-Output[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|part5|displayHEX:H3
-Input[0] => Decoder0.IN3
-Input[1] => Decoder0.IN2
-Input[2] => Decoder0.IN1
-Input[3] => Decoder0.IN0
-Output[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-Output[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-Output[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-Output[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-Output[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-Output[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-Output[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
